@@ -86,7 +86,6 @@ void MixCompressor::run()
 				++block_count;
 				lossyCompPtr->compressOneBlock(block, line_num_of_block);
 				fileProcPtr->writeOneBlock2Tempfile(block, line_num_of_block);
-
 			}
 			else
 			{

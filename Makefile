@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -Wall -g -Ofast
+CFLAGS = -Wall -g -Ofast -std=c++11
 
 OBJS = losslessComp.o lossyComp.o fileProcess.o mixCompressor.o errComputer.o utils.o simplifyData.o
 

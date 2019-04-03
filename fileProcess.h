@@ -18,6 +18,8 @@ public:
 
 	int getOneBlock(std::vector<std::vector<std::string> > &block);
 	int writeOneBlock2Tempfile(std::vector<std::vector<std::string> > &block, int line_num);
+	void initBlock(std::vector<std::vector<std::string> > &block);
+
 
 	std::ofstream *out;
 	std::ifstream *in;

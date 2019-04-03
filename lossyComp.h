@@ -12,6 +12,7 @@ public:
 
 	int compressOneBlock(std::vector<std::vector<std::string> > &block, int line_num);
 	int compressFirstBlock(std::vector<std::vector<std::string> > &block, int line_num);
+	int compressOtherBlock(std::vector<std::vector<std::string> > &block, int line_num);
 	int compressOneColumn(std::vector<std::vector<std::string> > &block, int col);
 	// int compressFile(const std::string &inputFilepath);
 

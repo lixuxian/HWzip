@@ -90,6 +90,19 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 	return i;
 }
 
+void FileProcessor::initBlock(std::vector<std::vector<std::string> > &block)
+{
+	int rowN = block.size();
+	int colN = block[0].size();
+	for (int i = 0; i < rowN; ++i)
+	{
+		for (int j = 0; j < colN; ++j)
+		{
+			block[i][j] = "0";
+		}
+	}
+}
+
 int FileProcessor::writeOneBlock2Tempfile(std::vector<std::vector<std::string> > &block, int line_num)
 {
 	// 
@@ -106,6 +119,8 @@ int FileProcessor::writeOneBlock2Tempfile(std::vector<std::vector<std::string> >
 		}
 		*out << block[i][colN-1] << std::endl;
 	}
+	// clear current block for next step
+	initBlock(block);
 	std::cout << "finish writeOneBlock2Tempfile..." << std::endl;
 	return 1;
 }

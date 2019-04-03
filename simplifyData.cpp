@@ -15,6 +15,10 @@ SimplifyData::~SimplifyData()
 // 在上下限内进行字符替换，选择一个最优的数值
 std::string SimplifyData::getDataS0(std::string data, double err, std::vector<int> &cFreq)
 {
+	if (data == "")
+	{
+		return "0";
+	}
 	double UP = 1 + err;
 	double LOW = 1 - err;
 	double lTmp, uTmp;
@@ -38,7 +42,6 @@ std::string SimplifyData::getDataS0(std::string data, double err, std::vector<in
 	return getDataS(ls, us, cFreq);
 }
 
-// 从上下限中取一个概率最高的数值
 std::string SimplifyData::getDataS(std::string ls, std::string us, std::vector<int> &cFreq)
 {
 	int ls_len = ls.length();
@@ -68,22 +71,24 @@ std::string SimplifyData::getDataS(std::string ls, std::string us, std::vector<i
 	// 两个数长度相同时
 	int lInt = 0, uInt = 0;
 	int dotInL = -1, dotInU = -1;
-	if (lsTmp.find('.') != std::string::npos)
+	if (lsTmp.find(".") != std::string::npos)
 	{
-		dotInL = lsTmp.find('.');
-		lsTmp.erase(dotInL, 1);
-		lInt = std::stoi(lsTmp);
+		std::string l = lsTmp;
+		dotInL = l.find(".");
+		l.erase(dotInL, 1);
+		lInt = std::stoi(l);
 	} 
 	else
 	{
 		lInt = std::stoi(lsTmp);
 	}
 
-	if (usTmp.find('.') != std::string::npos)
+	if (usTmp.find(".") != std::string::npos)
 	{
-		dotInU = usTmp.find('.');
-		usTmp.erase(dotInU, 1);
-		uInt = std::stoi(usTmp);
+		std::string u = usTmp;
+		dotInU = u.find(".");
+		u.erase(dotInU, 1);
+		uInt = std::stoi(u);
 	}
 	else
 	{
@@ -105,13 +110,15 @@ std::string SimplifyData::getDataS(std::string ls, std::string us, std::vector<i
 
 	std::string result = ls;
 	int freq_count = 0;
+
 	for (int i = lInt; i <= uInt; ++i)
 	{
 		std::string sTmp = std::to_string(i);
 		int freq = 0;
 		for (int j = 0; j < sTmp.length(); ++j)
 		{
-			freq += cFreq[sTmp[i] - '0'];
+			// cout << "ch = " << sTmp[j] - '0' << endl;
+			freq += cFreq[sTmp[j] - '0'];
 		}
 
 		if (freq > freq_count)
@@ -124,10 +131,12 @@ std::string SimplifyData::getDataS(std::string ls, std::string us, std::vector<i
 					// dotInL != dotInU
 					return result;
 				}
-				sTmp.insert(dotInL, '.', 1);
+				sTmp.insert(dotInL, ".", 1);
 			}
-			result = sTmp;
-
+			// 把us中的usTmp换成sTmp
+			// result = sTmp;
+			std::string u_str = us;
+			result = u_str.replace(us.find(usTmp), usTmp.length(), sTmp);
 			if (std::stod(ls) > std::stod(result) || std::stod(us) < std::stod(result))
 			{
 				// out of bound
@@ -136,24 +145,25 @@ std::string SimplifyData::getDataS(std::string ls, std::string us, std::vector<i
 			}
 		}
 	}
-
 	return result;
 }
 
-// 将一个数据拆分成一个无0字符的整数数据
+// 将一个数据拆分成一个无0字符的数据
 std::string SimplifyData::baseIntConvert2(std::string str)
 {
 	int start = 0;
 	int end = str.length() - 1;
-	while( !(str[start] >= '1' && str[start] <= '9'))
+	while(start <= end && !(str[start] >= '1' && str[start] <= '9'))
 	{
 		++start;
 	}
-	while( !(str[end] >= '1' && str[end] <= '9'))
+	while(end >= 0 && !(str[end] >= '1' && str[end] <= '9'))
 	{
 		--end;
 	}
-	return str.substr(start, end - start + 1);
+	std::string res = str.substr(start, end - start + 1);
+
+	return res == "" ? "0" : res;
 }
 
 
