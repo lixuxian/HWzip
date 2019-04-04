@@ -66,17 +66,39 @@ int LosslessCompressor::compressFile_paq9a(std::string inputFilepath, std::strin
 	return 1;
 }
 
-int LosslessCompressor::decompressFile_7z(std::string inputFilepath, std::string outputFilepath, int level)
+int LosslessCompressor::decompressFile_7z(std::string inputFilepath, int level)
 {
-	std::string de_cmd_7z = "7z x " + inputFilepath
+	std::string de_cmd_7z = "7z x " + inputFilepath;
+	system(de_cmd_7z.c_str());
+	return 1;
 }
 
 int LosslessCompressor::decompressFile_bz2(std::string inputFilepath, int level)
 {
-
+	std::string de_cmd_bz2 = "bzip2 -d " + inputFilepath;
+	system(de_cmd_bz2.c_str());
+	return 1;
 }
 
 int LosslessCompressor::decompressFile_paq9a(std::string inputFilepath, std::string outputFilepath)
 {
+	FILE *in = fopen(inputFilepath.c_str(), "rb");
+	if (!in)
+	{
+		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *in == NULL" << std::endl;
+		exit(0);
+	}
+	FILE *out = fopen(outputFilepath.c_str(), "wb");
+	if (!out)
+	{
+		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
+		exit(0);
+	}
+	Mode_paq m = DECOMPRESS;
+	paq9a(in, out, m);
 
+	fclose(in);
+	fclose(out);
+
+	return 1;
 }

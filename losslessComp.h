@@ -19,7 +19,7 @@ public:
 
 	int compressFile_paq9a(std::string inputFilepath, std::string outputFilepath);
 	
-	int decompressFile_7z(std::string inputFilepath, std::string outputFilepath, int level);
+	int decompressFile_7z(std::string inputFilepath, int level);
 
 	int decompressFile_bz2(std::string inputFilepath, int level);
 
