@@ -9,8 +9,9 @@ hwzip: $(OBJS) main.cpp
 	$(CC) $(CFLAGS) $(OBJS) main.cpp -o hwzip
 
 build/utils.o: utils.h utils.cpp
+	$(CC) $(CFLAGS) utils.cpp -o build/utils.o
 
-build/losslessComp.o: baseComp.h losslessComp.h losslessComp.cpp 
+build/losslessComp.o: baseComp.h losslessComp.h losslessComp.cpp paq9a.h
 	$(CC) $(CFLAGS) losslessComp.cpp -o build/losslessComp.o
 
 build/simplifyData.o: simplifyData.h simplifyData.cpp

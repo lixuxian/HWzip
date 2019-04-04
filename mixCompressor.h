@@ -26,6 +26,8 @@ public:
 	
 	void run();
 
+	int deleteTmpFile();
+
 private:
 	// LossyCompressor *lossyComp;
 	// LosslessCompressor *losslessComp;
@@ -40,6 +42,7 @@ private:
 
 	std::string inputFilepath;
 	std::string outputFilepath;
+	std::string tempFilepath;
 
 	const double PW_REL_ERR_MAX;
 	const double AVG_ERR_MAX;
