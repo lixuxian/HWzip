@@ -18,6 +18,7 @@ public:
 
 	int getOneBlock(std::vector<std::vector<std::string> > &block);
 	int writeOneBlock2Tempfile(std::vector<std::vector<std::string> > &block, int line_num);
+	int writeOneBlock2Tempfile(std::string &lossless_str);
 	void initBlock(std::vector<std::vector<std::string> > &block);
 
 

@@ -99,7 +99,7 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 	// first three col are metadatas
 	for (int j = 3; j < colN; ++j)
 	{
-		std::cout << "compress column " << j << std::endl;
+		// std::cout << "compress column " << j << std::endl;
 		int start = 0, end = 0; // 区间开始、结束下标
 		double up1 = std::stod(block[0][j]) * UP;
 		double low1 = std::stod(block[0][j]) * LOW;
@@ -128,9 +128,6 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 				std::string bestData = simplifyData.getDataS(std::to_string(low1), std::to_string(up1), cFreq);
 				for (int i = start; i <= end; ++i)
 				{		
-					// block[i][j] = std::to_string(up1);
-					// TODO 更改处理方式，使用字符替换的方式
-					// block[i][j] = convertDouble(up1);
 					block[i][j] = bestData;
 					updateFreq(block[i][j]);
 				}
@@ -175,10 +172,6 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 					std::string bestData = simplifyData.getDataS(std::to_string(low1), std::to_string(up1), cFreq);
 					for (int i = start; i <= end; ++i)
 					{
-						// block[i][j] = std::to_string(up1);
-						// TODO 更改处理方式，使用字符替换的方式
-						// block[i][j] = convertDouble(up1);
-						// block[i][j] = simplifyData.getDataS0(block[i][j], err, cFreq);
 						block[i][j] = bestData;
 						updateFreq(block[i][j]);
 					}
@@ -227,7 +220,7 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 	// first three col are metadatas
 	for (int j = 3; j < colN; ++j)
 	{
-		std::cout << "compress column " << j << std::endl;
+		// std::cout << "compress column " << j << std::endl;
 		int start = 0, end = 0; // 区间开始、结束下标
 		double up1 = std::stod(block[0][j]) * UP;
 		double low1 = std::stod(block[0][j]) * LOW;

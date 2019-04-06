@@ -103,6 +103,19 @@ void FileProcessor::initBlock(std::vector<std::vector<std::string> > &block)
 	}
 }
 
+int FileProcessor::writeOneBlock2Tempfile(std::string &lossless_str)
+{
+	if (lossless_str == "") {
+		perror("FileProcessor::writeOneBlock2Tempfile(), lossless_str == NULL");
+		return -1;
+	}
+
+	*out << lossless_str;
+	
+	return 1;
+}
+
+
 int FileProcessor::writeOneBlock2Tempfile(std::vector<std::vector<std::string> > &block, int line_num)
 {
 	// 

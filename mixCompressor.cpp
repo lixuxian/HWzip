@@ -72,9 +72,11 @@ int MixCompressor::compress()
 		{
 			++block_count;
 			lossyCompPtr->compressOneBlock(block, line_num_of_block);
-			fileProcPtr->writeOneBlock2Tempfile(block, line_num_of_block);
-			// TODO
-			// lossless compress the temp file
+			// fileProcPtr->writeOneBlock2Tempfile(block, line_num_of_block);
+	
+			std::string lossless_str;
+			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
+			fileProcPtr->writeOneBlock2Tempfile(lossless_str);
 		}
 		else
 		{
@@ -91,16 +93,16 @@ int MixCompressor::compress()
 	losslessCompPtr->compressFile_7z(tempFilepath, outputFilepath, 9);
 	std::cout << "finish compressFile_7z." << std::endl;
 
-	// compress temp file - bz2
-	losslessCompPtr->compressFile_bz2(tempFilepath, 9);
-	std::cout << "finish compressFile_bz2." << std::endl;
+	// // compress temp file - bz2
+	// losslessCompPtr->compressFile_bz2(tempFilepath, 9);
+	// std::cout << "finish compressFile_bz2." << std::endl;
 
-	// compress temp file - paq9a
-	std::string outputFilepath_paq = outputFilepath + ".paq9a";
-	losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath_paq);
-	std::cout << "finish compressFile_paq9a" << std::endl;
+	// // compress temp file - paq9a
+	// std::string outputFilepath_paq = outputFilepath + ".paq9a";
+	// losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath_paq);
+	// std::cout << "finish compressFile_paq9a" << std::endl;
 
-	deleteTmpFile();
+	// deleteTmpFile();
 
 	return 1;
 }
