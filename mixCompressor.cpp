@@ -63,8 +63,8 @@ int MixCompressor::compress()
 	// get fileLines
 	fileLines = getFileLines(inputFilepath);
 
-	tempFilepath = inputFilepath + ".tmp";
-	outputFilepath = inputFilepath + ".hw";
+	tempFilepath = inputFilepath  + "_" + convertDouble(AVG_ERR_MAX) + ".tmp";
+	outputFilepath = inputFilepath + "_" + convertDouble(AVG_ERR_MAX) + ".hw";
 
 	std::ifstream in(inputFilepath.c_str(), std::ios::in);
 	std::ofstream tmp_out(tempFilepath.c_str(), std::ios::out | std::ios::trunc);

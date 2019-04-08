@@ -21,3 +21,8 @@
 **note:**
 
 the input filename should end with ".hw"
+
+## test
+in directory ./test, run ./compress_test.sh and ./decompress_test.sh to test.
+
+note: the test file should be copy to directory ./file

@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <cmath>
 
 int Help() {
   printf("hwzip v1.0\n");
@@ -42,6 +43,7 @@ int getParas(int argc, char const *argv[])
 	{
 		paras.MAX_PW_REL_ERR = atof(argv[3]);
 		paras.MAX_AVG_ERR = atof(argv[4]);	
+		paras.MAX_PW_REL_ERR = std::min(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR);
 	}
 	return 1;
 }
@@ -59,8 +61,6 @@ int main(int argc, char const *argv[])
 	{
 		exit(0);
 	}
-
-	
 
 	MixCompressor *mixComp = new MixCompressor(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
 		, paras.inputFile, paras.mode);
