@@ -1,4 +1,5 @@
-file/
+file/*
+!file/.test.file
 build/
 temp/
 *.o
