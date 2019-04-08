@@ -1,8 +1,9 @@
 #!/bin/bash
-dir=../file
+cd ../file
+dir=$(pwd)
 pw_err=0.05
 avg_err=0.05
-logfile=./compress_result.txt
+logfile=../test/compress_result.txt
 for file in $dir/*; do
     startTime_s=`date +%s`
     cmd="../hwzip c $file $pw_err $avg_err"

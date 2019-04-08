@@ -136,7 +136,6 @@ int MixCompressor::decompress()
 
 	// lossless decompress
 	// get metadata
-	// get first three column
 	// loop
 	// 		decompress one block
 	// end loop
@@ -150,7 +149,7 @@ int MixCompressor::decompress()
 		splitString(inputFilepath, filename, ".hw");
 
 		tempFilepath = filename[0] + ".tmp";
-		outputFilepath = filename[0];
+		outputFilepath = filename[0] + "_de.csv";
 		std::cout << "tempFilepath = " << tempFilepath << std::endl;
 		std::cout << "outputFilepath = " << outputFilepath << std::endl;
 	} else {

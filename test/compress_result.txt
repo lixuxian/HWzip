@@ -13,7 +13,7 @@ p7zip Version 16.02 (locale=utf8,Utf16=on,HugeFiles=on,64 bits,4 CPUs x64)
 Scanning the drive:
 1 file, 42109 bytes (42 KiB)
 
-Creating archive: ../file/7-part-3000-6.csv.hw
+Creating archive: /Users/lixuxian/compress/HWzip/file/7-part-3000-6.csv.hw
 
 Items to compress: 1
 
@@ -44,7 +44,7 @@ p7zip Version 16.02 (locale=utf8,Utf16=on,HugeFiles=on,64 bits,4 CPUs x64)
 Scanning the drive:
 1 file, 3623612 bytes (3539 KiB)
 
-Creating archive: ../file/7-part-6000-194.csv.hw
+Creating archive: /Users/lixuxian/compress/HWzip/file/7-part-6000-194.csv.hw
 
 Items to compress: 1
 
