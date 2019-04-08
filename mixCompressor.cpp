@@ -97,16 +97,6 @@ int MixCompressor::compress()
 			++block_count;
 			lossyCompPtr->compressOneBlock(block, line_num_of_block);
 
-			for(size_t i = 0; i < line_num_of_block; i++)
-			{
-				for(size_t j = 0; j < 6; j++)
-				{
-					std::cout << block[i][j] << std::endl;
-				}
-				
-			}
-			
-
 			std::string lossless_str;
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
 			fileProcPtr->writeOneBlock2Tempfile(lossless_str);
