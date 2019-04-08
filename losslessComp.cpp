@@ -26,7 +26,7 @@ void LosslessCompressor::decompress(std::string inputFilepath, std::string outpu
 
 int LosslessCompressor::compressOneBlock(std::vector<std::vector<std::string> > &block, int line_num, std::string &lossless_str)
 {
-	std::cout << "LosslessCompressor::compressOtherBlock()..." << std::endl;
+	std::cout << "LosslessCompressor::compressOneBlock()..." << std::endl;
 	int rowN = line_num;
 	if (rowN <= 0)
 	{
@@ -37,7 +37,7 @@ int LosslessCompressor::compressOneBlock(std::vector<std::vector<std::string> > 
 
 	lossless_str = "";
 	// first three col are metadatas
-	for (int col = 3; col < colN; ++col)
+	for (int col = 0; col < colN; ++col)
 	{
 		std::string col_str = "";
 		double similarity;
@@ -50,6 +50,7 @@ int LosslessCompressor::compressOneBlock(std::vector<std::vector<std::string> > 
 			for (int line = 1; line < line_num; ++line)
 			{
 				std::string currentData = block[line][col];
+				// std::cout << "currentData = " << currentData << std::endl;
 				if (pre_data.compare(currentData) == 0) // 相等
 				{
 					col_str += ",";
@@ -58,15 +59,16 @@ int LosslessCompressor::compressOneBlock(std::vector<std::vector<std::string> > 
 					pre_data = currentData;
 				}
 			}
+			col_str += ",";
 		}
 		else
 		{
 			/* there is a similar column */
 			if (similarity == 1.0) {
-				if (col != 3) {
-					col_str += ",";
-				}
-				col_str += std::to_string(col - simCol - 1) + "-";
+				// if (col != 0) {
+				// 	col_str += ",";
+				// }
+				col_str += std::to_string(col - simCol - 1) + "-,";
 			}
 			else
 			{
@@ -93,16 +95,20 @@ int LosslessCompressor::createSimilarString(std::vector<std::vector<std::string>
 			{
 				if(distance_stored)
 				{
-					result += ",--" + std::to_string(same_len); 
+					// result += ",--" + std::to_string(same_len); 
+					result += "--" + std::to_string(same_len) + ","; 
 				} else {
-					result += "," +distance + "-" + std::to_string(same_len);
+					// result += "," +distance + "-" + std::to_string(same_len);
+					result += distance + "-" + std::to_string(same_len) + ",";
 					distance_stored = true;
 				}
 			} else if (same_len == 1){ // 前面只有一个数字相同
-				result += block[i-1][currentCol];
+				// result += "," + block[i-1][currentCol];
+				result += block[i-1][currentCol] + ",";
 			}
 			same_len = 0;
-			result += "," + block[i][currentCol];
+			// result += "," + block[i][currentCol];
+			result += block[i][currentCol] + ",";
 			continue;
 		} else {
 			/* 相等 */
@@ -113,11 +119,14 @@ int LosslessCompressor::createSimilarString(std::vector<std::vector<std::string>
 		{
 			if (!distance_stored)
 			{
-				result += "," + distance + "-";
+				// result += "," + distance + "-,";
+				result += distance + "-,";
 				distance_stored = true;
 			} else {
-				result += ",-";
+				// result += ",-,";
+				result += "-,";
 			}
+			same_len = 0;
 		}
 	}
 	return 1;
@@ -199,14 +208,14 @@ int LosslessCompressor::compressFile_paq9a(std::string inputFilepath, std::strin
 	return 1;
 }
 
-int LosslessCompressor::decompressFile_7z(std::string inputFilepath, int level)
+int LosslessCompressor::decompressFile_7z(std::string inputFilepath)
 {
 	std::string de_cmd_7z = "7z x " + inputFilepath;
 	system(de_cmd_7z.c_str());
 	return 1;
 }
 
-int LosslessCompressor::decompressFile_bz2(std::string inputFilepath, int level)
+int LosslessCompressor::decompressFile_bz2(std::string inputFilepath)
 {
 	std::string de_cmd_bz2 = "bzip2 -d " + inputFilepath;
 	system(de_cmd_bz2.c_str());

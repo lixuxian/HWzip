@@ -18,7 +18,7 @@ enum Mode
 class MixCompressor
 {
 public:
-	MixCompressor(double rel_err, double avg_err, std::string input, std::string output, char mode);
+	MixCompressor(double rel_err, double avg_err, std::string input, char mode);
 	~MixCompressor();
 
 	int compress();
@@ -32,6 +32,8 @@ private:
 	// LossyCompressor *lossyComp;
 	// LosslessCompressor *losslessComp;
 	// FileProcessor *fileProc;
+
+	int getFileLines(std::string inputFilepath);
 
 	LossyCompressor *lossyCompPtr;
 	LosslessCompressor *losslessCompPtr;
@@ -50,5 +52,7 @@ private:
 	char mode;
 	int blockSize;
 	int columnSize;
+	int fileLines;
+	int blocks;
 
 };

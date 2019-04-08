@@ -9,7 +9,10 @@ void splitString(const std::string& s, std::vector<std::string>& v, const std::s
 bool isZeroOrNA(std::string str);
 bool containE(std::string str);
 
+std::string convertDouble_old(double value);
 std::string convertDouble(double value);
+
+double Stod(std::string str);
 
 
 #endif

@@ -5,10 +5,6 @@
 
 LossyCompressor::LossyCompressor(double rel_err, double avg_err) : PW_REL_ERR_MAX(rel_err), AVG_ERR_MAX(avg_err), cFreq(10), block_count(0)
 {
-	for (int i = 0; i < 10; ++i)
-	{
-		std::cout << "cFreq[" << i << "] = " << cFreq[i] << std::endl;
-	}
 	UP = 1 + PW_REL_ERR_MAX;
 	LOW = 1 - PW_REL_ERR_MAX;
 
@@ -48,20 +44,20 @@ void LossyCompressor::processIntervalRange(double &low, double &up)
 	{
 		std::swap(up, low); // 负数
 	}
-	std::string low_tmp = simplifyData.simplifyDataCeil(std::to_string(low), std::to_string(up));
+	std::string low_tmp = simplifyData.simplifyDataCeil(convertDouble(low), convertDouble(up));
 	if (low_tmp == "")
 	{
 		low = 0;
 	} else {
-		low = std::stod(low_tmp);
+		low = Stod(low_tmp);
 	}
 	
-	std::string up_tmp = simplifyData.simplifyDataFloor(std::to_string(low), std::to_string(up));
+	std::string up_tmp = simplifyData.simplifyDataFloor(convertDouble(low), convertDouble(up));
 	if (up_tmp == "")
 	{
 		up = 0;
 	} else {
-		up = std::stod(up_tmp);
+		up = Stod(up_tmp);
 	}
 	// std::cout << "low = " << low << " up = " << up << std::endl;
 }
@@ -101,8 +97,8 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 	{
 		// std::cout << "compress column " << j << std::endl;
 		int start = 0, end = 0; // 区间开始、结束下标
-		double up1 = std::stod(block[0][j]) * UP;
-		double low1 = std::stod(block[0][j]) * LOW;
+		double up1 = Stod(block[0][j]) * UP;
+		double low1 = Stod(block[0][j]) * LOW;
 
 		processIntervalRange(low1, up1);
 
@@ -125,7 +121,7 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 				// TODO 更改处理方式，使用字符替换的方式
 				processZeroOrE(block[k][j], PW_REL_ERR_MAX);
 				// process interval
-				std::string bestData = simplifyData.getDataS(std::to_string(low1), std::to_string(up1), cFreq);
+				std::string bestData = simplifyData.getDataS(convertDouble(low1), convertDouble(up1), cFreq);
 				for (int i = start; i <= end; ++i)
 				{		
 					block[i][j] = bestData;
@@ -142,23 +138,23 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 				}
 				else if (k == rowN - 1) // 最后一个数
 				{
-					up1 = std::stod(block[k][j]) * UP;
-					low1 = std::stod(block[k][j]) * LOW;
+					up1 = Stod(block[k][j]) * UP;
+					low1 = Stod(block[k][j]) * LOW;
 					processIntervalRange(low1, up1);
 					// block[k][j] = convertDouble(up1);
 					block[k][j] = simplifyData.getDataS0(block[k][j], PW_REL_ERR_MAX, cFreq);
 					updateFreq(block[k][j]);
 					break;
 				}
-				up1 = std::stod(block[k][j]) * UP;
-				low1 = std::stod(block[k][j]) * LOW;
+				up1 = Stod(block[k][j]) * UP;
+				low1 = Stod(block[k][j]) * LOW;
 				processIntervalRange(low1, up1);
 
 			}
 			else // 普通数值，非0且不含E
 			{
-				double low_cur = std::stod(currentData) * UP;
-				double up_cur = std::stod(currentData) * LOW;
+				double low_cur = Stod(currentData) * UP;
+				double up_cur = Stod(currentData) * LOW;
 				processIntervalRange(low_cur, up_cur);
 				// 判断是否可扩展
 				if ((low_cur <= up1 && up_cur >= low1)) // 有交集
@@ -169,7 +165,7 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 				} else { // 无交集
 					// 处理区间内数据
 					// 更新start、end、up1、low1
-					std::string bestData = simplifyData.getDataS(std::to_string(low1), std::to_string(up1), cFreq);
+					std::string bestData = simplifyData.getDataS(convertDouble(low1), convertDouble(up1), cFreq);
 					for (int i = start; i <= end; ++i)
 					{
 						block[i][j] = bestData;
@@ -186,8 +182,8 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 					}
 					else if (k == rowN - 1) // 最后一个数
 					{
-						up1 = std::stod(block[k][j]) * UP;
-						low1 = std::stod(block[k][j]) * LOW;
+						up1 = Stod(block[k][j]) * UP;
+						low1 = Stod(block[k][j]) * LOW;
 						processIntervalRange(low1, up1);
 						// TODO 更改处理方式，使用字符替换的方式
 						// block[k][j] = convertDouble(up1);
@@ -196,8 +192,8 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 						break;
 					}
 					// update
-					up1 = std::stod(block[k][j]) * UP;
-					low1 = std::stod(block[k][j]) * LOW;
+					up1 = Stod(block[k][j]) * UP;
+					low1 = Stod(block[k][j]) * LOW;
 					processIntervalRange(low1, up1);
 				}
 			}
@@ -209,7 +205,7 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 
 int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &block, int line_num)
 {
-	std::cout << "compressOtherBlock()..." << std::endl;
+	std::cout << "compressFirstBlock()..." << std::endl;
 	int rowN = line_num;
 	if (rowN <= 0)
 	{
@@ -222,10 +218,12 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 	{
 		// std::cout << "compress column " << j << std::endl;
 		int start = 0, end = 0; // 区间开始、结束下标
-		double up1 = std::stod(block[0][j]) * UP;
-		double low1 = std::stod(block[0][j]) * LOW;
+		double up1 = Stod(block[0][j]) * UP;
+		double low1 = Stod(block[0][j]) * LOW;
 
 		processIntervalRange(low1, up1);
+
+		// std::cout << "low1 = " << low1 << " up1 = " << up1 << std::endl;
 
 		for (int k = 1; k < rowN; ++k)
 		{
@@ -240,6 +238,9 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 			//		else
 			//			处理区间start到end的值，更新start、end为当前点，更新up、low
 			std::string currentData = block[k][j];
+
+			// std::cout << "lossy current data = " << currentData << std::endl;
+
 			if (isZeroOrNA(currentData) || containE(currentData))
 			{
 				// 区间结束
@@ -249,6 +250,7 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 				{		
 					// block[i][j] = std::to_string(up1);
 					block[i][j] = convertDouble(up1);
+					// std::cout << "block[i][j] = " << block[i][j] << std::endl;
 					updateFreq(block[i][j]);
 				}
 				// update
@@ -262,21 +264,22 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 				}
 				else if (k == rowN - 1) // 最后一个数
 				{
-					up1 = std::stod(block[k][j]) * UP;
-					low1 = std::stod(block[k][j]) * LOW;
+					up1 = Stod(block[k][j]) * UP;
+					low1 = Stod(block[k][j]) * LOW;
 					processIntervalRange(low1, up1);
 					block[k][j] = convertDouble(up1);
+					// std::cout << "block[i][j] = " << block[k][j] << std::endl;
 					break;
 				}
-				up1 = std::stod(block[k][j]) * UP;
-				low1 = std::stod(block[k][j]) * LOW;
+				up1 = Stod(block[k][j]) * UP;
+				low1 = Stod(block[k][j]) * LOW;
 				processIntervalRange(low1, up1);
 
 			}
 			else // 普通数值，非0且不含E
 			{
-				double low_cur = std::stod(currentData) * UP;
-				double up_cur = std::stod(currentData) * LOW;
+				double low_cur = Stod(currentData) * UP;
+				double up_cur = Stod(currentData) * LOW;
 				processIntervalRange(low_cur, up_cur);
 				// 判断区间是否可扩展
 				if ((low_cur <= up1 && up_cur >= low1)) // 有交集，可扩展
@@ -304,20 +307,21 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 					}
 					else if (k == rowN - 1) // 最后一个数
 					{
-						up1 = std::stod(block[k][j]) * UP;
-						low1 = std::stod(block[k][j]) * LOW;
+						up1 = Stod(block[k][j]) * UP;
+						low1 = Stod(block[k][j]) * LOW;
 						processIntervalRange(low1, up1);
 						block[k][j] = convertDouble(up1);
 						break;
 					}
 					// update
-					up1 = std::stod(block[k][j]) * UP;
-					low1 = std::stod(block[k][j]) * LOW;
+					up1 = Stod(block[k][j]) * UP;
+					low1 = Stod(block[k][j]) * LOW;
 					processIntervalRange(low1, up1);
 				}
 			}
 		}
 	}
+	std::cout << "after compressFirstBlock()..." << std::endl;
 	return 1;
 }
 

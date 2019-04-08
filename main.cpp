@@ -17,7 +17,7 @@ struct Paras
 	double MAX_PW_REL_ERR;
 	double MAX_AVG_ERR;
 	std::string inputFile;
-	std::string outputFile;
+	// std::string outputFile;
 } paras;
 
 int getParas(int argc, char const *argv[])
@@ -36,12 +36,12 @@ int getParas(int argc, char const *argv[])
 		return Help();
 	}
 	paras.inputFile = argv[2];
-	paras.outputFile = argv[3];
+	// paras.outputFile = argv[3];
 
-	if (argc == 6)
+	if (argc == 5)
 	{
-		paras.MAX_PW_REL_ERR = atof(argv[4]);
-		paras.MAX_AVG_ERR = atof(argv[5]);	
+		paras.MAX_PW_REL_ERR = atof(argv[3]);
+		paras.MAX_AVG_ERR = atof(argv[4]);	
 	}
 	return 1;
 }
@@ -49,7 +49,7 @@ int getParas(int argc, char const *argv[])
 int main(int argc, char const *argv[])
 {
 	std::cout << "argc = " << argc << std::endl;
-	if (argc != 6 && argc != 4)
+	if (argc != 5 && argc != 3)
 	{
 		return Help();
 	}
@@ -63,7 +63,7 @@ int main(int argc, char const *argv[])
 	
 
 	MixCompressor *mixComp = new MixCompressor(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
-		, paras.inputFile, paras.outputFile, paras.mode);
+		, paras.inputFile, paras.mode);
 
 	mixComp->run();
 
