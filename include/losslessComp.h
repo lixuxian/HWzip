@@ -1,6 +1,8 @@
 #pragma once
 
 #include "baseComp.h"
+#include <string>
+#include <vector>
 
 class LosslessCompressor : public BaseCompressor
 {

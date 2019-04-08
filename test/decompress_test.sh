@@ -14,7 +14,7 @@ for file in $dir/*; do
         echo "file size = $filesize bytes"  # get file size
 
         startTime_s=`date +%s`
-        cmd="../hwzip d $file"
+        cmd="../bin/hwzip d $file"
         echo "cmd = $cmd"
         $cmd >> $logfile
         endTime_s=`date +%s`
