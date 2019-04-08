@@ -283,7 +283,7 @@ int FileProcessor::getOneDecompressedBlock(std::vector<std::vector<std::string> 
 						if (data_splited[0] == "") {
 							// 负数
 							block[k][i] = data;
-							std::cout << "222 preData = data = " << data << std::endl;
+							// std::cout << "222 preData = data = " << data << std::endl;
 							preData = data;	
 						}
 						else
@@ -294,7 +294,7 @@ int FileProcessor::getOneDecompressedBlock(std::vector<std::vector<std::string> 
 							{
 								if (x >= current_block_lines) {
 									// "-63" 注意，这种情况是负数
-									std::cout << "0-10 x >= current_block_lines, k = " << k << " data = " << data << std::endl;
+									std::cout << "-xx x >= current_block_lines, k = " << k << " data = " << data << std::endl;
 								}
 								
 								block[x][i] = block[x][similar_col];

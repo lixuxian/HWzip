@@ -125,7 +125,7 @@ int MixCompressor::compress()
 	// losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath_paq);
 	// std::cout << "finish compressFile_paq9a" << std::endl;
 
-	// deleteTmpFile();
+	deleteTmpFile();
 
 	return 1;
 }
@@ -184,10 +184,10 @@ int MixCompressor::decompress()
 
 	// block.reserve(blockSize);
 	// block.resize(blockSize);
-	for (std::vector<std::string> x : block)
-	{
-		std::cout << x.size() << std::endl;
-	}
+	// for (std::vector<std::string> x : block)
+	// {
+	// 	std::cout << x.size() << std::endl;
+	// }
 
 	int block_count = 0;
 	int line_num_of_block;
@@ -227,7 +227,7 @@ int MixCompressor::deleteTmpFile()
 {
 	if (remove(tempFilepath.c_str()) == 0)
 	{
-		std::cout << "finish remove tmp file" << std::endl;
+		std::cout << "remove tmp file" << std::endl;
 		return 0;
 	} else {
 		std::cout << "remove tmp file failed" << std::endl;
