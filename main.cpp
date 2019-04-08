@@ -6,8 +6,8 @@
 int Help() {
   printf("hwzip v1.0\n");
   printf("How to use hwzip:\n");
-  printf("    compress:           hwzip c [input] [output] [max_pw_rel_err] [max_avg_err]\n");
-  printf("    decompress:         hwzip d [input] [output]\n");
+  printf("    compress:           hwzip c [input] [max_pw_rel_err] [max_avg_err]\n");
+  printf("    decompress:         hwzip d [input]\n");
   return -1;
 }
 
