@@ -25,12 +25,17 @@ public:
 	int compressFile_bz2(std::string inputFilepath, int level);
 
 	int compressFile_paq9a(std::string inputFilepath, std::string outputFilepath);
+
+	int compressFile_ppmd(std::string inputFilepath, std::string outputFilepath);
 	
 	int decompressFile_7z(std::string inputFilepath);
 
 	int decompressFile_bz2(std::string inputFilepath);
 
 	int decompressFile_paq9a(std::string inputFilepath, std::string outputFilepath);
+
+	int decompressFile_ppmd(std::string inputFilepath, std::string outputFilepath);
+
 	
 private:
 	double simThreshold;

@@ -1,5 +1,6 @@
 #include "losslessComp.h"
 #include "paq9a.h"
+#include "ppmd.h"
 #include <cstdio>
 #include <iostream>
 #include <vector>
@@ -207,6 +208,19 @@ int LosslessCompressor::compressFile_paq9a(std::string inputFilepath, std::strin
 
 	return 1;
 }
+
+int LosslessCompressor::compressFile_ppmd(std::string inputFilepath, std::string outputFilepath)
+{
+	ppmd_compress(inputFilepath.c_str(), outputFilepath.c_str());
+	return 1;
+}
+
+int LosslessCompressor::decompressFile_ppmd(std::string inputFilepath, std::string outputFilepath)
+{
+	ppmd_decompress(inputFilepath.c_str(), outputFilepath.c_str());
+	return 1;
+}
+
 
 int LosslessCompressor::decompressFile_7z(std::string inputFilepath)
 {

@@ -1,5 +1,6 @@
 file/*
 !file/.test.file
-build/
-temp/
-*.o
+obj/
+.vscode/*
+.DS_Store/*
+hwzip.dSYM/*
