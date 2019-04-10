@@ -446,7 +446,7 @@ std::string SimplifyData::simplifyFloat_bigger_than_10(std::string data, double 
 	{
 		// 叠数
 		{
-			int intTmp = (int)Stod(data);
+			// int intTmp = (int)Stod(data);
 			std::string dataTmp = data;
 			dataTmp[1+flag] = data[0+flag];
 			if (errComp.pwRelErr(data, dataTmp) <= err)

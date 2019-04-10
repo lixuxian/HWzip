@@ -19,7 +19,7 @@ class MixCompressor
 {
 public:
 	MixCompressor(double rel_err, double avg_err, std::string input, char mode);
-	~MixCompressor();
+	virtual ~MixCompressor();
 
 	int compress();
 	int decompress();
@@ -42,12 +42,12 @@ private:
 	std::vector<std::vector<std::string> > block; 
 
 
+	const double PW_REL_ERR_MAX;
+	const double AVG_ERR_MAX;
+
 	std::string inputFilepath;
 	std::string outputFilepath;
 	std::string tempFilepath;
-
-	const double PW_REL_ERR_MAX;
-	const double AVG_ERR_MAX;
 
 	char mode;
 	int blockSize;

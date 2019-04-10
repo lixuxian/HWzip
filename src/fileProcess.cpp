@@ -195,8 +195,6 @@ int FileProcessor::writeOneBlock2Tempfile(std::vector<std::vector<std::string> >
 
 int FileProcessor::getOneDecompressedBlock(std::vector<std::vector<std::string> > &block)
 {
-	int lines_count;
-
 	int wait2decompress_lines = (fileLines - 1) - decompress_block_count * blockLines;
 
 	if (wait2decompress_lines <= 0)

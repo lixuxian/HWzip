@@ -174,6 +174,7 @@ double LosslessCompressor::getSimilarity(std::vector<std::vector<std::string> > 
 int LosslessCompressor::compressFile_7z(std::string inputFilepath, std::string outputFilepath, int level)
 {
 	// 7z a outputFile inputFile -mx9
+	std::cout << "7z.... input = " << inputFilepath << " output = " << outputFilepath << std::endl;
 	std::string cmd_7z = "7z a " + outputFilepath + " " + inputFilepath + " -mx" + std::to_string(level);
 	system(cmd_7z.c_str());
 	return 1;

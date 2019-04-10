@@ -8,7 +8,7 @@ class LossyCompressor : public BaseCompressor
 {
 public:
 	LossyCompressor(double rel_err = 0.10, double avg_err = 0.05);
-	~LossyCompressor();
+	virtual ~LossyCompressor();
 
 	int compressOneBlock(std::vector<std::vector<std::string> > &block, int line_num);
 	int compressFirstBlock(std::vector<std::vector<std::string> > &block, int line_num);

@@ -30,9 +30,8 @@ public:
 	int writeOneBlock2DecompressedFile(std::vector<std::vector<std::string> > &block, int lines);
 	int writeHeader2DecompressedFile();
 
-
-	std::ofstream *out;
 	std::ifstream *in;
+	std::ofstream *out;
 
 private:
 	std::string inputFilepath;
