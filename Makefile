@@ -12,7 +12,7 @@ TARGET = hwzip
 BIN_TARGET = ${DIR_BIN}/${TARGET}
 
 CC = g++
-CFLAGS = -g -Wall -I${DIR_INC}
+CFLAGS = -g -Wall -I${DIR_INC} -std=c++11
 
 OS:=$(shell uname -s)
 IS_LINUX:=$(shell echo $(OS) | grep -i Linux)
