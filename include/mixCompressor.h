@@ -1,3 +1,10 @@
+/*
+ * @Description: 混合压缩器，包含了有损压缩、无损压缩
+ * @Author: lixuxian
+ * @LastEditor: lixuxian
+ * @Date: 2019-03-29 17:33:45
+ * @LastEditTime: 2019-04-11 11:41:21
+ */
 #pragma once
 
 #include "lossyComp.h"

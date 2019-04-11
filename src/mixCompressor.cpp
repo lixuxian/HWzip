@@ -6,17 +6,16 @@ MixCompressor::MixCompressor(double rel_err, double avg_err,
 	std::string input, char mode) : PW_REL_ERR_MAX(rel_err), AVG_ERR_MAX(avg_err), 
 	inputFilepath(input), mode(mode)
 {
-	// lossyComp = new LossyCompressor(rel_err, avg_err);
-	// LosslessCompressor = new LosslessCompressor();
-	// fileProc = new FileProcessor();
 	lossyCompPtr = new LossyCompressor(rel_err, avg_err);
 	losslessCompPtr = new LosslessCompressor();
 
 	blockSize = 3000;
 	columnSize = 0;
-
 }
 
+/**
+ * @description: 析构函数，清理指针和block
+ */
 MixCompressor::~MixCompressor()
 {
 	if (lossyCompPtr)
@@ -42,6 +41,11 @@ MixCompressor::~MixCompressor()
 	std::cout << "~MixCompressor(): block.size() = " << block.size() << std::endl;
 }
 
+/**
+ * @description: 获取文件的行数，用于计算文件块数，及最后一块的行数
+ * @param inputFilepath 输入文件
+ * @return: int 大于0表示文件行数，-1表示读文件出错
+ */
 int MixCompressor::getFileLines(std::string inputFilepath)
 {
 	std::ifstream in(inputFilepath.c_str(), std::ios::in);
@@ -58,6 +62,11 @@ int MixCompressor::getFileLines(std::string inputFilepath)
 	return lines;
 }
 
+/**
+ * @description: 对输入文件进行压缩
+ * @param
+ * @return: int 1表示正常
+ */
 int MixCompressor::compress()
 {
 	// get fileLines
@@ -130,6 +139,11 @@ int MixCompressor::compress()
 	return 1;
 }
 
+/**
+ * @description: 对输入文件进行解压
+ * @param 
+ * @return: int 1表示正常 
+ */
 int MixCompressor::decompress()
 {
 	// std::ifstream in(inputFilepath.c_str(), std::ios::in);
@@ -211,6 +225,11 @@ int MixCompressor::decompress()
 	return 1;
 }
 
+/**
+ * @description: 压缩器/解压器运行入口，根据mode对文件进行压缩或解压
+ * @param
+ * @return: void
+ */
 void MixCompressor::run()
 {
 	if (mode == COMPRESS)
@@ -222,6 +241,11 @@ void MixCompressor::run()
 	}
 }
 
+/**
+ * @description: 删除中间文件
+ * @param 
+ * @return: int 1表示删除成功，-1表示删除失败
+ */
 int MixCompressor::deleteTmpFile()
 {
 	if (remove(tempFilepath.c_str()) == 0)

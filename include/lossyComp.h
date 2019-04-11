@@ -1,3 +1,10 @@
+/*
+ * @Description: 有损压缩器，按块压缩
+ * @Author: lixuxian
+ * @LastEditor: lixuxian
+ * @Date: 2019-03-29 17:36:08
+ * @LastEditTime: 2019-04-11 11:40:58
+ */
 #pragma once
 
 #include "baseComp.h"

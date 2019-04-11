@@ -1,3 +1,10 @@
+/*
+ * @Description: 无损压缩器，包括相似列处理、7z、ppmd、paq等无损算法接口
+ * @Author: lixuxian
+ * @LastEditor: lixuxian
+ * @Date: 2019-03-29 17:36:17
+ * @LastEditTime: 2019-04-11 11:40:33
+ */
 #pragma once
 
 #include "baseComp.h"

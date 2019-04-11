@@ -1,6 +1,13 @@
 #include "utils.h"
 #include <iostream>
 
+/**
+ * @description: 对输入字符串进行分割
+ * @param s 待分割的字符串
+ * @param v 用于存储分割结果
+ * @param c 分割符号，根据c对s进行分割
+ * @return: void
+ */
 void splitString(const std::string& s, std::vector<std::string>& v, const std::string& c)
 {
     std::string::size_type pos1, pos2;
@@ -18,6 +25,11 @@ void splitString(const std::string& s, std::vector<std::string>& v, const std::s
     }
 }
 
+/**
+ * @description: 判断数值是否为0或为空
+ * @param str 当前数值
+ * @return: bool true表示为0或空，否则不是
+ */
 bool isZeroOrNA(std::string str)
 {
     if (str == "NA" || str == "" || str == " ")           
@@ -41,11 +53,21 @@ bool isZeroOrNA(std::string str)
     return false;
 }
 
+/**
+ * @description: 判断当前数值是否包含e或E(即科学计数法)
+ * @param str 当前数值 
+ * @return: bool true表示包含，否则不包含
+ */
 bool containE(std::string str)
 {
     return str.find('e') != std::string::npos || str.find('E') != std::string::npos;
 }
 
+/**
+ * @description: 浮点数转换为字符串，已废弃，因为精度不够
+ * @param value 待转换的浮点数
+ * @return: string 转换后的字符串
+ */
 std::string convertDouble_old(double value)  
 {
   std::ostringstream o;
@@ -54,6 +76,11 @@ std::string convertDouble_old(double value)
   return o.str();
 }
 
+/**
+ * @description: 浮点数转换为字符串，保留10位小数的精度，并取出结尾不必要的0
+ * @param value 待转换的浮点数
+ * @return: string 转换后的字符串
+ */
 std::string convertDouble(double value)  
 {
   std::string res;
@@ -75,6 +102,11 @@ std::string convertDouble(double value)
   return res;
 }
 
+/**
+ * @description: 将字符串转换为浮点数。是对std::stod函数的封装，增加了输入检测，若输入为0或空则直接返回0.0
+ * @param str 当前数值
+ * @return: double 转换后的浮点数
+ */
 double Stod(std::string str)
 {
   if (isZeroOrNA(str)) {

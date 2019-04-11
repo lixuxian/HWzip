@@ -1,3 +1,10 @@
+/*
+ * @Description: 文件处理类，包括处理csv文件头、处理metadata、按块读写等
+ * @Author: lixuxian
+ * @LastEditor: lixuxian
+ * @Date: 2019-03-29 18:10:11
+ * @LastEditTime: 2019-04-11 14:23:58
+ */
 #pragma once
 
 #include <string>
@@ -12,9 +19,6 @@ public:
 	~FileProcessor();
 
 	int initWork(); // store head、time and ID
-
-	int storeHeader();
-	int storeTimeAndId();
 
 	int getOneBlock(std::vector<std::vector<std::string> > &block);
 	int writeOneBlock2Tempfile(std::vector<std::vector<std::string> > &block, int line_num);

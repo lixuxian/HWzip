@@ -11,12 +11,21 @@ FileProcessor::~FileProcessor()
 {
 
 }
-
+/**
+ * @description: 设置文件行数，解压时用于计算文件块数和每块行数
+ * @param lines 文件行数 
+ * @return: void
+ */
 void FileProcessor::setFileLines(int lines)
 {
 	this->fileLines = lines;
 }
 
+/**
+ * @description: 初始化，检查输入文输出件是否正常打开；获取第一行的文件头、计算文件列数
+ * @param
+ * @return: int 文件列数
+ */
 int FileProcessor::initWork()
 {
 	if (!in->is_open())
@@ -51,6 +60,14 @@ int FileProcessor::initWork()
 	return column_num;
 }
 
+/**
+ * @description: 获取压缩文件元信息，包括块大小、列数目、文件行数、块数目等
+ * @param blockSize 块大小，即每块包含的行数
+ * @param columnSize 文件列数
+ * @param lines 文件行数
+ * @param blocks 文件块数
+ * @return: void
+ */
 void FileProcessor::getMetadata(int& blockSize, int& columnSize, int& lines, int& blocks)
 {
 	if (!in->is_open())
@@ -86,6 +103,11 @@ void FileProcessor::getMetadata(int& blockSize, int& columnSize, int& lines, int
 	this->columnSize = columnSize;
 }
 
+/**
+ * @description: 将文件头(即原文件第一行的指标名称)写入压缩文件
+ * @param
+ * @return: int 1表示正常，-1表示读文件头出错
+ */
 int FileProcessor::writeHeader2DecompressedFile()
 {
 	std::string header;
@@ -98,18 +120,11 @@ int FileProcessor::writeHeader2DecompressedFile()
 }
 
 
-
-int FileProcessor::storeHeader()
-{
-	return 1;
-}
-
-int FileProcessor::storeTimeAndId()
-{
-	return 1;
-}
-
-// return line num of the block
+/**
+ * @description: 从原文件中读出一个块，放入结构block中，用于压缩
+ * @param block 保存读出的一块数据，用于后续压缩
+ * @return: int 返回读出块的行数，大于0表示块中有数据，为0则表示文件已读完
+ */
 int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 {
 	int i = 0;
@@ -145,6 +160,11 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 	return i;
 }
 
+/**
+ * @description: 对block结构进行初始化，赋值为“0”
+ * @param block 存储一块数据 
+ * @return: void
+ */
 void FileProcessor::initBlock(std::vector<std::vector<std::string> > &block)
 {
 	int rowN = block.size();
@@ -158,6 +178,11 @@ void FileProcessor::initBlock(std::vector<std::vector<std::string> > &block)
 	}
 }
 
+/**
+ * @description: 将无损压缩处理后的字符串写入中间文件
+ * @param lossless_str 无损压缩处理后的一块数据，用一个字符串表示
+ * @return: int 1表示正常，-1表示出错，字符串为空
+ */
 int FileProcessor::writeOneBlock2Tempfile(std::string &lossless_str)
 {
 	if (lossless_str == "") {
@@ -170,7 +195,12 @@ int FileProcessor::writeOneBlock2Tempfile(std::string &lossless_str)
 	return 1;
 }
 
-
+/**
+ * @description: 将一个block的数据写入中间文件中，测试用
+ * @param block 一个块的数据
+ * @param line_num 一个块中包含的文件行数
+ * @return: int 1表示正常
+ */
 int FileProcessor::writeOneBlock2Tempfile(std::vector<std::vector<std::string> > &block, int line_num)
 {
 	// 
@@ -193,6 +223,11 @@ int FileProcessor::writeOneBlock2Tempfile(std::vector<std::vector<std::string> >
 	return 1;
 }
 
+/**
+ * @description: 从压缩文件中读取数据，构造成一个block，用于后续解压
+ * @param block 用于存储从压缩文件中解压出的一块数据
+ * @return: int 大于0表示读出的块包含的文件行数，-1表示无数据可读
+ */
 int FileProcessor::getOneDecompressedBlock(std::vector<std::vector<std::string> > &block)
 {
 	int wait2decompress_lines = (fileLines - 1) - decompress_block_count * blockLines;
@@ -320,6 +355,12 @@ int FileProcessor::getOneDecompressedBlock(std::vector<std::vector<std::string> 
 	return current_block_lines;
 }
 
+/**
+ * @description: 将解压出的一块数据写入解压后的csv文件
+ * @param block 解压出的一块数据
+ * @param lines block中包含的文件行数 
+ * @return: int 1表示正常
+ */
 int FileProcessor::writeOneBlock2DecompressedFile(std::vector<std::vector<std::string> > &block, int lines)
 {
 	for(size_t i = 0; i < lines; i++)

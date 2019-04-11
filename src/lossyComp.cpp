@@ -14,7 +14,11 @@ LossyCompressor::~LossyCompressor()
 {
 
 }
-
+/**
+ * @description: 根据data更新每个字符的频率
+ * @param data 当前数据
+ * @return: void
+ */
 void LossyCompressor::updateFreq(const std::string &data)
 {
 	for (int i = 0; i < data.length(); i++) {
@@ -24,6 +28,12 @@ void LossyCompressor::updateFreq(const std::string &data)
 	}
 }
 
+/**
+ * @description: 处理为0的数据或者含E的数据(即科学计数法的数据)
+ * @param data 当前数据
+ * @param err 误差限制
+ * @return: void
+ */
 void LossyCompressor::processZeroOrE(std::string &data, double err)
 {
 	if (isZeroOrNA(data))
@@ -38,6 +48,12 @@ void LossyCompressor::processZeroOrE(std::string &data, double err)
 	updateFreq(data);
 }
 
+/**
+ * @description: 处理区间[low, up]范围，对区间的上下限进行简化(截断字符串)
+ * @param low 区间下限值
+ * @param up 区间上限值
+ * @return: void
+ */
 void LossyCompressor::processIntervalRange(double &low, double &up)
 {
 	if (up < low)
@@ -62,11 +78,22 @@ void LossyCompressor::processIntervalRange(double &low, double &up)
 	// std::cout << "low = " << low << " up = " << up << std::endl;
 }
 
+/**
+ * @description: 处理区间中的数据，暂未使用
+ * @param 
+ * @return: 
+ */
 void LossyCompressor::processIntervalData(std::vector<std::vector<std::string> > &block, int col, int start, int end)
 {
 
 }
 
+/**
+ * @description: 对一个块的数据进行有损处理(按列进行)
+ * @param block 一个块的数据
+ * @param line_num 一个块的文件行数
+ * @return: int 1表示正常
+ */
 int LossyCompressor::compressOneBlock(std::vector<std::vector<std::string> > &block, int line_num)
 {
 	++block_count;
@@ -82,6 +109,12 @@ int LossyCompressor::compressOneBlock(std::vector<std::vector<std::string> > &bl
 	return 1;
 }
 
+/**
+ * @description: 对其他块(非第一个块)进行有损压缩(需要根据字符频率进行字符替换)
+ * @param block 一个块的数据
+ * @param line_num 一个块的文件行数
+ * @return: int 1表示正常
+ */
 int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &block, int line_num)
 {
 	std::cout << "compressOtherBlock()..." << std::endl;
@@ -121,7 +154,7 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 				// TODO 更改处理方式，使用字符替换的方式
 				processZeroOrE(block[k][j], PW_REL_ERR_MAX);
 				// process interval
-				std::string bestData = simplifyData.getDataS(convertDouble(low1), convertDouble(up1), cFreq);
+				std::string bestData = simplifyData.getBestDataFromInterval(convertDouble(low1), convertDouble(up1), cFreq);
 				for (int i = start; i <= end; ++i)
 				{		
 					block[i][j] = bestData;
@@ -142,7 +175,7 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 					low1 = Stod(block[k][j]) * LOW;
 					processIntervalRange(low1, up1);
 					// block[k][j] = convertDouble(up1);
-					block[k][j] = simplifyData.getDataS0(block[k][j], PW_REL_ERR_MAX, cFreq);
+					block[k][j] = simplifyData.getBestData(block[k][j], PW_REL_ERR_MAX, cFreq);
 					updateFreq(block[k][j]);
 					break;
 				}
@@ -165,7 +198,7 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 				} else { // 无交集
 					// 处理区间内数据
 					// 更新start、end、up1、low1
-					std::string bestData = simplifyData.getDataS(convertDouble(low1), convertDouble(up1), cFreq);
+					std::string bestData = simplifyData.getBestDataFromInterval(convertDouble(low1), convertDouble(up1), cFreq);
 					for (int i = start; i <= end; ++i)
 					{
 						block[i][j] = bestData;
@@ -187,7 +220,7 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 						processIntervalRange(low1, up1);
 						// TODO 更改处理方式，使用字符替换的方式
 						// block[k][j] = convertDouble(up1);
-						block[k][j] = simplifyData.getDataS0(block[k][j], PW_REL_ERR_MAX, cFreq);
+						block[k][j] = simplifyData.getBestData(block[k][j], PW_REL_ERR_MAX, cFreq);
 						updateFreq(block[k][j]);
 						break;
 					}
@@ -202,7 +235,12 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 	return 1;
 }
 
-
+/**
+ * @description: 对第一个块进行有损压缩，第一个块用于统计初始字符频率，不进行字符替换
+ * @param block 一个块的数据
+ * @param line_num 一个块的文件行数
+ * @return: int 1表示正常
+ */
 int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &block, int line_num)
 {
 	std::cout << "compressFirstBlock()..." << std::endl;
@@ -325,11 +363,21 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 	return 1;
 }
 
+/**
+ * @description: 暂未使用
+ * @param {type} 
+ * @return: 
+ */
 void LossyCompressor::compress(std::string inputFilepath, std::string outputFilepath)
 {
 
 }
 
+/**
+ * @description: 暂未使用
+ * @param {type} 
+ * @return: 
+ */
 void LossyCompressor::decompress(std::string inputFilepath, std::string outputFilepath)
 {
 

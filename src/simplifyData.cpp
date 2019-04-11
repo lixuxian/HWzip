@@ -13,7 +13,14 @@ SimplifyData::~SimplifyData()
 }
 
 // 在上下限内进行字符替换，选择一个最优的数值
-std::string SimplifyData::getDataS0(std::string data, double err, std::vector<int> &cFreq)
+/**
+ * @description: 对当前数据进行简化处理，在其误差区间内选择一个最优的数值
+ * @param data 当前数据
+ * @param err 误差阈值
+ * @param cFreq 每个字符的频率 
+ * @return: string 简化处理后的数据
+ */
+std::string SimplifyData::getBestData(std::string data, double err, std::vector<int> &cFreq)
 {
 	if (data == "")
 	{
@@ -39,10 +46,17 @@ std::string SimplifyData::getDataS0(std::string data, double err, std::vector<in
 	std::string ls = simplifyDataCeil(convertDouble(lTmp), convertDouble(uTmp));
 	std::string us = simplifyDataFloor(	convertDouble(lTmp), convertDouble(uTmp));
 
-	return getDataS(ls, us, cFreq);
+	return getBestDataFromInterval(ls, us, cFreq);
 }
 
-std::string SimplifyData::getDataS(std::string ls, std::string us, std::vector<int> &cFreq)
+/**
+ * @description: 从误差允许的区间中，选择一个长度最短、字符频率最高的字符串，替换当前数据
+ * @param ls 区间下限
+ * @param us 区间上线
+ * @param cFreq 字符频率
+ * @return: string 处理后的数据
+ */
+std::string SimplifyData::getBestDataFromInterval(std::string ls, std::string us, std::vector<int> &cFreq)
 {
 	int ls_len = ls.length();
 	int us_len = us.length();
@@ -55,8 +69,8 @@ std::string SimplifyData::getDataS(std::string ls, std::string us, std::vector<i
 		return ls;
 	}
 
-	std::string lsTmp = baseIntConvert2(ls); // 去除头尾的0
-	std::string usTmp = baseIntConvert2(us);
+	std::string lsTmp = trimZeros(ls); // 去除头尾的0
+	std::string usTmp = trimZeros(us);
 
 	// 若有个数比较短，则返回短的
 	if (lsTmp.length() > usTmp.length())
@@ -97,7 +111,7 @@ std::string SimplifyData::getDataS(std::string ls, std::string us, std::vector<i
 
 	if (dotInL != dotInU)
 	{
-		std::cout << "getDataS(): dotInL != dotInU" << std::endl;
+		std::cout << "getBestDataFromInterval(): dotInL != dotInU" << std::endl;
 		return ls;
 	}
 
@@ -140,7 +154,7 @@ std::string SimplifyData::getDataS(std::string ls, std::string us, std::vector<i
 			if (Stod(ls) > Stod(result) || Stod(us) < Stod(result))
 			{
 				// out of bound
-				std::cout << "getDataS(), result out of bound" << std::endl;
+				std::cout << "getBestDataFromInterval(), result out of bound" << std::endl;
 				return ls;
 			}
 		}
@@ -148,8 +162,12 @@ std::string SimplifyData::getDataS(std::string ls, std::string us, std::vector<i
 	return result;
 }
 
-// 将一个数据拆分成一个无0字符的数据
-std::string SimplifyData::baseIntConvert2(std::string str)
+/**
+ * @description: 去除数值头尾的不必要的0和负号，如10.12000变为10.12，0.123变成123
+ * @param str 待处理数据
+ * @return: string 处理后的数据
+ */
+std::string SimplifyData::trimZeros(std::string str)
 {
 	int start = 0;
 	int end = str.length() - 1;
@@ -167,7 +185,12 @@ std::string SimplifyData::baseIntConvert2(std::string str)
 }
 
 
-
+/**
+ * @description: 简化区间下限值
+ * @param s1 原区间下限
+ * @param s2 原区间上限
+ * @return: string 简化后的区间下限
+ */
 std::string SimplifyData::simplifyDataCeil(std::string s1, std::string s2)
 {
 	double lower, upper;
@@ -223,6 +246,12 @@ std::string SimplifyData::simplifyDataCeil(std::string s1, std::string s2)
 	return s1;
 }
 
+/**
+ * @description: 简化区间上限值
+ * @param s1 原区间下限
+ * @param s2 原区间上限
+ * @return: string 简化后的区间上限
+ */
 std::string SimplifyData::simplifyDataFloor(std::string s1, std::string s2)
 {
 	double lower, upper;
@@ -278,6 +307,12 @@ std::string SimplifyData::simplifyDataFloor(std::string s1, std::string s2)
 	return s2;
 }
 
+/**
+ * @description: 简化当前数值
+ * @param data 当前数值
+ * @param err 误差阈值
+ * @return: string 简化后的数值
+ */
 std::string SimplifyData::simpData(std::string data, double err)
 {
 	
@@ -291,10 +326,16 @@ std::string SimplifyData::simpData(std::string data, double err)
 	}
 	else
 	{
-		return simplifyInt2(data, err);
+		return simplifyInt(data, err);
 	}
 }
 
+/**
+ * @description: 简化浮点数
+ * @param f_data 原浮点数值
+ * @param err 误差阈值
+ * @return: string 简化后的浮点数值
+ */
 std::string SimplifyData::simplifyFloat(std::string f_data, double err)
 {
 	std::string result;
@@ -324,13 +365,13 @@ std::string SimplifyData::simplifyFloat(std::string f_data, double err)
 	return result;
 }
 
+/**
+ * @description: 从高位到低位依次四舍五入，取满足误差条件的
+ * @param i_data 原整型数值
+ * @param err 误差阈值
+ * @return: string 简化后的整型数值
+ */
 std::string SimplifyData::simplifyInt(std::string i_data, double err)
-{
-	return "0";
-}
-
-// 简化整型数据，从高位到低位依次四舍五入，取满足误差条件的
-std::string SimplifyData::simplifyInt2(std::string i_data, double err)
 {
 	std::string result = i_data;
 	int isNav = 0;
@@ -370,7 +411,12 @@ std::string SimplifyData::simplifyInt2(std::string i_data, double err)
 	return result;
 }
 
-// 对包含e的数字进行处理
+/**
+ * @description: 对包含e的数字进行处理
+ * @param e_data 包含e的数字
+ * @param err 误差阈值
+ * @return: string 处理后的数值
+ */
 std::string SimplifyData::restoreE0(std::string e_data, double err)
 {
 	std::string result = "";
@@ -387,7 +433,7 @@ std::string SimplifyData::restoreE0(std::string e_data, double err)
 	}
 	else
 	{
-		splited_data[0] = simplifyInt2(splited_data[0], err);
+		splited_data[0] = simplifyInt(splited_data[0], err);
 	}
 	result = splited_data[0] + "E" + splited_data[1];
 	std::string result1 = result;
@@ -396,7 +442,12 @@ std::string SimplifyData::restoreE0(std::string e_data, double err)
 	return result;
 }
 
-// 1到10之间的数值	
+/**
+ * @description: 处理1-10之间的浮点数
+ * @param data 原始数值
+ * @param err 误差阈值
+ * @return: string 简化后的数值
+ */
 std::string SimplifyData::simplifyFloat_bigger_than_1(std::string data, double err)
 {
 	int flag = 0;
@@ -433,6 +484,12 @@ std::string SimplifyData::simplifyFloat_bigger_than_1(std::string data, double e
 	}
 }
 
+/**
+ * @description: 处理10-100之间的浮点数
+ * @param data 原始数值
+ * @param err 误差阈值
+ * @return: string 简化后的数值
+ */
 std::string SimplifyData::simplifyFloat_bigger_than_10(std::string data, double err)
 {
 	int flag = 0;
@@ -465,11 +522,16 @@ std::string SimplifyData::simplifyFloat_bigger_than_10(std::string data, double 
 	return 	convertDouble(round1);
 }
 
-//100以上，保留到十位或者四舍五入或者约去小数
+/**
+ * @description: 处理100以上的浮点数，保留到十位或者四舍五入或者约去小数
+ * @param data 原始数值
+ * @param err 误差阈值
+ * @return: string 简化后的数值
+ */
 std::string SimplifyData::simplifyFloat_bigger_than_100(std::string data, double err)
 {
 	std::string result = data.substr(0, data.find('.'));
-	result = simplifyInt2(result, err);
+	result = simplifyInt(result, err);
 	if (errComp.pwRelErr(data, result) > err)
 	{
 		int tmp = std::round(Stod(data) / 10) * 10;
@@ -485,13 +547,14 @@ std::string SimplifyData::simplifyFloat_bigger_than_100(std::string data, double
 	return result;
 }
 
-// 小于1的数字
+/**
+ * @description: 处理小于1的浮点数
+ * @param data 原始数值
+ * @param err 误差阈值
+ * @return: string 简化后的数值
+ */
 std::string SimplifyData::simplifyFloat_smaller_than_1(std::string data, double err)
 {
-	// if (Stod(data) == 0.0)
-	// {
-	// 	return "0";
-	// }
 	if (isZeroOrNA(data)) {
 		return "0";
 	}

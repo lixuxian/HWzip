@@ -1,3 +1,10 @@
+/*
+ * @Description: 误差计算类，包括计算相对误差、计算误差平方和
+ * @Author: lixuxian
+ * @LastEditor: lixuxian
+ * @Date: 2019-03-29 18:09:06
+ * @LastEditTime: 2019-04-11 11:38:45
+ */
 #pragma once
 #include <iostream>
 #include <string>
