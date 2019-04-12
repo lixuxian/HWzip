@@ -116,7 +116,7 @@ int MixCompressor::compress()
 		// std::vector<std::vector<std::string> > block; 
 		// block.reserve(blockSize);
 		line_num_of_block = fileProcPtr->getOneBlock(block);
-		// std::cout << "line_num_of_block = " << line_num_of_block << std::endl;
+		std::cout << "line_num_of_block = " << line_num_of_block << std::endl;
 
 		if (line_num_of_block > 0)
 		{
@@ -126,6 +126,7 @@ int MixCompressor::compress()
 			std::string lossless_str;
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
 			fileProcPtr->writeOneBlock2Tempfile(lossless_str);
+			std::cout << "str len = " << lossless_str.length() << std::endl;
 		}
 		else
 		{
