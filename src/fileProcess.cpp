@@ -134,14 +134,17 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 		std::string line;
 		std::vector<std::string> line_splited;
 		// std::vector<std::string> line_splited;
+		std::cout << "11111" << std::endl;
 		if(getline(*in, line))
 		{
+			std::cout << "2222" << std::endl;
+
 			++fileLines;
 			// std::cout << "get one line" << i << std::endl;
-			if (line[line.length()-1] == '\n' || line[line.length()-1] == '\r')
-	        {
-	            line[line.length()-1] = '\0';
-	        }
+			// if (line[line.length()-1] == '\n' || line[line.length()-1] == '\r')
+	        // {
+	        //     line[line.length()-1] = '\0';
+	        // }
 			splitString(line, line_splited, ",");
 			block[i] = line_splited;
 			for (int x = 0; x < block[i].size(); ++x)
