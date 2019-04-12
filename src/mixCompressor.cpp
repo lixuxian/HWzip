@@ -127,6 +127,9 @@ int MixCompressor::compress()
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
 			fileProcPtr->writeOneBlock2Tempfile(lossless_str);
 			std::cout << "str len = " << lossless_str.length() << std::endl;
+			
+			std::string t;
+			t.swap(lossless_str);
 		}
 		else
 		{

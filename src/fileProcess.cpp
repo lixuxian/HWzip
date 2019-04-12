@@ -161,12 +161,9 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 			{
 				return i;
 			}
-			line.shrink_to_fit();
-			for (auto x : line_splited)
-			{
-				x.shrink_to_fit();
-			}
-			line_splited.shrink_to_fit();
+			std::string t;
+			t.swap(line);
+			std::vector<std::string>().swap(line_splited);
 		}
 		catch(const std::exception& e)
 		{
