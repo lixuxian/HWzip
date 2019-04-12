@@ -62,7 +62,7 @@ int MixCompressor::getFileLines(std::string inputFilepath)
 	}
 	std::string line;
 	int lines = 0;
-	while(getline(in, line)){
+	while(std::getline(in, line)){
 		++lines;
 	}
 	in.close();
@@ -107,7 +107,7 @@ int MixCompressor::compress()
 	// }
 	std::vector<std::vector<std::string> > tmp_block(blockSize, std::vector<std::string>(columnSize)); 
 	block = tmp_block;
-	
+
 	int block_count = 0;
 	int line_num_of_block;
 

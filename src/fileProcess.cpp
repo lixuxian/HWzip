@@ -42,7 +42,7 @@ int FileProcessor::initWork()
 
 	// header
 	std::string header;
-	getline(*in, header);
+	std::getline(*in, header);
 
 	std::vector<std::string> header_splited;
 	splitString(header, header_splited, ",");
@@ -83,7 +83,7 @@ void FileProcessor::getMetadata(int& blockSize, int& columnSize, int& lines, int
 	}
 
 	std::string metadata;
-	getline(*in, metadata);
+	std::getline(*in, metadata);
 
 	std::vector<std::string> metadata_splited;
 	splitString(metadata, metadata_splited, ",");
@@ -111,7 +111,7 @@ void FileProcessor::getMetadata(int& blockSize, int& columnSize, int& lines, int
 int FileProcessor::writeHeader2DecompressedFile()
 {
 	std::string header;
-	if (getline(*in, header) )
+	if (std::getline(*in, header) )
 	{
 		(*out) << header << std::endl;
 		return 1;
@@ -135,7 +135,7 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 		std::vector<std::string> line_splited;
 		// std::vector<std::string> line_splited;
 		std::cout << "11111" << std::endl;
-		if(getline(*in, line))
+		if(std::getline(*in, line))
 		{
 			std::cout << "2222" << std::endl;
 
