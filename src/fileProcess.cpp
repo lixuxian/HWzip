@@ -135,30 +135,38 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 		std::vector<std::string> line_splited;
 		// std::vector<std::string> line_splited;
 		std::cout << "11111" << std::endl;
-		if(std::getline(*in, line))
+		try
 		{
-			std::cout << "2222" << std::endl;
-
-			++fileLines;
-			// std::cout << "get one line" << i << std::endl;
-			// if (line[line.length()-1] == '\n' || line[line.length()-1] == '\r')
-	        // {
-	        //     line[line.length()-1] = '\0';
-	        // }
-			splitString(line, line_splited, ",");
-			block[i] = line_splited;
-			for (int x = 0; x < block[i].size(); ++x)
+			if(std::getline(*in, line))
 			{
-				if (block[i][x] == "")
+				std::cout << "2222" << std::endl;
+
+				++fileLines;
+				// std::cout << "get one line" << i << std::endl;
+				// if (line[line.length()-1] == '\n' || line[line.length()-1] == '\r')
+				// {
+				//     line[line.length()-1] = '\0';
+				// }
+				splitString(line, line_splited, ",");
+				block[i] = line_splited;
+				for (int x = 0; x < block[i].size(); ++x)
 				{
-					block[i][x] = "0";
+					if (block[i][x] == "")
+					{
+						block[i][x] = "0";
+					}
 				}
 			}
+			else
+			{
+				return i;
+			}
 		}
-		else
+		catch(const std::exception& e)
 		{
-			return i;
+			std::cerr << e.what() << '\n';
 		}
+		
 	}
 	return i;
 }
