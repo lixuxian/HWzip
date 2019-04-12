@@ -100,12 +100,14 @@ int MixCompressor::compress()
 	columnSize = fileProcPtr->initWork();
 	std::cout << "columnSize = " << columnSize << std::endl;
 
-	block.resize(blockSize);
-	for (std::vector<std::string> x : block)
-	{
-		x.resize(columnSize);
-	}
-
+	// block.resize(blockSize);
+	// for (std::vector<std::string> x : block)
+	// {
+	// 	x.resize(columnSize);
+	// }
+	std::vector<std::vector<std::string> > tmp_block(blockSize, std::vector<std::string>(columnSize)); 
+	block = tmp_block;
+	
 	int block_count = 0;
 	int line_num_of_block;
 
