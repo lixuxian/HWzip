@@ -117,7 +117,7 @@ int LossyCompressor::compressOneBlock(std::vector<std::vector<std::string> > &bl
  */
 int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &block, int line_num)
 {
-	std::cout << "compressOtherBlock()..." << std::endl;
+	// std::cout << "compressOtherBlock()..." << std::endl;
 	int rowN = line_num;
 	if (rowN <= 0)
 	{
@@ -243,7 +243,7 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
  */
 int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &block, int line_num)
 {
-	std::cout << "compressFirstBlock()..." << std::endl;
+	// std::cout << "compressFirstBlock()..." << std::endl;
 	int rowN = line_num;
 	if (rowN <= 0)
 	{

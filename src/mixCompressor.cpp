@@ -2,6 +2,13 @@
 #include "utils.h"
 #include <cstdio>
 
+/**
+ * @description: 构造函数，根据参数进行相应的初始化
+ * @param rel_err 最大相对误差
+ * @param avg_err 最大平均误差
+ * @param input 输入文件
+ * @param mode 运行模式，压缩为COMPRESS，解压为DECOMPRESS
+ */
 MixCompressor::MixCompressor(double rel_err, double avg_err, 
 	std::string input, char mode) : PW_REL_ERR_MAX(rel_err), AVG_ERR_MAX(avg_err), 
 	inputFilepath(input), mode(mode)
@@ -38,7 +45,7 @@ MixCompressor::~MixCompressor()
 	}
 	block.shrink_to_fit();
 
-	std::cout << "~MixCompressor(): block.size() = " << block.size() << std::endl;
+	// std::cout << "~MixCompressor(): block.size() = " << block.size() << std::endl;
 }
 
 /**
@@ -69,6 +76,14 @@ int MixCompressor::getFileLines(std::string inputFilepath)
  */
 int MixCompressor::compress()
 {
+	std::string suffix = inputFilepath.substr(inputFilepath.length()-3);
+	if (suffix.compare("csv") != 0)
+	{
+		std::cout << "Don't support this type of file!!! Only CSV files!!!" << std::endl;
+		exit(0);
+	}
+	
+	
 	// get fileLines
 	fileLines = getFileLines(inputFilepath);
 
@@ -99,7 +114,7 @@ int MixCompressor::compress()
 		// std::vector<std::vector<std::string> > block; 
 		// block.reserve(blockSize);
 		line_num_of_block = fileProcPtr->getOneBlock(block);
-		std::cout << "line_num_of_block = " << line_num_of_block << std::endl;
+		// std::cout << "line_num_of_block = " << line_num_of_block << std::endl;
 
 		if (line_num_of_block > 0)
 		{
@@ -122,8 +137,12 @@ int MixCompressor::compress()
 	in.close();
 	tmp_out.close();
 
-	losslessCompPtr->compressFile_7z(tempFilepath, outputFilepath, 9);
-	std::cout << "finish compressFile_7z." << std::endl;
+	losslessCompPtr->compressFile_ppmd(tempFilepath, outputFilepath);
+	std::cout << "finish compressFile_ppmd" << std::endl;
+
+	// // compress temp file - 7z
+	// losslessCompPtr->compressFile_7z(tempFilepath, outputFilepath, 9);
+	// std::cout << "finish compressFile_7z." << std::endl;
 
 	// // compress temp file - bz2
 	// losslessCompPtr->compressFile_bz2(tempFilepath, 9);
@@ -174,7 +193,8 @@ int MixCompressor::decompress()
 	// tempFilepath = inputFilepath + ".tmp";
 	// outputFilepath = inputFilepath + ".hw";
 
-	losslessCompPtr->decompressFile_7z(inputFilepath);
+	// losslessCompPtr->decompressFile_7z(inputFilepath);
+	losslessCompPtr->decompressFile_ppmd(inputFilepath, tempFilepath);
 
 	std::cout << "after decompressFile_7z to " << tempFilepath << std::endl;
 	
@@ -195,13 +215,6 @@ int MixCompressor::decompress()
 	std::vector<std::vector<std::string> > tmp_block(blockSize, std::vector<std::string>(columnSize)); 
 	block = tmp_block;
 
-	// block.reserve(blockSize);
-	// block.resize(blockSize);
-	// for (std::vector<std::string> x : block)
-	// {
-	// 	std::cout << x.size() << std::endl;
-	// }
-
 	int block_count = 0;
 	int line_num_of_block;
 
@@ -216,12 +229,14 @@ int MixCompressor::decompress()
 		// write this decompressed block to output file
 		fileProcPtr->writeOneBlock2DecompressedFile(block, line_num_of_block);
 		++block_count;
+		std::cout << "decompress block " << block_count << std::endl;
 	}
 
 	tmp_in.close();
 	out.close();
 
 	std::cout << "finish decompress all " << block_count << " blocks" << std::endl;
+	std::cout << "decompress file " << inputFilepath << " to file " << outputFilepath << std::endl;
 	return 1;
 }
 

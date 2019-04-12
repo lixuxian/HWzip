@@ -70,7 +70,6 @@ int getParas(int argc, char const *argv[])
  */
 int main(int argc, char const *argv[])
 {
-	std::cout << "argc = " << argc << std::endl;
 	if (argc != 5 && argc != 3)
 	{
 		return Help();

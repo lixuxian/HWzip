@@ -154,7 +154,7 @@ std::string SimplifyData::getBestDataFromInterval(std::string ls, std::string us
 			if (Stod(ls) > Stod(result) || Stod(us) < Stod(result))
 			{
 				// out of bound
-				std::cout << "getBestDataFromInterval(), result out of bound" << std::endl;
+				// std::cout << "getBestDataFromInterval(), result out of bound" << std::endl;
 				return ls;
 			}
 		}

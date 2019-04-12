@@ -240,7 +240,7 @@ int FileProcessor::getOneDecompressedBlock(std::vector<std::vector<std::string> 
 	// 当前应该读取的行数
 	int current_block_lines = wait2decompress_lines <= blockLines ? wait2decompress_lines : blockLines;
 
-	std::cout << "current_block_lines = " << current_block_lines << std::endl;
+	// std::cout << "current_block_lines = " << current_block_lines << std::endl;
 
 	++decompress_block_count;
 
