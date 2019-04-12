@@ -134,12 +134,12 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 		std::string line;
 		std::vector<std::string> line_splited;
 		// std::vector<std::string> line_splited;
-		std::cout << "11111" << std::endl;
+		//std::cout << "11111" << std::endl;
 		try
 		{
 			if(std::getline(*in, line))
 			{
-				std::cout << "2222" << std::endl;
+				//std::cout << "2222" << std::endl;
 
 				++fileLines;
 				// std::cout << "get one line" << i << std::endl;

@@ -13,7 +13,7 @@ TARGET_MAC = hwzip-mac
 BUILD_TARGET = build
 
 CC = g++
-CFLAGS = -g -Wall -I${DIR_INC} -fpermissive -D_GLIBCXX_USE_CXX11_ABI=0
+CFLAGS = -g -Wall -std=c++11 -I${DIR_INC} -fpermissive
 
 OS:=$(shell uname -s)
 IS_LINUX:=$(shell echo $(OS) | grep -i Linux)
