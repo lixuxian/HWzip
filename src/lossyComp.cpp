@@ -147,7 +147,16 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 			// 			更新end，up1、low1
 			//		else
 			//			处理区间start到end的值，更新start、end为当前点，更新up、low
-			std::string currentData = block[k][j];
+			std::string currentData;
+			try
+			{
+				currentData = block[k][j];
+			}
+			catch(const std::exception& e)
+			{
+				std::cerr << e.what() << '\n';
+			}
+			
 			if (isZeroOrNA(currentData) || containE(currentData))
 			{
 				// 区间结束
