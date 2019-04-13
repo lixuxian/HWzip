@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 22:45:38
- * @LastEditTime: 2019-04-11 11:43:38
+ * @LastEditTime: 2019-04-13 22:53:46
  */
 #ifndef __UTILS__
 #define __UTILS__
@@ -13,13 +13,13 @@
 
 void splitString(const std::string& s, std::vector<std::string>& v, const std::string& c);
 
-bool isZeroOrNA(std::string str);
-bool containE(std::string str);
+bool isZeroOrNA(const std::string &str);
+bool containE(const std::string &str);
 
 std::string convertDouble_old(double value);
 std::string convertDouble(double value);
 
-double Stod(std::string str);
+double Stod(const std::string &str);
 
 
 #endif

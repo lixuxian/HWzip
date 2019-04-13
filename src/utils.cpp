@@ -30,7 +30,7 @@ void splitString(const std::string& s, std::vector<std::string>& v, const std::s
  * @param str 当前数值
  * @return: bool true表示为0或空，否则不是
  */
-bool isZeroOrNA(std::string str)
+bool isZeroOrNA(const std::string &str)
 {
     if (str == "NA" || str == "" || str == " ")           
     {
@@ -58,7 +58,7 @@ bool isZeroOrNA(std::string str)
  * @param str 当前数值 
  * @return: bool true表示包含，否则不包含
  */
-bool containE(std::string str)
+bool containE(const std::string &str)
 {
     return str.find('e') != std::string::npos || str.find('E') != std::string::npos;
 }
@@ -107,7 +107,7 @@ std::string convertDouble(double value)
  * @param str 当前数值
  * @return: double 转换后的浮点数
  */
-double Stod(std::string str)
+double Stod(const std::string &str)
 {
   if (isZeroOrNA(str)) {
     return 0.0;

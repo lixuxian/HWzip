@@ -123,15 +123,15 @@ int MixCompressor::compress()
 			++block_count;
 			lossyCompPtr->compressOneBlock(block, line_num_of_block);
 
-			std::string lossless_str;
-			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
-			fileProcPtr->writeOneBlock2Tempfile(lossless_str);
-			std::cout << "str len = " << lossless_str.length() << std::endl;
+			// std::string lossless_str;
+			// losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
+			// fileProcPtr->writeOneBlock2Tempfile(lossless_str);
+			// std::cout << "str len = " << lossless_str.length() << std::endl;
 
-			{
-				std::string t;
-				t.swap(lossless_str);
-			}
+			// {
+			// 	std::string t;
+			// 	t.swap(lossless_str);
+			// }
 			
 		}
 		else
@@ -143,11 +143,11 @@ int MixCompressor::compress()
 	}
 
 	// compress temp file - 7z
-	in.close();
-	tmp_out.close();
+	// in.close();
+	// tmp_out.close();
 
-	losslessCompPtr->compressFile_ppmd(tempFilepath, outputFilepath);
-	std::cout << "finish compressFile_ppmd" << std::endl;
+	// losslessCompPtr->compressFile_ppmd(tempFilepath, outputFilepath);
+	// std::cout << "finish compressFile_ppmd" << std::endl;
 
 	// // compress temp file - 7z
 	// losslessCompPtr->compressFile_7z(tempFilepath, outputFilepath, 9);
