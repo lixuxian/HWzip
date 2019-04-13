@@ -163,9 +163,16 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 				return i;
 			}
 			{
-				std::string t;
-				t.swap(line);
+				std::string().swap(line);
 			}
+			for (std::string x : line_splited)
+			{
+				x.clear();
+				{
+					std::string().swap(x);
+				}
+			}
+			line_splited.clear();
 			std::vector<std::string>().swap(line_splited);
 			// std::cout << "line.capacity() = " << line.capacity() << "line_splited.capacity() = " << line_splited.capacity() << " size = " << line_splited.size() << std::endl;
 		}
