@@ -106,8 +106,9 @@ int MixCompressor::compress()
 	// 	x.resize(columnSize);
 	// }
 	// std::vector<std::vector<std::string> > tmp_block(blockSize, std::vector<std::string>(columnSize)); 
-	std::vector<std::vector<std::string> > tmp_block(blockSize); 
-	block = tmp_block;
+
+	// std::vector<std::vector<std::string> > tmp_block(blockSize); 
+	// block = tmp_block;
 
 	int block_count = 0;
 	int line_num_of_block;
@@ -116,6 +117,13 @@ int MixCompressor::compress()
 	{
 		// std::vector<std::vector<std::string> > block; 
 		// block.reserve(blockSize);
+		std::vector<std::vector<std::string> > tmp_block(blockSize); 
+		block = tmp_block;
+		for (std::vector<std::string> x : block)
+		{
+			x.reserve(columnSize);
+		}
+		
 		line_num_of_block = fileProcPtr->getOneBlock(block);
 		std::cout << "line_num_of_block = " << line_num_of_block << std::endl;
 
@@ -129,14 +137,25 @@ int MixCompressor::compress()
 			fileProcPtr->writeOneBlock2Tempfile(lossless_str);
 			std::cout << "str len = " << lossless_str.length() << std::endl;
 
-			std::string t;
-			t.swap(lossless_str);
+			{
+				std::string t;
+				t.swap(lossless_str);
+			}
+			
 		}
 		else
 		{
 			std::cout << "finish process block " << block_count << std::endl;
 			break;
 		}
+		for (std::vector<std::string> x : block)
+		{
+			x.clear();
+			{
+				std::vector<std::string>().swap(x);
+			}
+		}
+		std::vector<std::vector<std::string> >().swap(block);
 		// std::cout << "block_count = " << block_count << std::endl;
 	}
 
