@@ -149,14 +149,22 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 				//     line[line.length()-1] = '\0';
 				// }
 				splitString(line, line_splited, ",");
-				block[i] = line_splited;
-				for (int x = 0; x < block[i].size(); ++x)
+				// block[i] = line_splited;
+				if (line_splited.size() < columnSize)
 				{
-					if (block[i][x] == "")
+					for (size_t i = line_splited.size(); i < columnSize; i++)
 					{
-						block[i][x] = "0";
+						line_splited.push_back("0");
 					}
 				}
+				block.push_back(line_splited);
+				// for (int x = 0; x < block[i].size(); ++x)
+				// {
+				// 	if (block[i][x] == "")
+				// 	{
+				// 		block[i][x] = "0";
+				// 	}
+				// }
 			}
 			else
 			{
