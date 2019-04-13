@@ -147,17 +147,18 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 			// 			更新end，up1、low1
 			//		else
 			//			处理区间start到end的值，更新start、end为当前点，更新up、low
-			std::string currentData;
-			try
-			{
-				currentData = block[k][j];
-			}
-			catch(const std::exception& e)
-			{
-				std::cerr << e.what() << '\n';
-			}
 			
-			if (isZeroOrNA(currentData) || containE(currentData))
+			// std::string currentData;
+			// try
+			// {
+			// 	currentData = block[k][j];
+			// }
+			// catch(const std::exception& e)
+			// {
+			// 	std::cerr << e.what() << '\n';
+			// }
+			
+			if (isZeroOrNA(block[k][j]) || containE(block[k][j]))
 			{
 				// 区间结束
 				// TODO 更改处理方式，使用字符替换的方式
@@ -195,8 +196,8 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 			}
 			else // 普通数值，非0且不含E
 			{
-				double low_cur = Stod(currentData) * UP;
-				double up_cur = Stod(currentData) * LOW;
+				double low_cur = Stod(block[k][j]) * UP;
+				double up_cur = Stod(block[k][j]) * LOW;
 				processIntervalRange(low_cur, up_cur);
 				// 判断是否可扩展
 				if ((low_cur <= up1 && up_cur >= low1)) // 有交集
