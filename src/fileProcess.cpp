@@ -133,6 +133,7 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 	{
 		std::string line;
 		std::vector<std::string> line_splited;
+		line_splited.reserve(columnSize);
 		// std::vector<std::string> line_splited;
 		//std::cout << "11111" << std::endl;
 		try
@@ -164,6 +165,7 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 			std::string t;
 			t.swap(line);
 			std::vector<std::string>().swap(line_splited);
+			line_splited.shrink_to_fit();
 		}
 		catch(const std::exception& e)
 		{
