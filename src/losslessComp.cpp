@@ -46,7 +46,7 @@ void LosslessCompressor::decompress(std::string inputFilepath, std::string outpu
  */
 int LosslessCompressor::compressOneBlock(std::vector<std::vector<std::string> > &block, int line_num, std::string &lossless_str)
 {
-	std::cout << "LosslessCompressor::compressOneBlock()..." << std::endl;
+	// std::cout << "LosslessCompressor::compressOneBlock()..." << std::endl;
 	int rowN = line_num;
 	if (rowN <= 0)
 	{

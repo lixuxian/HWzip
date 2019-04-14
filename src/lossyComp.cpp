@@ -369,7 +369,7 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 			}
 		}
 	}
-	std::cout << "after compressFirstBlock()..." << std::endl;
+	// std::cout << "after compressFirstBlock()..." << std::endl;
 	return 1;
 }
 

@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:33:45
- * @LastEditTime: 2019-04-11 11:41:21
+ * @LastEditTime: 2019-04-14 13:44:38
  */
 #pragma once
 
@@ -33,7 +33,7 @@ public:
 	
 	void run();
 
-	int deleteTmpFile();
+	int deleteTmpFile(std::string &tmpfile);
 
 private:
 	// LossyCompressor *lossyComp;

@@ -45,5 +45,9 @@ ${DIR_OBJ}/%.o:${DIR_SRC}/%.cpp
 ${BIN_TARGET}:${OBJ}
 	$(CC) $(OBJ)  ${LDFLAGS}  -o $@
 
+install:
+	cp ${BIN_TARGET} /usr/local/bin
+uninstall:
+	rm -f /usr/local/bin/${TARGET}
 clean:
 	rm -f ${DIR_OBJ}/*.o ${BIN_TARGET}

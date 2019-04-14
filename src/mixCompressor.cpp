@@ -83,9 +83,9 @@ int MixCompressor::compress()
 		exit(0);
 	}
 	
-	
 	// get fileLines
 	fileLines = getFileLines(inputFilepath);
+	blocks = fileLines / blockSize + ((fileLines % blockSize) != 0);
 
 	tempFilepath = inputFilepath  + "_" + convertDouble(AVG_ERR_MAX) + ".tmp";
 	outputFilepath = inputFilepath + "_" + convertDouble(AVG_ERR_MAX) + ".hw";
@@ -118,7 +118,7 @@ int MixCompressor::compress()
 		block.reserve(columnSize);
 
 		line_num_of_block = fileProcPtr->getOneBlock(block);
-		std::cout << "line_num_of_block = " << line_num_of_block << std::endl;
+		// std::cout << "line_num_of_block = " << line_num_of_block << std::endl;
 
 		if (line_num_of_block > 0)
 		{
@@ -128,17 +128,18 @@ int MixCompressor::compress()
 			std::string lossless_str;
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
 			fileProcPtr->writeOneBlock2Tempfile(lossless_str);
-			std::cout << "str len = " << lossless_str.length() << std::endl;
+			// std::cout << "str len = " << lossless_str.length() << std::endl;
 
 			{
 				std::string t;
 				t.swap(lossless_str);
 			}
-			
+			std::cout << "\rlossy processing... " << std::fixed << (double)block_count / blocks * 100 << " %";
+			std::cout.flush();
 		}
 		else
 		{
-			std::cout << "finish process block " << block_count << std::endl;
+			std::cout << "\nlossy process " << block_count << " blocks\n"<< std::endl;
 			break;
 		}
 		for(std::vector<std::string> x : block)
@@ -153,13 +154,13 @@ int MixCompressor::compress()
 		}
 		block.clear();
 		block.shrink_to_fit();
-		std::cout << "block.size() = " << block.size() << std::endl;
+		// std::cout << "block.size() = " << block.size() << std::endl;
 	}
 
-	// compress temp file - 7z
 	in.close();
 	tmp_out.close();
 
+	std::cout << "lossless encoding, PPMD algorithm..." << std::endl;
 	losslessCompPtr->compressFile_ppmd(tempFilepath, outputFilepath);
 	std::cout << "finish compressFile_ppmd" << std::endl;
 
@@ -176,7 +177,7 @@ int MixCompressor::compress()
 	// losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath_paq);
 	// std::cout << "finish compressFile_paq9a" << std::endl;
 
-	deleteTmpFile();
+	deleteTmpFile(tempFilepath);
 
 	return 1;
 }
@@ -196,7 +197,6 @@ int MixCompressor::decompress()
 	// 		decompress one block
 	// end loop
 
-	// decompressFile_7z
 	if (inputFilepath.find(".hw") != std::string::npos) {
 		// tempFilepath = inputFilepath.replace(inputFilepath.find(".hw"), 3, ".tmp");
 		// std::cout << "tempFilepath = " << tempFilepath << std::endl;
@@ -217,9 +217,10 @@ int MixCompressor::decompress()
 	// outputFilepath = inputFilepath + ".hw";
 
 	// losslessCompPtr->decompressFile_7z(inputFilepath);
+	std::cout << "lossless decoding, PPMD algorithm" << std::endl;
 	losslessCompPtr->decompressFile_ppmd(inputFilepath, tempFilepath);
 
-	std::cout << "after decompressFile_7z to " << tempFilepath << std::endl;
+	std::cout << "decompress file to " << tempFilepath << std::endl;
 	
 	std::ifstream tmp_in(tempFilepath.c_str(), std::ios::in);
 	std::ofstream out(outputFilepath.c_str(), std::ios::out | std::ios::trunc);
@@ -252,13 +253,15 @@ int MixCompressor::decompress()
 		// write this decompressed block to output file
 		fileProcPtr->writeOneBlock2DecompressedFile(block, line_num_of_block);
 		++block_count;
-		std::cout << "decompress block " << block_count << std::endl;
+		std::cout << "\rlossy processing... " << std::fixed << (double)block_count / blocks * 100 << " %";
+		std::cout.flush();
 	}
 
 	tmp_in.close();
 	out.close();
 
-	std::cout << "finish decompress all " << block_count << " blocks" << std::endl;
+	deleteTmpFile(tempFilepath);
+	std::cout << "\nfinish decompress all " << block_count << " blocks" << std::endl;
 	std::cout << "decompress file " << inputFilepath << " to file " << outputFilepath << std::endl;
 	return 1;
 }
@@ -284,9 +287,9 @@ void MixCompressor::run()
  * @param 
  * @return: int 1表示删除成功，-1表示删除失败
  */
-int MixCompressor::deleteTmpFile()
+int MixCompressor::deleteTmpFile(std::string &tmpfile)
 {
-	if (remove(tempFilepath.c_str()) == 0)
+	if (remove(tmpfile.c_str()) == 0)
 	{
 		std::cout << "remove tmp file" << std::endl;
 		return 0;

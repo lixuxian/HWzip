@@ -38,11 +38,11 @@ struct Paras
 int getParas(int argc, char const *argv[])
 {
 	// get mode
-	if (argv[1][0] == 'c')
+	if (argc == 5 && argv[1][0] == 'c')
 	{
 		paras.mode = COMPRESS;
 	}
-	else if (argv[1][0] == 'd')
+	else if (argc == 3 && argv[1][0] == 'd')
 	{
 		paras.mode = DECOMPRESS;
 	}
@@ -86,7 +86,7 @@ int main(int argc, char const *argv[])
 
 	mixComp->run();
 
-	std::cout << "run() finish" << std::endl;
+	// std::cout << "run() finish" << std::endl;
 	
 	delete mixComp;
 
