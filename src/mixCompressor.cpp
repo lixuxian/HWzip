@@ -85,7 +85,7 @@ int MixCompressor::compress()
 	
 	// get fileLines
 	fileLines = getFileLines(inputFilepath);
-	blocks = fileLines / blockSize + ((fileLines % blockSize) != 0);
+	blocks = (fileLines - 1) / blockSize + (((fileLines - 1) % blockSize) != 0);
 
 	tempFilepath = inputFilepath  + "_" + convertDouble(AVG_ERR_MAX) + ".tmp";
 	outputFilepath = inputFilepath + "_" + convertDouble(AVG_ERR_MAX) + ".hw";
@@ -291,10 +291,9 @@ int MixCompressor::deleteTmpFile(std::string &tmpfile)
 {
 	if (remove(tmpfile.c_str()) == 0)
 	{
-		std::cout << "remove tmp file" << std::endl;
 		return 0;
 	} else {
-		std::cout << "remove tmp file failed" << std::endl;
+		std::cout << "\nremove tmp file failed" << std::endl;
 		return -1;
 	}
 }
