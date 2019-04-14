@@ -264,3 +264,7 @@ decompress block 2
 finish decompress all 2 blocks
 decompress file /usr/lxx/HWzip/file/7-part-6000-194.csv_0.05.hw to file /usr/lxx/HWzip/file/7-part-6000-194.csv_0.05_de.csv
 run() finish
+tempFilepath = /usr/lxx/HWzip/file/2.csv_0.05.tmp
+outputFilepath = /usr/lxx/HWzip/file/2.csv_0.05_de.csv
+lossless decoding, PPMD algorithm
+ 0 > 0, 8.00 bpb,    0.0M RAM,    0Kb/s 262144 > 917504, 2.29 bpb,   14.6M RAM, 1710Kb/s 458752 > 1769472, 2.07 bpb,   26.7M RAM, 1630Kb/s 589824 > 2555904, 1.85 bpb,   36.9M RAM, 1596Kb/s 786432 > 3342336, 1.88 bpb,   47.1M RAM, 1559Kb/s 983040 > 4128768, 1.90 bpb,   56.5M RAM, 1530Kb/s 1179648 > 4784128, 1.97 bpb,   64.7M RAM, 1481Kb/s 1310720 > 5636096, 1.86 bpb,   74.2M RAM, 1494Kb/s 1507328 > 6422528, 1.88 bpb,   83.0M RAM, 1481Kb/s 1703936 > 7274496, 1.87 bpb,   92.0M RAM, 1487Kb/s 1835008 > 7995392, 1.84 bpb,   99.7M RAM, 1477Kb/s 2031616 > 8781824, 1.85 bpb,  107.4M RAM, 1481Kb/s
