@@ -1,28 +1,27 @@
 # 无线性能数据有损压缩算法
 
-## compile
-`make`
+## 编译安装
+运行`make`进行编译，运行`make install`将可执行程序安装到`/usr/local/bin`目录，运行`make uninstall`卸载。
 
-## run
-### compress
+## 运行
+**压缩**
 `./hwzip c [input] [max_pw_rel_err] [max_avg_err]`
-
-**for example:**
-
+**示例:**
 `./hwzip c file/7.csv 0.10 0.05`
 
-### decompress
+**解压**
 `./hwzip d [input]`
-
-**for example:**
-
+**示例:**
 `./hwzip d file/7.csv.hw`
 
-**note:**
+**注意:**
+解压的文件名应当以`.hw`结尾
 
-the input filename should end with ".hw"
+## 测试
+进入`./test`目录, 运行./compress_test.sh和./decompress_test.sh脚本.
+注意：测试文件应位于file目录中。
 
-## test
-in directory ./test, run ./compress_test.sh and ./decompress_test.sh to test.
-
-note: the test file should be copy to directory ./file
+**压缩测试示例：**
+`./compress_test.sh  0.10  0.05`
+**解压测试示例：**
+`./decompress_tese.sh`
