@@ -2,3 +2,833 @@ argc = 3
 columnSize = 194
 after compressFirstBlock()...
 LosslessCompressor::compressOneBlock()...
+columnSize = 194
+line_num_of_block = 3000
+after compressFirstBlock()...
+LosslessCompressor::compressOneBlock()...
+str len = 1738587
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1736292
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1723216
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1711334
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1730503
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1735294
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1737945
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1735181
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1740046
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1738915
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1725130
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1709177
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1716988
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1733078
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1734343
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1732230
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1734054
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1739490
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1727692
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1718289
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1708614
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1721803
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1731603
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1727732
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1731472
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1733707
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1735290
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1715759
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1699064
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1704438
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1729894
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1728578
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1731215
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1729174
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1736549
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1726400
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1701741
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1701197
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1718613
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1729073
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1731016
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1732788
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1734478
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1737646
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1713983
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1698608
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1713424
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1730602
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1732894
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1734969
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1734215
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1731558
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1720918
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1695178
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1697765
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1720478
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1728036
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1726821
+block.size() = 0
+line_num_of_block = 1914
+LosslessCompressor::compressOneBlock()...
+str len = 1103756
+block.size() = 0
+line_num_of_block = 0
+finish process block 59
+ 0 > 0, 8.00 bpb,    0.0M RAM,    0Kb/s 1048576 > 196608, 1.50 bpb,   15.4M RAM, 1981Kb/s 2031616 > 393216, 1.55 bpb,   28.5M RAM, 1899Kb/s 2818048 > 589824, 1.67 bpb,   39.6M RAM, 1760Kb/s 3670016 > 786432, 1.71 bpb,   49.8M RAM, 1735Kb/s 4456448 > 983040, 1.76 bpb,   60.0M RAM, 1661Kb/s 5308416 > 1179648, 1.78 bpb,   69.4M RAM, 1642Kb/s 6094848 > 1376256, 1.81 bpb,   78.5M RAM, 1618Kb/s 6881280 > 1507328, 1.75 bpb,   87.0M RAM, 1598Kb/s 7667712 > 1703936, 1.78 bpb,   95.6M RAM, 1584Kb/s 8323072 > 1900544, 1.83 bpb,  102.8M RAM, 1552Kb/s 9175040 > 2031616, 1.77 bpb,  111.6M RAM, 1546Kb/s 9830400 > 2162688, 1.76 bpb,  117.7M RAM, 1525Kb/s 10354688 > 2359296, 1.82 bpb,  123.6M RAM, 1484Kb/s 11206656 > 2490368, 1.78 bpb,  131.7M RAM, 1489Kb/s 11927552 > 2686976, 1.80 bpb,  139.0M RAM, 1482Kb/s 12713984 > 2883584, 1.81 bpb,  147.2M RAM, 1476Kb/s 13500416 > 3014656, 1.79 bpb,  154.4M RAM, 1473Kb/s 14286848 > 3211264, 1.80 bpb,  161.6M RAM, 1475Kb/s 15007744 > 3342336, 1.78 bpb,  168.4M RAM, 1470Kb/s 15794176 > 3538944, 1.79 bpb,  175.2M RAM, 1472Kb/s 16515072 > 3670016, 1.78 bpb,  182.4M RAM, 1465Kb/s 17235968 > 3866624, 1.79 bpb,  189.0M RAM, 1459Kb/s 18022400 > 3997696, 1.77 bpb,  196.0M RAM, 1458Kb/s 18743296 > 4194304, 1.79 bpb,  202.3M RAM, 1452Kb/s 19529728 > 4325376, 1.77 bpb,  209.3M RAM, 1452Kb/s 20316160 > 4521984, 1.78 bpb,  216.3M RAM, 1448Kb/s 21102592 > 4718592, 1.79 bpb,  222.9M RAM, 1451Kb/s 21757952 > 4849664, 1.78 bpb,  229.5M RAM, 1445Kb/s 22413312 > 4980736, 1.78 bpb,  234.8M RAM, 1438Kb/s 23068672 > 5177344, 1.80 bpb,  240.8M RAM, 1431Kb/s 23789568 > 5308416, 1.79 bpb,  246.9M RAM, 1424Kb/s 24510464 > 5439488, 1.78 bpb,  252.2M RAM, 1421Kb/s 24838144 > 5570560, 1.79 bpb,  102.0M RAM, 1135Kb/s 25493504 > 5701632, 1.79 bpb,  104.7M RAM, 1139Kb/s 26279936 > 5832704, 1.78 bpb,  108.6M RAM, 1146Kb/s 26935296 > 5963776, 1.77 bpb,  112.7M RAM, 1148Kb/s 27656192 > 6160384, 1.78 bpb,  116.6M RAM, 1152Kb/s 28377088 > 6291456, 1.77 bpb,  121.2M RAM, 1156Kb/s 29032448 > 6422528, 1.77 bpb,  125.3M RAM, 1158Kb/s 29818880 > 6619136, 1.78 bpb,  130.1M RAM, 1163Kb/s 30474240 > 6750208, 1.77 bpb,  134.9M RAM, 1165Kb/s 31129600 > 6881280, 1.77 bpb,  139.0M RAM, 1166Kb/s 31784960 > 7012352, 1.76 bpb,  143.6M RAM, 1167Kb/s 32374784 > 7143424, 1.77 bpb,  147.5M RAM, 1166Kb/s 32964608 > 7340032, 1.78 bpb,  152.2M RAM, 1164Kb/s 33685504 > 7471104, 1.77 bpb,  157.1M RAM, 1167Kb/s 34275328 > 7602176, 1.77 bpb,  161.6M RAM, 1166Kb/s 34996224 > 7733248, 1.77 bpb,  166.7M RAM, 1167Kb/s 35586048 > 7864320, 1.77 bpb,  171.7M RAM, 1166Kb/s 36241408 > 7995392, 1.76 bpb,  176.3M RAM, 1166Kb/s 36831232 > 8192000, 1.78 bpb,  181.2M RAM, 1166Kb/s 37421056 > 8323072, 1.78 bpb,  185.6M RAM, 1165Kb/s 38010880 > 8454144, 1.78 bpb,  190.0M RAM, 1165Kb/s 38666240 > 8519680, 1.76 bpb,  194.7M RAM, 1166Kb/s 39256064 > 8650752, 1.76 bpb,  199.1M RAM, 1166Kb/s 39845888 > 8781824, 1.76 bpb,  203.6M RAM, 1165Kb/s 40435712 > 8912896, 1.76 bpb,  208.5M RAM, 1164Kb/s 41025536 > 9043968, 1.76 bpb,  212.9M RAM, 1163Kb/s 41615360 > 9175040, 1.76 bpb,  217.3M RAM, 1161Kb/s 41746432 > 9240576, 1.77 bpb,  217.5M RAM, 1128Kb/s 42270720 > 9371648, 1.77 bpb,  222.3M RAM, 1127Kb/s 42795008 > 9502720, 1.78 bpb,  226.9M RAM, 1124Kb/s 43581440 > 9633792, 1.77 bpb,  231.9M RAM, 1128Kb/s 43909120 > 9699328, 1.77 bpb,  235.0M RAM, 1112Kb/s 44498944 > 9830400, 1.77 bpb,  239.2M RAM, 1111Kb/s 45088768 > 9961472, 1.77 bpb,  243.5M RAM, 1111Kb/s 45678592 > 10092544, 1.77 bpb,  248.3M RAM, 1111Kb/s 46137344 > 10223616, 1.77 bpb,  251.7M RAM, 1108Kb/s 46465024 > 10289152, 1.77 bpb,  102.1M RAM, 1001Kb/s 47185920 > 10420224, 1.77 bpb,  105.4M RAM, 1005Kb/s 47841280 > 10551296, 1.76 bpb,  108.5M RAM, 1008Kb/s 48496640 > 10682368, 1.76 bpb,  112.0M RAM, 1010Kb/s 49152000 > 10813440, 1.76 bpb,  115.8M RAM, 1012Kb/s 49741824 > 10944512, 1.76 bpb,  119.5M RAM, 1013Kb/s 50397184 > 11141120, 1.77 bpb,  123.5M RAM, 1016Kb/s 50987008 > 11272192, 1.77 bpb,  127.6M RAM, 1017Kb/s 51642368 > 11403264, 1.77 bpb,  131.7M RAM, 1019Kb/s 52297728 > 11534336, 1.76 bpb,  136.2M RAM, 1021Kb/s 52887552 > 11665408, 1.76 bpb,  140.3M RAM, 1022Kb/s 53477376 > 11796480, 1.76 bpb,  144.3M RAM, 1023Kb/s 54198272 > 11927552, 1.76 bpb,  149.3M RAM, 1025Kb/s 54788096 > 12058624, 1.76 bpb,  153.5M RAM, 1026Kb/s 55377920 > 12189696, 1.76 bpb,  157.8M RAM, 1027Kb/s 55967744 > 12320768, 1.76 bpb,  162.4M RAM, 1028Kb/s 56557568 > 12451840, 1.76 bpb,  166.6M RAM, 1029Kb/s 57212928 > 12582912, 1.76 bpb,  170.8M RAM, 1031Kb/s 57802752 > 12713984, 1.76 bpb,  175.7M RAM, 1032Kb/s 58392576 > 12845056, 1.76 bpb,  180.2M RAM, 1032Kb/s 59113472 > 12976128, 1.76 bpb,  185.2M RAM, 1034Kb/s 59703296 > 13107200, 1.76 bpb,  190.2M RAM, 1034Kb/s 60358656 > 13303808, 1.76 bpb,  194.8M RAM, 1035Kb/s 61014016 > 13434880, 1.76 bpb,  199.5M RAM, 1037Kb/s 61603840 > 13565952, 1.76 bpb,  203.9M RAM, 1038Kb/s 62193664 > 13697024, 1.76 bpb,  208.0M RAM, 1039Kb/s 62849024 > 13828096, 1.76 bpb,  213.3M RAM, 1040Kb/s 63438848 > 13959168, 1.76 bpb,  217.8M RAM, 1040Kb/s 64028672 > 14090240, 1.76 bpb,  222.1M RAM, 1041Kb/s 64618496 > 14221312, 1.76 bpb,  227.1M RAM, 1041Kb/s 65208320 > 14352384, 1.76 bpb,  231.9M RAM, 1041Kb/s 65929216 > 14483456, 1.76 bpb,  236.7M RAM, 1043Kb/s 66519040 > 14614528, 1.76 bpb,  241.9M RAM, 1042Kb/s 67108864 > 14745600, 1.76 bpb,  246.1M RAM, 1043Kb/s 67698688 > 14876672, 1.76 bpb,  250.4M RAM, 1042Kb/s 68026368 > 14942208, 1.76 bpb,  101.6M RAM,  972Kb/s 68681728 > 15073280, 1.76 bpb,  104.5M RAM,  973Kb/s 69337088 > 15269888, 1.76 bpb,  107.7M RAM,  976Kb/s 69992448 > 15400960, 1.76 bpb,  111.4M RAM,  977Kb/s 70647808 > 15532032, 1.76 bpb,  115.1M RAM,  979Kb/s 71303168 > 15663104, 1.76 bpb,  119.0M RAM,  981Kb/s 71958528 > 15794176, 1.76 bpb,  122.7M RAM,  982Kb/s 72613888 > 15925248, 1.75 bpb,  127.0M RAM,  984Kb/s 73269248 > 16056320, 1.75 bpb,  131.3M RAM,  985Kb/s 73859072 > 16187392, 1.75 bpb,  135.3M RAM,  986Kb/s 74514432 > 16318464, 1.75 bpb,  139.0M RAM,  988Kb/s 75104256 > 16449536, 1.75 bpb,  143.4M RAM,  988Kb/s 75628544 > 16580608, 1.75 bpb,  147.3M RAM,  988Kb/s 76283904 > 16711680, 1.75 bpb,  151.2M RAM,  990Kb/s 76808192 > 16842752, 1.75 bpb,  155.3M RAM,  990Kb/s 77332480 > 16973824, 1.76 bpb,  159.4M RAM,  990Kb/s 77987840 > 17104896, 1.75 bpb,  163.4M RAM,  991Kb/s 78512128 > 17235968, 1.76 bpb,  167.7M RAM,  991Kb/s 79036416 > 17367040, 1.76 bpb,  172.0M RAM,  991Kb/s 79691776 > 17498112, 1.76 bpb,  176.3M RAM,  992Kb/s 80281600 > 17629184, 1.76 bpb,  181.3M RAM,  992Kb/s 80871424 > 17760256, 1.76 bpb,  185.6M RAM,  993Kb/s 81526784 > 17891328, 1.76 bpb,  190.5M RAM,  994Kb/s 82116608 > 18022400, 1.76 bpb,  195.5M RAM,  994Kb/s 82706432 > 18153472, 1.76 bpb,  199.8M RAM,  994Kb/s 83296256 > 18284544, 1.76 bpb,  204.0M RAM,  995Kb/s 83820544 > 18415616, 1.76 bpb,  208.6M RAM,  995Kb/s 84344832 > 18481152, 1.75 bpb,  212.1M RAM,  995Kb/s 84934656 > 18612224, 1.75 bpb,  216.3M RAM,  996Kb/s 85524480 > 18743296, 1.75 bpb,  221.5M RAM,  996Kb/s 86114304 > 18874368, 1.75 bpb,  225.6M RAM,  997Kb/s 86769664 > 19005440, 1.75 bpb,  230.6M RAM,  998Kb/s 87293952 > 19136512, 1.75 bpb,  235.0M RAM,  998Kb/s 87949312 > 19267584, 1.75 bpb,  239.8M RAM,  999Kb/s 88604672 > 19398656, 1.75 bpb,  244.4M RAM, 1000Kb/s 89194496 > 19529728, 1.75 bpb,  248.8M RAM, 1001Kb/s 89784320 > 19660800, 1.75 bpb,  253.0M RAM, 1002Kb/s 89915392 > 19726336, 1.76 bpb,  102.2M RAM,  951Kb/s 90570752 > 19857408, 1.75 bpb,  105.1M RAM,  952Kb/s 91160576 > 19988480, 1.75 bpb,  108.0M RAM,  953Kb/s 91815936 > 20119552, 1.75 bpb,  111.2M RAM,  955Kb/s 92405760 > 20250624, 1.75 bpb,  115.0M RAM,  955Kb/s 92995584 > 20381696, 1.75 bpb,  118.3M RAM,  956Kb/s 93585408 > 20512768, 1.75 bpb,  122.0M RAM,  957Kb/s 94109696 > 20643840, 1.75 bpb,  125.7M RAM,  957Kb/s 94699520 > 20774912, 1.76 bpb,  129.3M RAM,  958Kb/s 95354880 > 20905984, 1.75 bpb,  133.8M RAM,  959Kb/s 95813632 > 21037056, 1.76 bpb,  137.4M RAM,  958Kb/s 96403456 > 21168128, 1.76 bpb,  141.2M RAM,  959Kb/s 97058816 > 21233664, 1.75 bpb,  145.4M RAM,  960Kb/s 97583104 > 21364736, 1.75 bpb,  149.6M RAM,  960Kb/s 98172928 > 21495808, 1.75 bpb,  153.6M RAM,  961Kb/s 98828288 > 21626880, 1.75 bpb,  158.3M RAM,  962Kb/s 99352576 > 21757952, 1.75 bpb,  162.3M RAM,  962Kb/s 99942400 > 21889024, 1.75 bpb,  166.6M RAM,  963Kb/s 100532224 > 22020096, 1.75 bpb,  170.8M RAM,  963Kb/s 101122048 > 22151168, 1.75 bpb,  175.2M RAM,  964Kb/s 101163721 > 22209779, 1.76 bpb,  175.8M RAM,  964Kb/s
+Processing time: 102.540s
+finish compressFile_ppmd
+remove tmp file
+run() finish
+columnSize = 194
+line_num_of_block = 3000
+after compressFirstBlock()...
+LosslessCompressor::compressOneBlock()...
+str len = 1729591
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1721293
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1743026
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1750932
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1753776
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1727481
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1727921
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1753814
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1757792
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1751364
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1732250
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1730262
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1759654
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1755024
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1765639
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1736612
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1735027
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1754634
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1763573
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1762494
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1735332
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1731864
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1757860
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1751345
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1758282
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1732089
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1730234
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1757244
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1764879
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1762395
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1734108
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1733781
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1761715
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1761917
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1764661
+block.size() = 0
+line_num_of_block = 318
+LosslessCompressor::compressOneBlock()...
+str len = 188534
+block.size() = 0
+line_num_of_block = 0
+finish process block 36
+ 0 > 0, 8.00 bpb,    0.0M RAM,    0Kb/s 1048576 > 196608, 1.50 bpb,   15.6M RAM, 1965Kb/s 2031616 > 393216, 1.55 bpb,   28.9M RAM, 1872Kb/s 2686976 > 589824, 1.76 bpb,   38.6M RAM, 1681Kb/s 3538944 > 786432, 1.78 bpb,   49.3M RAM, 1666Kb/s 4325376 > 983040, 1.82 bpb,   59.2M RAM, 1625Kb/s 5111808 > 1114112, 1.74 bpb,   68.2M RAM, 1598Kb/s 5963776 > 1310720, 1.76 bpb,   77.2M RAM, 1608Kb/s 6684672 > 1441792, 1.73 bpb,   84.9M RAM, 1580Kb/s 7471104 > 1638400, 1.75 bpb,   93.1M RAM, 1573Kb/s 8192000 > 1769472, 1.73 bpb,  100.7M RAM, 1547Kb/s 9043968 > 1966080, 1.74 bpb,  108.9M RAM, 1552Kb/s 9699328 > 2162688, 1.78 bpb,  116.6M RAM, 1522Kb/s 10551296 > 2293760, 1.74 bpb,  124.2M RAM, 1530Kb/s 11337728 > 2490368, 1.76 bpb,  131.9M RAM, 1527Kb/s 12124160 > 2621440, 1.73 bpb,  139.4M RAM, 1520Kb/s 12976128 > 2818048, 1.74 bpb,  147.1M RAM, 1523Kb/s 13697024 > 3014656, 1.76 bpb,  153.6M RAM, 1515Kb/s 14548992 > 3145728, 1.73 bpb,  161.1M RAM, 1519Kb/s 15269888 > 3342336, 1.75 bpb,  167.8M RAM, 1508Kb/s 16121856 > 3473408, 1.72 bpb,  174.7M RAM, 1512Kb/s 16842752 > 3670016, 1.74 bpb,  181.4M RAM, 1505Kb/s 17694720 > 3801088, 1.72 bpb,  188.3M RAM, 1508Kb/s 18415616 > 3997696, 1.74 bpb,  195.5M RAM, 1498Kb/s 19202048 > 4194304, 1.75 bpb,  201.8M RAM, 1499Kb/s 19988480 > 4325376, 1.73 bpb,  208.4M RAM, 1500Kb/s 20643840 > 4521984, 1.75 bpb,  214.2M RAM, 1491Kb/s 21495808 > 4653056, 1.73 bpb,  220.8M RAM, 1495Kb/s 22151168 > 4849664, 1.75 bpb,  226.9M RAM, 1486Kb/s 23068672 > 4980736, 1.73 bpb,  233.1M RAM, 1491Kb/s 23724032 > 5111808, 1.72 bpb,  238.8M RAM, 1483Kb/s 24313856 > 5308416, 1.75 bpb,  243.8M RAM, 1472Kb/s 25100288 > 5439488, 1.73 bpb,  249.7M RAM, 1469Kb/s 25755648 > 5570560, 1.73 bpb,  254.8M RAM, 1462Kb/s 25952256 > 5636096, 1.74 bpb,  106.2M RAM, 1204Kb/s 26738688 > 5767168, 1.73 bpb,  109.7M RAM, 1211Kb/s 27394048 > 5963776, 1.74 bpb,  113.4M RAM, 1211Kb/s 28246016 > 6094848, 1.73 bpb,  117.6M RAM, 1220Kb/s 28901376 > 6225920, 1.72 bpb,  121.7M RAM, 1221Kb/s 29556736 > 6422528, 1.74 bpb,  125.7M RAM, 1222Kb/s 30343168 > 6553600, 1.73 bpb,  130.2M RAM, 1227Kb/s 31064064 > 6684672, 1.72 bpb,  134.6M RAM, 1230Kb/s 31784960 > 6881280, 1.73 bpb,  139.1M RAM, 1233Kb/s 32505856 > 7012352, 1.73 bpb,  143.7M RAM, 1235Kb/s 33161216 > 7143424, 1.72 bpb,  148.0M RAM, 1236Kb/s 33882112 > 7274496, 1.72 bpb,  153.0M RAM, 1238Kb/s 34537472 > 7405568, 1.72 bpb,  157.4M RAM, 1238Kb/s 35323904 > 7602176, 1.72 bpb,  162.6M RAM, 1242Kb/s 35979264 > 7733248, 1.72 bpb,  167.5M RAM, 1241Kb/s 36634624 > 7864320, 1.72 bpb,  172.0M RAM, 1242Kb/s 37355520 > 7995392, 1.71 bpb,  177.2M RAM, 1242Kb/s 37945344 > 8192000, 1.73 bpb,  181.5M RAM, 1239Kb/s 38731776 > 8323072, 1.72 bpb,  186.4M RAM, 1243Kb/s 39387136 > 8454144, 1.72 bpb,  191.7M RAM, 1242Kb/s 40108032 > 8585216, 1.71 bpb,  196.5M RAM, 1244Kb/s 40828928 > 8781824, 1.72 bpb,  201.4M RAM, 1246Kb/s 41484288 > 8912896, 1.72 bpb,  206.0M RAM, 1246Kb/s 42270720 > 9043968, 1.71 bpb,  210.9M RAM, 1249Kb/s 42926080 > 9175040, 1.71 bpb,  216.1M RAM, 1249Kb/s 43581440 > 9371648, 1.72 bpb,  220.8M RAM, 1249Kb/s 44105728 > 9437184, 1.71 bpb,  224.0M RAM, 1224Kb/s 44761088 > 9568256, 1.71 bpb,  228.9M RAM, 1223Kb/s 45481984 > 9764864, 1.72 bpb,  234.0M RAM, 1224Kb/s 46202880 > 9895936, 1.71 bpb,  239.2M RAM, 1214Kb/s 46858240 > 10027008, 1.71 bpb,  243.8M RAM, 1214Kb/s 47579136 > 10158080, 1.71 bpb,  248.7M RAM, 1216Kb/s 48168960 > 10354688, 1.72 bpb,  253.4M RAM, 1214Kb/s 48627712 > 10420224, 1.71 bpb,  107.1M RAM, 1103Kb/s 49414144 > 10551296, 1.71 bpb,  110.6M RAM, 1107Kb/s 50069504 > 10747904, 1.72 bpb,  113.7M RAM, 1109Kb/s 50790400 > 10878976, 1.71 bpb,  117.4M RAM, 1112Kb/s 51511296 > 11010048, 1.71 bpb,  121.2M RAM, 1115Kb/s 52232192 > 11141120, 1.71 bpb,  125.4M RAM, 1117Kb/s 52953088 > 11337728, 1.71 bpb,  129.6M RAM, 1120Kb/s 53608448 > 11468800, 1.71 bpb,  133.5M RAM, 1121Kb/s 54263808 > 11599872, 1.71 bpb,  137.8M RAM, 1123Kb/s 54984704 > 11730944, 1.71 bpb,  142.3M RAM, 1125Kb/s 55640064 > 11862016, 1.71 bpb,  146.7M RAM, 1126Kb/s 56360960 > 12058624, 1.71 bpb,  151.1M RAM, 1072Kb/s 57016320 > 12189696, 1.71 bpb,  155.7M RAM, 1074Kb/s 57737216 > 12320768, 1.71 bpb,  160.5M RAM, 1076Kb/s 58458112 > 12451840, 1.70 bpb,  165.2M RAM, 1078Kb/s 59113472 > 12582912, 1.70 bpb,  169.6M RAM, 1080Kb/s 59834368 > 12779520, 1.71 bpb,  174.2M RAM, 1083Kb/s 60489728 > 12910592, 1.71 bpb,  179.1M RAM, 1084Kb/s 61145088 > 13041664, 1.71 bpb,  183.6M RAM, 1086Kb/s 61343287 > 13130611, 1.71 bpb,  185.5M RAM, 1085Kb/s
+Processing time: 55.199s
+finish compressFile_ppmd
+remove tmp file
+run() finish
+columnSize = 194
+line_num_of_block = 3000
+after compressFirstBlock()...
+LosslessCompressor::compressOneBlock()...
+str len = 1742524
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1740920
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1734998
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1722721
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1731257
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1750613
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1740352
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1749781
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1750038
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1745133
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1747111
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1734739
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1723206
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1728763
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1741678
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1746146
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1750600
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1743857
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1745369
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1753902
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1732669
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1727912
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1728828
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1736197
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1740710
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1737215
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1735955
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1745499
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1744312
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1725509
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1722962
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1721919
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1736837
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1746547
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1744315
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1744096
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1748033
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1743323
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1736541
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1723727
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1725827
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1740707
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1748675
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1746371
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1746559
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1743620
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1747202
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1740025
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1724057
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1725695
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1742043
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1745492
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1748433
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1751156
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1747309
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1743312
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1733993
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1722889
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1717894
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1731383
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1741808
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1742018
+block.size() = 0
+line_num_of_block = 2901
+LosslessCompressor::compressOneBlock()...
+str len = 1692277
+block.size() = 0
+line_num_of_block = 0
+finish process block 63
+ 0 > 0, 8.00 bpb,    0.0M RAM,    0Kb/s 1048576 > 196608, 1.50 bpb,   15.3M RAM, 2020Kb/s 2031616 > 393216, 1.55 bpb,   28.1M RAM, 1928Kb/s 2883584 > 589824, 1.64 bpb,   39.8M RAM, 1810Kb/s 3801088 > 786432, 1.66 bpb,   50.3M RAM, 1793Kb/s 4587520 > 983040, 1.71 bpb,   60.1M RAM, 1727Kb/s 5505024 > 1179648, 1.71 bpb,   69.7M RAM, 1715Kb/s 6225920 > 1376256, 1.77 bpb,   78.8M RAM, 1665Kb/s 7012352 > 1507328, 1.72 bpb,   86.8M RAM, 1643Kb/s 7798784 > 1703936, 1.75 bpb,   94.9M RAM, 1627Kb/s 8519680 > 1900544, 1.78 bpb,  102.6M RAM, 1602Kb/s 9371648 > 2031616, 1.73 bpb,  111.2M RAM, 1594Kb/s 10092544 > 2228224, 1.77 bpb,  118.2M RAM, 1573Kb/s 10878976 > 2359296, 1.73 bpb,  125.5M RAM, 1569Kb/s 11599872 > 2555904, 1.76 bpb,  132.4M RAM, 1557Kb/s 12320768 > 2686976, 1.74 bpb,  139.4M RAM, 1544Kb/s 13107200 > 2883584, 1.76 bpb,  147.0M RAM, 1536Kb/s 13828096 > 3014656, 1.74 bpb,  153.8M RAM, 1527Kb/s 14614528 > 3211264, 1.76 bpb,  160.9M RAM, 1527Kb/s 15335424 > 3342336, 1.74 bpb,  167.2M RAM, 1521Kb/s 16187392 > 3538944, 1.75 bpb,  174.9M RAM, 1517Kb/s 16973824 > 3735552, 1.76 bpb,  181.6M RAM, 1511Kb/s 17825792 > 3866624, 1.74 bpb,  188.5M RAM, 1515Kb/s 18546688 > 4063232, 1.75 bpb,  194.9M RAM, 1509Kb/s 19398656 > 4194304, 1.73 bpb,  201.1M RAM, 1515Kb/s 20054016 > 4390912, 1.75 bpb,  207.6M RAM, 1504Kb/s 20774912 > 4521984, 1.74 bpb,  214.1M RAM, 1497Kb/s 21561344 > 4718592, 1.75 bpb,  220.7M RAM, 1497Kb/s 22282240 > 4849664, 1.74 bpb,  226.8M RAM, 1491Kb/s 23068672 > 5046272, 1.75 bpb,  233.4M RAM, 1491Kb/s 23724032 > 5177344, 1.75 bpb,  238.9M RAM, 1482Kb/s 24313856 > 5308416, 1.75 bpb,  243.5M RAM, 1471Kb/s 24969216 > 5439488, 1.74 bpb,  248.9M RAM, 1464Kb/s 25624576 > 5570560, 1.74 bpb,  254.3M RAM, 1454Kb/s 25886720 > 5636096, 1.74 bpb,  102.9M RAM, 1192Kb/s 26607616 > 5832704, 1.75 bpb,  106.3M RAM, 1196Kb/s 27328512 > 5963776, 1.75 bpb,  109.5M RAM, 1199Kb/s 27983872 > 6094848, 1.74 bpb,  113.2M RAM, 1200Kb/s 28704768 > 6225920, 1.74 bpb,  117.0M RAM, 1204Kb/s 29360128 > 6422528, 1.75 bpb,  120.9M RAM, 1205Kb/s 30081024 > 6553600, 1.74 bpb,  125.4M RAM, 1208Kb/s 30736384 > 6684672, 1.74 bpb,  129.3M RAM, 1208Kb/s 31391744 > 6815744, 1.74 bpb,  133.4M RAM, 1208Kb/s 32047104 > 6946816, 1.73 bpb,  137.9M RAM, 1210Kb/s 32702464 > 7077888, 1.73 bpb,  142.1M RAM, 1209Kb/s 33423360 > 7274496, 1.74 bpb,  146.4M RAM, 1213Kb/s 34013184 > 7405568, 1.74 bpb,  150.9M RAM, 1211Kb/s 34668544 > 7536640, 1.74 bpb,  155.5M RAM, 1210Kb/s 35389440 > 7667712, 1.73 bpb,  160.2M RAM, 1212Kb/s 36044800 > 7798784, 1.73 bpb,  164.6M RAM, 1212Kb/s 36700160 > 7929856, 1.73 bpb,  169.2M RAM, 1213Kb/s 37289984 > 8126464, 1.74 bpb,  174.1M RAM, 1211Kb/s 37945344 > 8257536, 1.74 bpb,  178.7M RAM, 1211Kb/s 38666240 > 8388608, 1.74 bpb,  183.6M RAM, 1213Kb/s 39256064 > 8519680, 1.74 bpb,  188.6M RAM, 1211Kb/s 39911424 > 8650752, 1.73 bpb,  193.3M RAM, 1211Kb/s 40566784 > 8781824, 1.73 bpb,  198.0M RAM, 1212Kb/s 41222144 > 8912896, 1.73 bpb,  202.4M RAM, 1212Kb/s 41877504 > 9043968, 1.73 bpb,  207.3M RAM, 1211Kb/s 42467328 > 9175040, 1.73 bpb,  212.0M RAM, 1208Kb/s 42991616 > 9306112, 1.73 bpb,  215.4M RAM, 1204Kb/s 43319296 > 9371648, 1.73 bpb,  218.0M RAM, 1172Kb/s 43974656 > 9568256, 1.74 bpb,  223.3M RAM, 1172Kb/s 44761088 > 9699328, 1.73 bpb,  228.4M RAM, 1175Kb/s 45547520 > 9830400, 1.73 bpb,  233.5M RAM, 1179Kb/s 45744128 > 9895936, 1.73 bpb,  235.7M RAM, 1164Kb/s 46465024 > 10027008, 1.73 bpb,  240.6M RAM, 1166Kb/s 47251456 > 10223616, 1.73 bpb,  245.9M RAM, 1170Kb/s 47775744 > 10354688, 1.73 bpb,  250.2M RAM, 1167Kb/s 48300032 > 10420224, 1.73 bpb,  102.6M RAM, 1062Kb/s 49152000 > 10616832, 1.73 bpb,  106.2M RAM, 1068Kb/s 49872896 > 10747904, 1.72 bpb,  109.6M RAM, 1072Kb/s 50593792 > 10944512, 1.73 bpb,  113.3M RAM, 1075Kb/s 51314688 > 11075584, 1.73 bpb,  117.1M RAM, 1078Kb/s 51970048 > 11272192, 1.74 bpb,  121.5M RAM, 1079Kb/s 52822016 > 11403264, 1.73 bpb,  126.1M RAM, 1084Kb/s 53477376 > 11534336, 1.73 bpb,  130.4M RAM, 1085Kb/s 54198272 > 11665408, 1.72 bpb,  134.7M RAM, 1088Kb/s 54722560 > 11862016, 1.73 bpb,  139.0M RAM, 1086Kb/s 55377920 > 11927552, 1.72 bpb,  143.0M RAM, 1088Kb/s 56033280 > 12124160, 1.73 bpb,  147.3M RAM, 1090Kb/s 56623104 > 12255232, 1.73 bpb,  151.9M RAM, 1090Kb/s 57278464 > 12386304, 1.73 bpb,  156.3M RAM, 1092Kb/s 57999360 > 12517376, 1.73 bpb,  161.0M RAM, 1094Kb/s 58654720 > 12648448, 1.73 bpb,  165.8M RAM, 1095Kb/s 59375616 > 12779520, 1.72 bpb,  170.2M RAM, 1097Kb/s 59899904 > 12910592, 1.72 bpb,  174.5M RAM, 1097Kb/s 60489728 > 13041664, 1.72 bpb,  178.9M RAM, 1097Kb/s 61210624 > 13172736, 1.72 bpb,  183.5M RAM, 1098Kb/s 61800448 > 13303808, 1.72 bpb,  188.3M RAM, 1098Kb/s 62390272 > 13434880, 1.72 bpb,  192.4M RAM, 1098Kb/s 63045632 > 13631488, 1.73 bpb,  197.2M RAM, 1099Kb/s 63635456 > 13762560, 1.73 bpb,  201.6M RAM, 1100Kb/s 64225280 > 13893632, 1.73 bpb,  205.9M RAM, 1100Kb/s 64880640 > 14024704, 1.73 bpb,  210.3M RAM, 1101Kb/s 65470464 > 14155776, 1.73 bpb,  214.5M RAM, 1101Kb/s 66125824 > 14286848, 1.73 bpb,  218.8M RAM, 1103Kb/s 66715648 > 14417920, 1.73 bpb,  223.9M RAM, 1103Kb/s 67371008 > 14548992, 1.73 bpb,  228.0M RAM, 1104Kb/s 68091904 > 14680064, 1.72 bpb,  232.3M RAM, 1106Kb/s 68681728 > 14811136, 1.73 bpb,  237.3M RAM, 1106Kb/s 69271552 > 14942208, 1.73 bpb,  241.9M RAM, 1106Kb/s 69926912 > 15073280, 1.72 bpb,  246.5M RAM, 1107Kb/s 70516736 > 15204352, 1.72 bpb,  251.7M RAM, 1104Kb/s 70778880 > 15269888, 1.73 bpb,  101.9M RAM, 1034Kb/s 71499776 > 15400960, 1.72 bpb,  105.1M RAM, 1036Kb/s 72155136 > 15532032, 1.72 bpb,  108.4M RAM, 1038Kb/s 72810496 > 15663104, 1.72 bpb,  111.7M RAM, 1039Kb/s 73465856 > 15859712, 1.73 bpb,  115.6M RAM, 1041Kb/s 74055680 > 15990784, 1.73 bpb,  119.1M RAM, 1042Kb/s 74645504 > 16121856, 1.73 bpb,  122.6M RAM, 1042Kb/s 75366400 > 16187392, 1.72 bpb,  126.4M RAM, 1045Kb/s 75956224 > 16318464, 1.72 bpb,  130.1M RAM, 1045Kb/s 76546048 > 16515072, 1.73 bpb,  133.9M RAM, 1046Kb/s 77135872 > 16646144, 1.73 bpb,  138.4M RAM, 1046Kb/s 77791232 > 16711680, 1.72 bpb,  142.2M RAM, 1048Kb/s 78381056 > 16842752, 1.72 bpb,  146.1M RAM, 1048Kb/s 79036416 > 16973824, 1.72 bpb,  150.6M RAM, 1049Kb/s 79626240 > 17170432, 1.73 bpb,  154.9M RAM, 1050Kb/s 80412672 > 17301504, 1.72 bpb,  159.7M RAM, 1052Kb/s 81002496 > 17432576, 1.72 bpb,  164.3M RAM, 1053Kb/s 81657856 > 17563648, 1.72 bpb,  168.7M RAM, 1054Kb/s 82378752 > 17694720, 1.72 bpb,  173.5M RAM, 1055Kb/s 83034112 > 17825792, 1.72 bpb,  178.2M RAM, 1056Kb/s 83820544 > 18022400, 1.72 bpb,  183.2M RAM, 1058Kb/s 84410368 > 18153472, 1.72 bpb,  188.1M RAM, 1058Kb/s 85065728 > 18284544, 1.72 bpb,  192.9M RAM, 1058Kb/s 85721088 > 18415616, 1.72 bpb,  197.9M RAM, 1059Kb/s 86376448 > 18546688, 1.72 bpb,  202.4M RAM, 1060Kb/s 86966272 > 18743296, 1.72 bpb,  207.1M RAM, 1061Kb/s 87621632 > 18808832, 1.72 bpb,  211.9M RAM, 1062Kb/s 88211456 > 19005440, 1.72 bpb,  216.2M RAM, 1062Kb/s 88997888 > 19136512, 1.72 bpb,  221.2M RAM, 1064Kb/s 89587712 > 19267584, 1.72 bpb,  225.9M RAM, 1064Kb/s 90243072 > 19398656, 1.72 bpb,  230.9M RAM, 1065Kb/s 90898432 > 19529728, 1.72 bpb,  235.5M RAM, 1066Kb/s 91422720 > 19660800, 1.72 bpb,  239.8M RAM, 1065Kb/s 92078080 > 19791872, 1.72 bpb,  244.5M RAM, 1066Kb/s 92798976 > 19922944, 1.72 bpb,  249.3M RAM, 1068Kb/s 93323264 > 20054016, 1.72 bpb,  253.3M RAM, 1067Kb/s 93388800 > 20119552, 1.72 bpb,  102.5M RAM, 1015Kb/s 94240768 > 20250624, 1.72 bpb,  105.9M RAM, 1018Kb/s 94896128 > 20381696, 1.72 bpb,  109.3M RAM, 1019Kb/s 95551488 > 20512768, 1.72 bpb,  112.7M RAM, 1020Kb/s 96272384 > 20643840, 1.72 bpb,  116.3M RAM, 1022Kb/s 96862208 > 20840448, 1.72 bpb,  119.7M RAM, 1023Kb/s 97583104 > 20971520, 1.72 bpb,  123.7M RAM, 1025Kb/s 98238464 > 21102592, 1.72 bpb,  127.8M RAM, 1026Kb/s 98828288 > 21233664, 1.72 bpb,  131.7M RAM, 1026Kb/s 99483648 > 21364736, 1.72 bpb,  135.4M RAM, 1027Kb/s 100073472 > 21495808, 1.72 bpb,  139.9M RAM, 1028Kb/s 100728832 > 21626880, 1.72 bpb,  144.3M RAM, 1028Kb/s 101384192 > 21757952, 1.72 bpb,  149.0M RAM, 1029Kb/s 101974016 > 21889024, 1.72 bpb,  153.0M RAM, 1029Kb/s 102563840 > 22020096, 1.72 bpb,  157.0M RAM, 1030Kb/s 103219200 > 22151168, 1.72 bpb,  161.6M RAM, 1031Kb/s 103809024 > 22282240, 1.72 bpb,  165.7M RAM, 1031Kb/s 104333312 > 22413312, 1.72 bpb,  169.5M RAM, 1031Kb/s 104988672 > 22544384, 1.72 bpb,  174.4M RAM, 1032Kb/s 105578496 > 22675456, 1.72 bpb,  178.5M RAM, 1032Kb/s 106168320 > 22806528, 1.72 bpb,  182.7M RAM, 1033Kb/s 106758144 > 22937600, 1.72 bpb,  187.3M RAM, 1033Kb/s 107347968 > 23068672, 1.72 bpb,  191.4M RAM, 1033Kb/s 108003328 > 23199744, 1.72 bpb,  195.7M RAM, 1035Kb/s 108593152 > 23330816, 1.72 bpb,  200.4M RAM, 1035Kb/s 109182976 > 23461888, 1.72 bpb,  204.8M RAM, 1035Kb/s 109500447 > 23555951, 1.72 bpb,  207.4M RAM, 1035Kb/s
+Processing time: 103.317s
+finish compressFile_ppmd
+remove tmp file
+run() finish
+columnSize = 194
+line_num_of_block = 3000
+after compressFirstBlock()...
+LosslessCompressor::compressOneBlock()...
+str len = 1810829
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1807897
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1808378
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1827626
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1814441
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1802837
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1811543
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1818828
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1830409
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1840261
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1836856
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1838192
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1822827
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1800037
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1802437
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1810300
+block.size() = 0
+line_num_of_block = 2810
+LosslessCompressor::compressOneBlock()...
+str len = 1696357
+block.size() = 0
+line_num_of_block = 0
+finish process block 17
+ 0 > 0, 8.00 bpb,    0.0M RAM,    0Kb/s 1179648 > 196608, 1.33 bpb,   17.2M RAM, 2281Kb/s 2293760 > 458752, 1.60 bpb,   31.9M RAM, 2168Kb/s 3211264 > 655360, 1.63 bpb,   44.1M RAM, 2043Kb/s 4259840 > 851968, 1.60 bpb,   55.9M RAM, 2034Kb/s 5177344 > 1114112, 1.72 bpb,   66.6M RAM, 1980Kb/s 6160384 > 1245184, 1.62 bpb,   76.7M RAM, 1968Kb/s 7077888 > 1441792, 1.63 bpb,   85.8M RAM, 1936Kb/s 8060928 > 1638400, 1.63 bpb,   95.1M RAM, 1929Kb/s 8912896 > 1900544, 1.71 bpb,  104.0M RAM, 1897Kb/s 9961472 > 2031616, 1.63 bpb,  112.6M RAM, 1911Kb/s 10878976 > 2293760, 1.69 bpb,  121.1M RAM, 1898Kb/s 11796480 > 2490368, 1.69 bpb,  130.0M RAM, 1883Kb/s 12845056 > 2686976, 1.67 bpb,  138.3M RAM, 1891Kb/s 13697024 > 2883584, 1.68 bpb,  146.5M RAM, 1872Kb/s 14811136 > 3080192, 1.66 bpb,  154.3M RAM, 1887Kb/s 15663104 > 3211264, 1.64 bpb,  162.3M RAM, 1873Kb/s 16711680 > 3473408, 1.66 bpb,  169.6M RAM, 1880Kb/s 17563648 > 3670016, 1.67 bpb,  177.0M RAM, 1867Kb/s 18612224 > 3866624, 1.66 bpb,  184.7M RAM, 1872Kb/s 19529728 > 4063232, 1.66 bpb,  192.2M RAM, 1862Kb/s 20512768 > 4259840, 1.66 bpb,  199.7M RAM, 1862Kb/s 21430272 > 4456448, 1.66 bpb,  207.0M RAM, 1853Kb/s 22282240 > 4653056, 1.67 bpb,  213.5M RAM, 1844Kb/s 23199744 > 4784128, 1.65 bpb,  220.2M RAM, 1840Kb/s 24182784 > 4980736, 1.65 bpb,  227.2M RAM, 1838Kb/s 25034752 > 5177344, 1.65 bpb,  233.7M RAM, 1830Kb/s 25952256 > 5373952, 1.66 bpb,  239.7M RAM, 1826Kb/s 26673152 > 5505024, 1.65 bpb,  245.2M RAM, 1808Kb/s 27590656 > 5701632, 1.65 bpb,  250.9M RAM, 1805Kb/s 28246016 > 5832704, 1.65 bpb,  109.4M RAM, 1465Kb/s 29097984 > 6029312, 1.66 bpb,  112.7M RAM, 1470Kb/s 29949952 > 6160384, 1.65 bpb,  116.7M RAM, 1474Kb/s 30784942 > 6356992, 1.65 bpb,  120.8M RAM, 1476Kb/s 30784942 > 6385172, 1.66 bpb,  121.2M RAM, 1476Kb/s
+Processing time: 20.390s
+finish compressFile_ppmd
+remove tmp file
+run() finish
+columnSize = 194
+line_num_of_block = 3000
+after compressFirstBlock()...
+LosslessCompressor::compressOneBlock()...
+str len = 1753365
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1745685
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1747998
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1767634
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1753367
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1742029
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1751588
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1759425
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1770988
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1782730
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1779594
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1782457
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1764251
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1738451
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1740658
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1749355
+block.size() = 0
+line_num_of_block = 2810
+LosslessCompressor::compressOneBlock()...
+str len = 1639485
+block.size() = 0
+line_num_of_block = 0
+finish process block 17
+ 0 > 0, 8.00 bpb,    0.0M RAM,    0Kb/s 1179648 > 196608, 1.33 bpb,   16.2M RAM, 2259Kb/s 2228224 > 393216, 1.41 bpb,   29.4M RAM, 2150Kb/s 3145728 > 655360, 1.67 bpb,   41.0M RAM, 2017Kb/s 4194304 > 851968, 1.62 bpb,   51.7M RAM, 2016Kb/s 5111808 > 983040, 1.54 bpb,   61.0M RAM, 1956Kb/s 6094848 > 1179648, 1.55 bpb,   69.9M RAM, 1948Kb/s 7012352 > 1376256, 1.57 bpb,   78.3M RAM, 1923Kb/s 7995392 > 1572864, 1.57 bpb,   87.4M RAM, 1903Kb/s 9043968 > 1769472, 1.57 bpb,   95.0M RAM, 1915Kb/s 9961472 > 1966080, 1.58 bpb,  103.2M RAM, 1896Kb/s 11010048 > 2162688, 1.57 bpb,  111.3M RAM, 1897Kb/s 11927552 > 2359296, 1.58 bpb,  118.9M RAM, 1883Kb/s 12910592 > 2555904, 1.58 bpb,  126.2M RAM, 1885Kb/s 13893632 > 2752512, 1.58 bpb,  133.7M RAM, 1877Kb/s 14942208 > 2949120, 1.58 bpb,  141.3M RAM, 1878Kb/s 15925248 > 3145728, 1.58 bpb,  148.1M RAM, 1879Kb/s 16908288 > 3342336, 1.58 bpb,  155.5M RAM, 1876Kb/s 18022400 > 3538944, 1.57 bpb,  162.5M RAM, 1884Kb/s 18939904 > 3735552, 1.58 bpb,  169.5M RAM, 1877Kb/s 19988480 > 3932160, 1.57 bpb,  176.4M RAM, 1880Kb/s 20905984 > 4128768, 1.58 bpb,  182.8M RAM, 1875Kb/s 21823488 > 4325376, 1.59 bpb,  189.3M RAM, 1867Kb/s 22806528 > 4521984, 1.59 bpb,  195.8M RAM, 1865Kb/s 23789568 > 4718592, 1.59 bpb,  201.7M RAM, 1867Kb/s 24772608 > 4915200, 1.59 bpb,  208.1M RAM, 1866Kb/s 25755648 > 5111808, 1.59 bpb,  214.6M RAM, 1867Kb/s 26869760 > 5308416, 1.58 bpb,  220.8M RAM, 1876Kb/s 27852800 > 5505024, 1.58 bpb,  227.0M RAM, 1876Kb/s 28901376 > 5701632, 1.58 bpb,  233.0M RAM, 1881Kb/s 29773947 > 5898240, 1.58 bpb,  238.5M RAM, 1874Kb/s 29773947 > 5920280, 1.59 bpb,  238.7M RAM, 1874Kb/s
+Processing time: 15.526s
+finish compressFile_ppmd
+remove tmp file
+run() finish
+columnSize = 194
+line_num_of_block = 3000
+after compressFirstBlock()...
+LosslessCompressor::compressOneBlock()...
+str len = 1810829
+block.size() = 0
+line_num_of_block = 3000
+LosslessCompressor::compressOneBlock()...
+str len = 1807897
+block.size() = 0
+line_num_of_block = 0
+finish process block 2
+ 0 > 0, 8.00 bpb,    0.0M RAM,    0Kb/s 1179648 > 196608, 1.33 bpb,   17.2M RAM, 2237Kb/s 2228224 > 458752, 1.65 bpb,   31.0M RAM, 2140Kb/s 3145728 > 655360, 1.67 bpb,   43.3M RAM, 2021Kb/s 3623612 > 792548, 1.75 bpb,   49.9M RAM, 1982Kb/s
+Processing time: 1.797s
+finish compressFile_ppmd
+remove tmp file
+run() finish
