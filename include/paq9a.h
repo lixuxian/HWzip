@@ -1021,6 +1021,29 @@ FILE* open_archive(const char* filename) {
 }
 
 // Compress filename to out.  option is 'c' to compress or 's' to store.
+void compress_paq9a(const char* filename, FILE* out) {
+
+  fprintf(out, "pQ9%c", 1);
+  putc('7', out);
+  // Open input file
+  FILE* in=fopen(filename, "rb");
+  if (!in) {
+    printf("File not found: %s\n", filename);
+    return;
+  }
+  fprintf(out, "%s", filename);
+  printf("%-40s ", filename);
+
+  // Compress depending on option
+  paq9a(in, out, COMPRESS);
+  if (in)
+  {
+    fclose(in);
+  }
+  printf("\n");
+}
+
+// Compress filename to out.  option is 'c' to compress or 's' to store.
 void compress(const char* filename, FILE* out, int option) {
 
   // Open input file
@@ -1126,6 +1149,70 @@ void extract(int argc, char** argv) {
     if (filename[0]) {  // new file?
       const char* fn=filename;
       if (argc>0) fn=argv[0], --argc, ++argv;
+      if (out) fclose(out);
+      out=fopen(fn, "rb");
+      if (out) {
+        printf("\nCannot overwrite file, skipping: %s ", fn);
+        fclose(out);
+        out=0;
+      }
+      else {
+        out=fopen(fn, "wb");
+        if (!out) printf("\nCannot create file: %s ", fn);
+      }
+      if (out) {
+        if (fn==filename) printf("\n%s ", filename);
+        else printf("\n%s -> %s ", filename, fn);
+      }
+    }
+
+    // Extract block
+    int mode=getc(in);
+    if (mode=='s')
+      unstore(in, out);
+    else if (mode=='c')
+      paq9a(in, out, DECOMPRESS);
+    else
+      printf("\nUnsupported compression mode %c %d at %ld\n", 
+        mode, mode, ftell(in)), exit(1);
+  }
+  printf("\n");
+  if (out) fclose(out);
+}
+
+
+void decompress_paq9a(const char *input, const char *output) {
+  // assert(argc>2);
+  // assert(argv[1][0]=='x');
+  static char filename[MAXNAMELEN+1];  // filename from archive
+
+  // Open archive
+  FILE* in=open_archive(input);
+  MEM=1<<22+MEM-'0';
+
+  // Extract files
+  // argc-=3;
+  // argv+=3;
+  FILE* out=0;
+  while (true) {  // for each block
+
+    // Get filename
+    int c;
+    for (int i=0;; ++i) {
+      c=getc(in);
+      if (c==EOF) break;
+      if (i<MAXNAMELEN) filename[i]=c;
+      if (!c) break;
+    }
+    if (c==EOF) break;
+
+    // Open output file
+    if (filename[0]) {  // new file?
+      const char* fn=filename;
+      if (output)
+      {
+        fn = output;
+      }
       if (out) fclose(out);
       out=fopen(fn, "rb");
       if (out) {

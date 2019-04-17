@@ -246,24 +246,42 @@ int LosslessCompressor::compressFile_bz2(std::string inputFilepath, int level)
  */
 int LosslessCompressor::compressFile_paq9a(std::string inputFilepath, std::string outputFilepath)
 {
-	FILE *in = fopen(inputFilepath.c_str(), "rb");
-	if (!in)
+	// FILE *in = fopen(inputFilepath.c_str(), "rb");
+	// if (!in)
+	// {
+	// 	std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *in == NULL" << std::endl;
+	// 	exit(0);
+	// }
+	// FILE *out = fopen(outputFilepath.c_str(), "wb");
+	// if (!out)
+	// {
+	// 	std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
+	// 	exit(0);
+	// }
+	// Mode_paq m = COMPRESS;
+	// paq9a(in, out, m);
+
+	// fclose(in);
+	// fclose(out);
+
+	// void compress_paq9a(const char* filename, FILE* out, int option) {
+	FILE *out = fopen(outputFilepath.c_str(), "rb");
+	if (out)
 	{
-		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *in == NULL" << std::endl;
-		exit(0);
+		std::cout << "Cannot overwrite archive " << outputFilepath << std::endl;
+		exit(1);
 	}
-	FILE *out = fopen(outputFilepath.c_str(), "wb");
+	out = fopen(outputFilepath.c_str(), "wb");
 	if (!out)
 	{
 		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
-		exit(0);
+		exit(1);
 	}
-	Mode_paq m = COMPRESS;
-	paq9a(in, out, m);
-
-	fclose(in);
-	fclose(out);
-
+	compress_paq9a(inputFilepath.c_str(), out);
+	if (out)
+	{
+		fclose(out);
+	}
 	return 1;
 }
 
@@ -323,23 +341,24 @@ int LosslessCompressor::decompressFile_bz2(std::string inputFilepath)
  */
 int LosslessCompressor::decompressFile_paq9a(std::string inputFilepath, std::string outputFilepath)
 {
-	FILE *in = fopen(inputFilepath.c_str(), "rb");
-	if (!in)
-	{
-		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *in == NULL" << std::endl;
-		exit(0);
-	}
-	FILE *out = fopen(outputFilepath.c_str(), "wb");
-	if (!out)
-	{
-		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
-		exit(0);
-	}
-	Mode_paq m = DECOMPRESS;
-	paq9a(in, out, m);
+	// FILE *in = fopen(inputFilepath.c_str(), "rb");
+	// if (!in)
+	// {
+	// 	std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *in == NULL" << std::endl;
+	// 	exit(0);
+	// }
+	// FILE *out = fopen(outputFilepath.c_str(), "wb");
+	// if (!out)
+	// {
+	// 	std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
+	// 	exit(0);
+	// }
+	// Mode_paq m = DECOMPRESS;
+	// paq9a(in, out, m);
+	decompress_paq9a(inputFilepath.c_str(), outputFilepath.c_str());
 
-	fclose(in);
-	fclose(out);
+	// fclose(in);
+	// fclose(out);
 
 	return 1;
 }

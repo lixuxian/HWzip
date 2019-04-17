@@ -76,8 +76,8 @@ int MixCompressor::getFileLines(std::string inputFilepath)
  */
 int MixCompressor::compress()
 {
-	std::string suffix = inputFilepath.substr(inputFilepath.length()-3);
-	if (suffix.compare("csv") != 0)
+	std::string suffix = inputFilepath.substr(inputFilepath.length()-4);
+	if (suffix.compare(".csv") != 0)
 	{
 		std::cout << "Don't support this type of file!!! Only CSV files!!!" << std::endl;
 		exit(0);
@@ -160,9 +160,13 @@ int MixCompressor::compress()
 	in.close();
 	tmp_out.close();
 
-	std::cout << "lossless encoding, PPMD algorithm..." << std::endl;
-	losslessCompPtr->compressFile_ppmd(tempFilepath, outputFilepath);
-	std::cout << "finish compressFile_ppmd" << std::endl;
+	// std::cout << "lossless encoding, PPMD algorithm..." << std::endl;
+	// losslessCompPtr->compressFile_ppmd(tempFilepath, outputFilepath);
+	// std::cout << "finish compressFile_ppmd" << std::endl;
+
+	std::cout << "lossless encoding, paq9a algorithm..." << std::endl;
+	losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath);
+	std::cout << "finish compressFile_paq9a" << std::endl;
 
 	// // compress temp file - 7z
 	// losslessCompPtr->compressFile_7z(tempFilepath, outputFilepath, 9);
@@ -177,7 +181,7 @@ int MixCompressor::compress()
 	// losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath_paq);
 	// std::cout << "finish compressFile_paq9a" << std::endl;
 
-	deleteTmpFile(tempFilepath);
+	// deleteTmpFile(tempFilepath);
 
 	return 1;
 }
@@ -196,8 +200,8 @@ int MixCompressor::decompress()
 	// loop
 	// 		decompress one block
 	// end loop
-
-	if (inputFilepath.find(".hw") != std::string::npos) {
+	std::string suffix = inputFilepath.substr(inputFilepath.length()-3);
+	if (suffix.compare(".hw") == 0) {
 		// tempFilepath = inputFilepath.replace(inputFilepath.find(".hw"), 3, ".tmp");
 		// std::cout << "tempFilepath = " << tempFilepath << std::endl;
 		// outputFilepath = inputFilepath.replace(tempFilepath.find(".tmp"), 4, "");
@@ -217,15 +221,18 @@ int MixCompressor::decompress()
 	// outputFilepath = inputFilepath + ".hw";
 
 	// losslessCompPtr->decompressFile_7z(inputFilepath);
-	std::cout << "lossless decoding, PPMD algorithm" << std::endl;
-	losslessCompPtr->decompressFile_ppmd(inputFilepath, tempFilepath);
 
+	// std::cout << "lossless decoding, PPMD algorithm" << std::endl;
+	// losslessCompPtr->decompressFile_ppmd(inputFilepath, tempFilepath);
+
+
+	std::cout << "lossless decoding, paq9a algorithm" << std::endl;
+	losslessCompPtr->decompressFile_paq9a(inputFilepath, tempFilepath);
 	std::cout << "decompress file to " << tempFilepath << std::endl;
 	
 	std::ifstream tmp_in(tempFilepath.c_str(), std::ios::in);
 	std::ofstream out(outputFilepath.c_str(), std::ios::out | std::ios::trunc);
 
-	
 	fileProcPtr = new FileProcessor(&tmp_in, &out, blockSize);
 
 	fileProcPtr->getMetadata(blockSize, columnSize, fileLines, blocks);
