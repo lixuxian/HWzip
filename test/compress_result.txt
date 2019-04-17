@@ -832,3 +832,4 @@ Processing time: 1.797s
 finish compressFile_ppmd
 remove tmp file
 run() finish
+columnSize = 194
