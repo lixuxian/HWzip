@@ -1,6 +1,11 @@
 #include "mixCompressor.h"
 #include "utils.h"
+#include "lossyComp.h"
+#include "losslessComp.h"
+#include "fileProcess.h"
 #include <cstdio>
+#include <ctime>
+#include <iostream>
 
 /**
  * @description: 构造函数，根据参数进行相应的初始化
@@ -27,18 +32,6 @@ MixCompressor::MixCompressor(double rel_err, double avg_err,
  */
 MixCompressor::~MixCompressor()
 {
-	// if (lossyCompPtr)
-	// {
-	// 	delete lossyCompPtr;
-	// }
-	// if (losslessCompPtr)
-	// {
-	// 	delete losslessCompPtr;
-	// }
-	// if (fileProcPtr)
-	// {
-	// 	delete fileProcPtr;
-	// }
 	block.clear();
 	for (std::vector<std::string> x : block)
 	{
@@ -72,11 +65,11 @@ int MixCompressor::getFileLines(std::string inputFilepath)
 }
 
 /**
- * @description: 对输入文件进行压缩
+ * @description: 旧版本的压缩接口，采用写入中间文件的方式
  * @param
- * @return: int 1表示正常
+ * @return: 
  */
-int MixCompressor::compress()
+int MixCompressor::compress_old()
 {
 	std::string suffix = inputFilepath.substr(inputFilepath.length()-4);
 	if (suffix.compare(".csv") != 0)
@@ -96,29 +89,19 @@ int MixCompressor::compress()
 	
 	blocks = (fileLines - 1) / blockSize + (((fileLines - 1) % blockSize) != 0);
 
-	tempFilepath = inputFilepath  + "_" + convertDouble(AVG_ERR_MAX) + ".tmp";
-	outputFilepath = inputFilepath + "_" + convertDouble(AVG_ERR_MAX) + ".hw";
+	std::string avg_err_str;
+	convertDouble(AVG_ERR_MAX, avg_err_str);
+	tempFilepath = inputFilepath  + "_" + avg_err_str + ".tmp";
+	outputFilepath = inputFilepath + "_" + avg_err_str + ".hw";
 
 	std::ifstream in(inputFilepath.c_str(), std::ios::in);
 	std::ofstream tmp_out(tempFilepath.c_str(), std::ios::out | std::ios::trunc);
-	// std::ofstream out(outputFilepath.c_str(), std::ios::out | std::ios::trunc);
 
-	// fileProcPtr = new FileProcessor(&in, &tmp_out, blockSize);
 	fileProcPtr = std::make_shared<FileProcessor>(&in, &tmp_out, blockSize);
 	fileProcPtr->setFileLines(fileLines);
 
-	columnSize = fileProcPtr->initWork();
+	columnSize = fileProcPtr->initWork_old();
 	std::cout << "columnSize = " << columnSize << std::endl;
-
-	// block.resize(blockSize);
-	// for (std::vector<std::string> x : block)
-	// {
-	// 	x.resize(columnSize);
-	// }
-	// std::vector<std::vector<std::string> > tmp_block(blockSize, std::vector<std::string>(columnSize)); 
-
-	// std::vector<std::vector<std::string> > tmp_block(blockSize); 
-	// block = tmp_block;
 
 	int block_count = 0;
 	int line_num_of_block;
@@ -128,7 +111,6 @@ int MixCompressor::compress()
 		block.reserve(columnSize);
 
 		line_num_of_block = fileProcPtr->getOneBlock(block);
-		// std::cout << "line_num_of_block = " << line_num_of_block << std::endl;
 
 		if (line_num_of_block > 0)
 		{
@@ -137,8 +119,9 @@ int MixCompressor::compress()
 
 			std::string lossless_str;
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
+			// TODO 目前是写入中间文件，改成直接无损压缩lossless_str（从内存压缩，减少io）
 			fileProcPtr->writeOneBlock2Tempfile(lossless_str);
-			// std::cout << "str len = " << lossless_str.length() << std::endl;
+			// losslessCompPtr->compress_str_paq9a(lossless_str);
 
 			{
 				std::string t;
@@ -164,31 +147,135 @@ int MixCompressor::compress()
 		}
 		block.clear();
 		block.shrink_to_fit();
-		// std::cout << "block.size() = " << block.size() << std::endl;
 	}
+
 
 	in.close();
 	tmp_out.close();
-
-	// std::cout << "lossless encoding, PPMD algorithm..." << std::endl;
-	// losslessCompPtr->compressFile_ppmd(tempFilepath, outputFilepath);
-	// std::cout << "finish compressFile_ppmd" << std::endl;
 
 	std::cout << "lossless encoding, paq9a algorithm..." << std::endl;
 	losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath);
 	std::cout << "finish compressFile_paq9a" << std::endl;
 
-	// // compress temp file - 7z
-	// losslessCompPtr->compressFile_7z(tempFilepath, outputFilepath, 9);
-	// std::cout << "finish compressFile_7z." << std::endl;
+	deleteTmpFile(tempFilepath);
 
-	// // compress temp file - bz2
-	// losslessCompPtr->compressFile_bz2(tempFilepath, 9);
-	// std::cout << "finish compressFile_bz2." << std::endl;
+	return 1;
+}
 
-	// // compress temp file - paq9a
-	// std::string outputFilepath_paq = outputFilepath + ".paq9a";
-	// losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath_paq);
+/**
+ * @description: 对输入文件进行压缩
+ * @param
+ * @return: int 1表示正常
+ */
+int MixCompressor::compress()
+{
+	std::string suffix = inputFilepath.substr(inputFilepath.length()-4);
+	if (suffix.compare(".csv") != 0)
+	{
+		std::cout << "Don't support this type of file!!! Only CSV files!!!" << std::endl;
+		exit(0);
+	}
+	
+	// get fileLines
+	std::cout << "inputFilepath = " << inputFilepath << std::endl;
+	fileLines = getFileLines(inputFilepath);
+	if (fileLines < 0)
+	{
+		std::cout << "fileLines = " << fileLines << std::endl;
+		exit(1);
+	}
+	
+	blocks = (fileLines - 1) / blockSize + (((fileLines - 1) % blockSize) != 0);
+
+	std::string avg_err_str;
+	convertDouble(AVG_ERR_MAX, avg_err_str);
+	tempFilepath = inputFilepath  + "_" + avg_err_str + ".tmp";
+	outputFilepath = inputFilepath + "_" + avg_err_str + ".hw";
+
+	std::ifstream in(inputFilepath.c_str(), std::ios::in);
+	std::ofstream tmp_out(tempFilepath.c_str(), std::ios::out | std::ios::trunc);
+
+	fileProcPtr = std::make_shared<FileProcessor>(&in, &tmp_out, blockSize);
+	fileProcPtr->setFileLines(fileLines);
+
+	std::string metadatas;
+	std::string header;
+	columnSize = fileProcPtr->initWork(metadatas, header);
+	std::cout << "columnSize = " << columnSize << std::endl;
+
+	int block_count = 0;
+	int line_num_of_block;
+
+	losslessCompPtr->compress_init_paq9a(tempFilepath, outputFilepath);
+	losslessCompPtr->compress_str_paq9a(metadatas);
+	losslessCompPtr->compress_str_paq9a(header);
+
+	std::string lossless_str = "";
+
+	while (true)
+	{
+		block.reserve(columnSize);
+
+		line_num_of_block = fileProcPtr->getOneBlock(block);
+
+		if (line_num_of_block > 0)
+		{
+			++block_count;
+			lossyCompPtr->compressOneBlock(block, line_num_of_block);
+
+			// std::string lossless_str;
+			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
+			// TODO 目前是写入中间文件，改成直接无损压缩lossless_str（从内存压缩，减少io）
+			// fileProcPtr->writeOneBlock2Tempfile(lossless_str);
+			if (lossless_str.length() >= 1024*1024)
+			{
+				losslessCompPtr->compress_str_paq9a(lossless_str);
+				{
+					std::string t;
+					t.swap(lossless_str);
+				}
+				lossless_str = "";
+			}
+
+			
+			std::cout << "\rlossy processing... " << std::fixed << (double)block_count / blocks * 100 << " %";
+			std::cout.flush();
+		}
+		else
+		{
+			std::cout << "\nlossy process " << block_count << " blocks\n"<< std::endl;
+			break;
+		}
+		for(std::vector<std::string> x : block)
+		{
+			for (std::string s : x)
+			{
+				s.clear();
+				std::string().swap(s);
+			}
+			x.clear();
+			std::vector<std::string>().swap(x);
+		}
+		block.clear();
+		block.shrink_to_fit();
+	}
+
+	if (lossless_str.length() > 0)
+	{
+		losslessCompPtr->compress_str_paq9a(lossless_str);
+		{
+			std::string t;
+			t.swap(lossless_str);
+		}
+		lossless_str = "";
+	}
+	losslessCompPtr->compress_paq9a_end();
+
+	in.close();
+	tmp_out.close();
+
+	// std::cout << "lossless encoding, paq9a algorithm..." << std::endl;
+	// losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath);
 	// std::cout << "finish compressFile_paq9a" << std::endl;
 
 	// deleteTmpFile(tempFilepath);
@@ -293,7 +380,11 @@ void MixCompressor::run()
 {
 	if (mode == COMPRESS)
 	{
-		compress();	
+		clock_t startTime = clock();
+		// compress_old();
+		compress();
+		clock_t endTime = clock();
+		std::cout << "total time = " << (double)(endTime - startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
 	}
 	else if (mode == DECOMPRESS) {
 		decompress();

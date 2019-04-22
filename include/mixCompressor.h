@@ -3,12 +3,12 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:33:45
- * @LastEditTime: 2019-04-22 09:55:30
+ * @LastEditTime: 2019-04-22 11:16:54
  */
 
-#include "lossyComp.h"
-#include "losslessComp.h"
-#include "fileProcess.h"
+// #include "lossyComp.h"
+// #include "losslessComp.h"
+// #include "fileProcess.h"
 #include <memory>
 #include <fstream>
 #include <string>
@@ -20,6 +20,9 @@ enum Mode
 	DECOMPRESS
 };
 
+class LosslessCompressor;
+class LossyCompressor;
+class FileProcessor;
 
 class MixCompressor
 {
@@ -27,6 +30,7 @@ public:
 	MixCompressor(double rel_err, double avg_err, std::string input, char mode);
 	virtual ~MixCompressor();
 
+	int compress_old();
 	int compress();
 	int decompress();
 	

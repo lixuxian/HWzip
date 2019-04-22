@@ -21,12 +21,7 @@ void FileProcessor::setFileLines(int lines)
 	this->fileLines = lines;
 }
 
-/**
- * @description: 初始化，检查输入文输出件是否正常打开；获取第一行的文件头、计算文件列数
- * @param
- * @return: int 文件列数
- */
-int FileProcessor::initWork()
+int FileProcessor::initWork_old()
 {
 	if (!in->is_open())
 	{
@@ -56,6 +51,46 @@ int FileProcessor::initWork()
 
 	*out << metadatas << std::endl;
 	*out << header << std::endl;
+
+	return column_num;
+}
+
+/**
+ * @description: 初始化，检查输入文输出件是否正常打开；获取第一行的文件头、计算文件列数
+ * @param
+ * @return: int 文件列数
+ */
+int FileProcessor::initWork(std::string &metadatas, std::string &header)
+{
+	if (!in->is_open())
+	{
+		perror("initWork(), input file can't open");
+		exit(0);
+	}
+
+	if (!out->is_open())
+	{
+		perror("initWork(), output file can't open");
+		exit(0);
+	}
+
+	// header
+	// std::string header;
+	std::getline(*in, header);
+
+	std::vector<std::string> header_splited;
+	splitString(header, header_splited, ",");
+
+	int column_num = header_splited.size();
+	columnSize = column_num;
+
+	// metadatas
+	// blocklines + cols + lossless algorith
+	// std::string metadatas = std::to_string(blockLines) + "," + std::to_string(column_num) + "," + std::to_string(fileLines);
+	metadatas = std::to_string(blockLines) + "," + std::to_string(column_num) + "," + std::to_string(fileLines) + '\n';
+	header += '\n';
+	// *out << metadatas << std::endl;
+	// *out << header << std::endl;
 
 	return column_num;
 }

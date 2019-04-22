@@ -3,13 +3,15 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:36:17
- * @LastEditTime: 2019-04-11 11:40:33
+ * @LastEditTime: 2019-04-22 11:11:10
  */
-#pragma once
 
 #include "baseComp.h"
+// #include "paq9a.h"
 #include <string>
 #include <vector>
+
+class Encoder;
 
 class LosslessCompressor : public BaseCompressor
 {
@@ -43,8 +45,12 @@ public:
 
 	int decompressFile_ppmd(std::string inputFilepath, std::string outputFilepath);
 
-	
+	int compress_init_paq9a(std::string inputFilepath, std::string outputFilepath);
+	int compress_str_paq9a(std::string str);
+	void compress_paq9a_end();
+
 private:
 	double simThreshold;
 	int simRange;
+	Encoder *e;
 };

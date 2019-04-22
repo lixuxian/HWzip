@@ -1,6 +1,6 @@
 #include "losslessComp.h"
-#include "paq9a.h"
 #include "ppmd.h"
+#include "paq9a.h"
 #include <cstdio>
 #include <iostream>
 #include <vector>
@@ -12,7 +12,10 @@ LosslessCompressor::LosslessCompressor() : simThreshold(0.90), simRange(12)
 
 LosslessCompressor::~LosslessCompressor()
 {
-
+	if (e)
+	{
+		delete e;
+	}
 }
 
 /**
@@ -55,7 +58,7 @@ int LosslessCompressor::compressOneBlock(std::vector<std::vector<std::string> > 
 	}
 	int colN = block[0].size();
 
-	lossless_str = "";
+	// lossless_str = "";
 	// first three col are metadatas
 	for (int col = 0; col < colN; ++col)
 	{
@@ -246,32 +249,13 @@ int LosslessCompressor::compressFile_bz2(std::string inputFilepath, int level)
  */
 int LosslessCompressor::compressFile_paq9a(std::string inputFilepath, std::string outputFilepath)
 {
-	// FILE *in = fopen(inputFilepath.c_str(), "rb");
-	// if (!in)
-	// {
-	// 	std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *in == NULL" << std::endl;
-	// 	exit(0);
-	// }
-	// FILE *out = fopen(outputFilepath.c_str(), "wb");
-	// if (!out)
-	// {
-	// 	std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
-	// 	exit(0);
-	// }
-	// Mode_paq m = COMPRESS;
-	// paq9a(in, out, m);
-
-	// fclose(in);
-	// fclose(out);
-
-	// void compress_paq9a(const char* filename, FILE* out, int option) {
 	FILE *out = fopen(outputFilepath.c_str(), "rb");
 	if (out)
 	{
 		std::cout << "Cannot overwrite archive " << outputFilepath << std::endl;
 		exit(1);
 	}
-	out = fopen(outputFilepath.c_str(), "wb");
+	out = fopen(outputFilepath.c_str(), "wb+");
 	if (!out)
 	{
 		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
@@ -295,6 +279,41 @@ int LosslessCompressor::compressFile_ppmd(std::string inputFilepath, std::string
 {
 	ppmd_compress(inputFilepath.c_str(), outputFilepath.c_str());
 	return 1;
+}
+
+int LosslessCompressor::compress_init_paq9a(std::string inputFilepath, std::string outputFilepath)
+{
+	FILE *out = fopen(outputFilepath.c_str(), "rb");
+	if (out)
+	{
+		std::cout << "Cannot overwrite archive " << outputFilepath << std::endl;
+		exit(1);
+	}
+	out = fopen(outputFilepath.c_str(), "wb");
+	if (!out)
+	{
+		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
+		exit(1);
+	}
+	Mode_paq mode = COMPRESS;
+	e = paq9a_compress_init(inputFilepath.c_str(), out, mode);
+	return 1;
+}
+
+int LosslessCompressor::compress_str_paq9a(std::string str)
+{
+	if (this->e == NULL)
+	{
+		std::cout << "LosslessCompressor::compress_str_paq9a(), this->e == NULL" << std::endl;
+		exit(1);
+	}
+	paq9a_compress_str(str.c_str(), e);
+	return 1;
+}
+
+void LosslessCompressor::compress_paq9a_end()
+{
+	paq9a_compress_end(e);
 }
 
 /**

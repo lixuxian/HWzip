@@ -907,6 +907,60 @@ void Encoder::flush() {
   }
 }
 
+
+///////////////////// add by lixuxian, 20190422 //////////////////
+
+Encoder* paq9a_compress_init(const char* filename, FILE* out, Mode_paq mode)
+{
+  if (!lzp && !predictor) {
+    lzp=new LZP;
+    predictor=new Predictor;
+    printf("%8d KiB\b\b\b\b\b\b\b\b\b\b\b\b", allocated>>10);
+  }
+  fprintf(out, "pQ9%c", 1); // 写入版本信息
+  putc('7', out);           // 写入内存配置，默认level 7
+  fprintf(out, "%s", filename); // 写入tmp文件名
+
+  if (mode == COMPRESS)
+  {
+    Encoder *e = new Encoder(COMPRESS, out);
+    return e;
+  }
+  else
+  {
+    printf("paq9a_compress_init(), error mode!!!\n");
+    exit(1);
+  }
+}
+
+void paq9a_compress_str(const char* str, Encoder*&e)
+{
+  if (str == NULL)
+  {
+    return;
+  }
+  int c;
+  while ((c=*str) != '\0') {
+    int cp=lzp->c();
+    if (c==cp)
+      e->code(1);
+    else
+      for (int i=8; i>=0; --i)
+        e->code(c>>i&1);
+    e->count();
+    lzp->update(c);
+    ++str;
+  } 
+  // e.flush();
+}
+
+void paq9a_compress_end(Encoder *e)
+{
+  e->flush();
+}
+///////////////////// add by lixuxian, 20190422 //////////////////
+
+
 /////////////////////////// paq9a ////////////////////////////////
 
 // Compress or decompress from in to out, depending on whether mode
@@ -930,7 +984,7 @@ void paq9a(FILE* in, FILE* out, Mode_paq mode) {
           e.code(c>>i&1);
       e.count();
       lzp->update(c);
-    }
+    } 
     e.flush();
   }
   else {  // DECOMPRESS
@@ -1023,15 +1077,15 @@ FILE* open_archive(const char* filename) {
 // Compress filename to out.  option is 'c' to compress or 's' to store.
 void compress_paq9a(const char* filename, FILE* out) {
 
-  fprintf(out, "pQ9%c", 1);
-  putc('7', out);
+  fprintf(out, "pQ9%c", 1); // 写入版本信息
+  putc('7', out);           // 写入内存配置，默认level 7
   // Open input file
   FILE* in=fopen(filename, "rb");
   if (!in) {
     printf("File not found: %s\n", filename);
     return;
   }
-  fprintf(out, "%s", filename);
+  fprintf(out, "%s", filename); // 写入文件名
   printf("%-40s ", filename);
 
   // Compress depending on option

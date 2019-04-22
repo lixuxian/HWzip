@@ -43,8 +43,11 @@ std::string SimplifyData::getBestData(std::string data, double err, std::vector<
 
 	// TODO
 	// 两个函数可以合并为一个
-	std::string ls = simplifyDataCeil(convertDouble(lTmp), convertDouble(uTmp));
-	std::string us = simplifyDataFloor(	convertDouble(lTmp), convertDouble(uTmp));
+	std::string lTmp_str, uTmp_str;
+	convertDouble(lTmp, lTmp_str);
+	convertDouble(uTmp, uTmp_str);
+	std::string ls = simplifyDataCeil(lTmp_str, uTmp_str);
+	std::string us = simplifyDataFloor(	lTmp_str, uTmp_str);
 
 	return getBestDataFromInterval(ls, us, cFreq);
 }
@@ -69,8 +72,10 @@ std::string SimplifyData::getBestDataFromInterval(std::string ls, std::string us
 		return ls;
 	}
 
-	std::string lsTmp = trimZeros(ls); // 去除头尾的0
-	std::string usTmp = trimZeros(us);
+	std::string lsTmp; 
+	trimZeros(ls, lsTmp); // 去除头尾的0
+	std::string usTmp; 
+	trimZeros(us, usTmp);
 
 	// 若有个数比较短，则返回短的
 	if (lsTmp.length() > usTmp.length())
@@ -167,7 +172,7 @@ std::string SimplifyData::getBestDataFromInterval(std::string ls, std::string us
  * @param str 待处理数据
  * @return: string 处理后的数据
  */
-std::string SimplifyData::trimZeros(std::string str)
+void SimplifyData::trimZeros(std::string str, std::string &result)
 {
 	int start = 0;
 	int end = str.length() - 1;
@@ -179,9 +184,11 @@ std::string SimplifyData::trimZeros(std::string str)
 	{
 		--end;
 	}
-	std::string res = str.substr(start, end - start + 1);
-
-	return res == "" ? "0" : res;
+	result = str.substr(start, end - start + 1);
+	if (result == "")
+	{
+		result = "0";
+	}
 }
 
 
@@ -240,7 +247,9 @@ std::string SimplifyData::simplifyDataCeil(std::string s1, std::string s2)
 		lowerTmp = base * std::ceil(lower / base);
 		if (lowerTmp >= lower && lowerTmp <= upper)
 		{
-			return 	convertDouble(lowerTmp);
+			std::string res;
+			convertDouble(lowerTmp, res);
+			return res;
 		}
 	}
 	return s1;
@@ -301,7 +310,9 @@ std::string SimplifyData::simplifyDataFloor(std::string s1, std::string s2)
 		upTmp = base * std::floor(upper / base);
 		if (upTmp >= lower && upTmp <= upper)
 		{
-			return 	convertDouble(upTmp);
+			std::string res;
+			convertDouble(upTmp, res);
+			return res;
 		}
 	}
 	return s2;
@@ -313,20 +324,20 @@ std::string SimplifyData::simplifyDataFloor(std::string s1, std::string s2)
  * @param err 误差阈值
  * @return: string 简化后的数值
  */
-std::string SimplifyData::simpData(std::string data, double err)
+void SimplifyData::simpData(std::string data, double err, std::string &result)
 {
 	
 	if (data.find('e') != std::string::npos || data.find('E') != std::string::npos)
 	{
-		return restoreE0(data, err);
+		restoreE0(data, err, result);
 	}
 	else if (data.find('.') != std::string::npos)
 	{
-		return simplifyFloat(data, err);
+		simplifyFloat(data, err, result);
 	}
 	else
 	{
-		return simplifyInt(data, err);
+		simplifyInt(data, err, result);
 	}
 }
 
@@ -336,10 +347,8 @@ std::string SimplifyData::simpData(std::string data, double err)
  * @param err 误差阈值
  * @return: string 简化后的浮点数值
  */
-std::string SimplifyData::simplifyFloat(std::string f_data, double err)
+void SimplifyData::simplifyFloat(std::string f_data, double err, std::string &result)
 {
-	std::string result;
-
 	int flag = 0;
 	if (f_data[0] == '-')
 	{
@@ -348,21 +357,21 @@ std::string SimplifyData::simplifyFloat(std::string f_data, double err)
 	double abs_f_data = std::abs(Stod(f_data));
 	if (abs_f_data > 100)
 	{
-		result = simplifyFloat_bigger_than_100(f_data, err);
+		// result = simplifyFloat_bigger_than_100(f_data, err);
+		simplifyFloat_bigger_than_100(f_data, err, result);
 	}
 	else if (abs_f_data > 10)
 	{
-		result = simplifyFloat_bigger_than_10(f_data, err);
+		simplifyFloat_bigger_than_10(f_data, err, result);
 	}
 	else if (abs_f_data > 1)
 	{
-		result = simplifyFloat_bigger_than_1(f_data, err);
+		simplifyFloat_bigger_than_1(f_data, err, result);
 	}
 	else
 	{
-		result = simplifyFloat_smaller_than_1(f_data, err);
+		simplifyFloat_smaller_than_1(f_data, err, result);
 	}
-	return result;
 }
 
 /**
@@ -371,9 +380,10 @@ std::string SimplifyData::simplifyFloat(std::string f_data, double err)
  * @param err 误差阈值
  * @return: string 简化后的整型数值
  */
-std::string SimplifyData::simplifyInt(std::string i_data, double err)
+void SimplifyData::simplifyInt(std::string i_data, double err, std::string &result)
 {
-	std::string result = i_data;
+	// std::string result = i_data;
+	result = i_data;
 	int isNav = 0;
 	if (i_data.find('.') != std::string::npos)
 	{
@@ -383,7 +393,8 @@ std::string SimplifyData::simplifyInt(std::string i_data, double err)
 	int len = i_data.length();
 	if (len - isNav == 1) // 个位数
 	{
-		return i_data;
+		// return i_data;
+		result = i_data;
 	}
 
 	// 2位以上,从高位第2位开始四舍五入
@@ -408,7 +419,7 @@ std::string SimplifyData::simplifyInt(std::string i_data, double err)
 			result = tmp;
 		}
 	}
-	return result;
+	return;
 }
 
 /**
@@ -417,9 +428,10 @@ std::string SimplifyData::simplifyInt(std::string i_data, double err)
  * @param err 误差阈值
  * @return: string 处理后的数值
  */
-std::string SimplifyData::restoreE0(std::string e_data, double err)
+void SimplifyData::restoreE0(std::string e_data, double err, std::string &result)
 {
-	std::string result = "";
+	// std::string result = "";
+	result = "";
 	std::vector<std::string> splited_data;
 	if (e_data.find("E") != std::string::npos) {
 		splitString(e_data, splited_data, "E");
@@ -429,17 +441,20 @@ std::string SimplifyData::restoreE0(std::string e_data, double err)
 	}
 	if (splited_data[0].find('.') != std::string::npos)
 	{
-		splited_data[0] = simplifyFloat(splited_data[0], err);
+		// splited_data[0] = simplifyFloat(splited_data[0], err);
+		simplifyFloat(splited_data[0], err, splited_data[0]);
 	}
 	else
 	{
-		splited_data[0] = simplifyInt(splited_data[0], err);
+		// splited_data[0] = simplifyInt(splited_data[0], err);
+		simplifyInt(splited_data[0], err, splited_data[0]);
 	}
 	result = splited_data[0] + "E" + splited_data[1];
 	std::string result1 = result;
-	result = convertDouble(Stod(result));
 	
-	return result;
+	convertDouble(Stod(result), result);
+	
+	// return result;
 }
 
 /**
@@ -448,7 +463,7 @@ std::string SimplifyData::restoreE0(std::string e_data, double err)
  * @param err 误差阈值
  * @return: string 简化后的数值
  */
-std::string SimplifyData::simplifyFloat_bigger_than_1(std::string data, double err)
+void SimplifyData::simplifyFloat_bigger_than_1(std::string data, double err, std::string &result)
 {
 	int flag = 0;
 	if (data[0] == '-')
@@ -459,7 +474,9 @@ std::string SimplifyData::simplifyFloat_bigger_than_1(std::string data, double e
 	int res = std::round(Stod(data)); // 不保留小数
 	if (errComp.pwRelErr(data, res) <= err)
 	{
-		return 	convertDouble(res);
+		// std::string res_str;
+		convertDouble(res, result);
+		return;
 	}
 
 	{
@@ -468,19 +485,22 @@ std::string SimplifyData::simplifyFloat_bigger_than_1(std::string data, double e
 		tmp[2+flag] = data[0+flag];
 		if (errComp.pwRelErr(data, tmp) <= err)
 		{
-			return tmp;
+			result = tmp;
+			return;
 		}
 	}
 
 	double round = (double)(std::round(Stod(data) * 10) / 10); // 保留一位小数
 	if (errComp.pwRelErr(data, round) <= err)
 	{
-		return 	convertDouble(round);
+		convertDouble(round, result);
+		return;
 	}
 	else
 	{
 		round = (double)(std::round(Stod(data) * 100) / 100);
-		return 	convertDouble(round);
+		convertDouble(round, result);
+		return;
 	}
 }
 
@@ -490,7 +510,7 @@ std::string SimplifyData::simplifyFloat_bigger_than_1(std::string data, double e
  * @param err 误差阈值
  * @return: string 简化后的数值
  */
-std::string SimplifyData::simplifyFloat_bigger_than_10(std::string data, double err)
+void SimplifyData::simplifyFloat_bigger_than_10(std::string data, double err, std::string &result)
 {
 	int flag = 0;
 	if (data[0] == '-')
@@ -508,18 +528,21 @@ std::string SimplifyData::simplifyFloat_bigger_than_10(std::string data, double 
 			dataTmp[1+flag] = data[0+flag];
 			if (errComp.pwRelErr(data, dataTmp) <= err)
 			{
-				return dataTmp;
+				result = dataTmp;
+				return;
 			}
 		}
 
 		round1 = std::round(Stod(data));
 		if (errComp.pwRelErr(data, (double)round1) > err)
 		{
-			return 	convertDouble(std::round(Stod(data) * 10) / 10); // 保留一位小数
+			convertDouble(std::round(Stod(data) * 10) / 10, result);
+			return;
 		}
 
 	}
-	return 	convertDouble(round1);
+	convertDouble(round1, result);
+	return;
 }
 
 /**
@@ -528,10 +551,12 @@ std::string SimplifyData::simplifyFloat_bigger_than_10(std::string data, double 
  * @param err 误差阈值
  * @return: string 简化后的数值
  */
-std::string SimplifyData::simplifyFloat_bigger_than_100(std::string data, double err)
+void SimplifyData::simplifyFloat_bigger_than_100(std::string data, double err, std::string &result)
 {
-	std::string result = data.substr(0, data.find('.'));
-	result = simplifyInt(result, err);
+	// std::string result = data.substr(0, data.find('.'));
+	result = data.substr(0, data.find('.'));
+	// result = simplifyInt(result, err);
+	simplifyInt(result, err, result);
 	if (errComp.pwRelErr(data, result) > err)
 	{
 		int tmp = std::round(Stod(data) / 10) * 10;
@@ -544,7 +569,7 @@ std::string SimplifyData::simplifyFloat_bigger_than_100(std::string data, double
 			result = std::to_string(std::round(Stod(data)));
 		}
 	}
-	return result;
+	return;
 }
 
 /**
@@ -553,13 +578,14 @@ std::string SimplifyData::simplifyFloat_bigger_than_100(std::string data, double
  * @param err 误差阈值
  * @return: string 简化后的数值
  */
-std::string SimplifyData::simplifyFloat_smaller_than_1(std::string data, double err)
+void SimplifyData::simplifyFloat_smaller_than_1(std::string data, double err, std::string &result)
 {
 	if (isZeroOrNA(data)) {
-		return "0";
+		result = "0";
+		return;
 	}
 
-	std::string result;
+	// std::string result;
 
 	int flag = 0;
 	if (data[0] == '-')
@@ -581,7 +607,8 @@ std::string SimplifyData::simplifyFloat_smaller_than_1(std::string data, double 
 		int round = std::round(Stod(data));
 		if (errComp.pwRelErr(data, round) <= err)
 		{
-			return std::to_string(round);
+			result = std::to_string(round);
+			return;
 		}
 	}
 
@@ -592,7 +619,7 @@ std::string SimplifyData::simplifyFloat_smaller_than_1(std::string data, double 
 		double round = (double)(std::round(Stod(data) * num) / num);
 		if (errComp.pwRelErr(data, round) <= err)
 		{
-			result = convertDouble(round);
+			convertDouble(round, result);
 			break;
 		}
 	}
@@ -605,13 +632,14 @@ std::string SimplifyData::simplifyFloat_smaller_than_1(std::string data, double 
 		if (errComp.pwRelErr(data, tmp) <= err)
 		{
 			result = tmp;
-			return result;
+			return;
 		}
 	}
 
 	if (Stod(result) == 0.0)
 	{
-		return "0";
+		result = "0";
+		return;
 	}
-	return result;
+	return;
 }

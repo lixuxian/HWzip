@@ -3,9 +3,8 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 18:10:11
- * @LastEditTime: 2019-04-11 14:23:58
+ * @LastEditTime: 2019-04-22 11:19:42
  */
-#pragma once
 
 #include <string>
 #include <vector>
@@ -18,7 +17,8 @@ public:
 	FileProcessor(std::ifstream *in, std::ofstream *out, int blockSize);
 	~FileProcessor();
 
-	int initWork(); // store head、time and ID
+	int initWork_old();
+	int initWork(std::string &metadatas, std::string &header); // store head、time and ID
 
 	int getOneBlock(std::vector<std::vector<std::string> > &block);
 	int writeOneBlock2Tempfile(std::vector<std::vector<std::string> > &block, int line_num);

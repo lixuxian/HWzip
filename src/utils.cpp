@@ -81,9 +81,9 @@ std::string convertDouble_old(double value)
  * @param value 待转换的浮点数
  * @return: string 转换后的字符串
  */
-std::string convertDouble(double value)  
+void convertDouble(double value, std::string &res)  
 {
-  std::string res;
+  // std::string res;
   char buf[24] = { 0 };
   snprintf(buf, 24, "%.10f", value);
   res = buf;
@@ -99,7 +99,7 @@ std::string convertDouble(double value)
     }
     res = res.substr(0, i + 1);
   }
-  return res;
+  // return res;
 }
 
 /**

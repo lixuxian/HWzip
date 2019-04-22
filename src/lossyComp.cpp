@@ -41,7 +41,8 @@ void LossyCompressor::processZeroOrE(std::string &data, double err)
 		data = "0";
 	} else if (containE(data))
 	{
-		data = simplifyData.restoreE0(data, err);
+		// data = simplifyData.restoreE0(data, err);
+		simplifyData.restoreE0(data, err, data);
 	} else {
 		perror("LossyCompressor::processZeroOrE(), not zero or E!");
 	}
@@ -60,7 +61,10 @@ void LossyCompressor::processIntervalRange(double &low, double &up)
 	{
 		std::swap(up, low); // 负数
 	}
-	std::string low_tmp = simplifyData.simplifyDataCeil(convertDouble(low), convertDouble(up));
+	std::string low_str, up_str;
+	convertDouble(low, low_str);
+	convertDouble(up, up_str);
+	std::string low_tmp = simplifyData.simplifyDataCeil(low_str, up_str);
 	if (low_tmp == "")
 	{
 		low = 0;
@@ -68,7 +72,7 @@ void LossyCompressor::processIntervalRange(double &low, double &up)
 		low = Stod(low_tmp);
 	}
 	
-	std::string up_tmp = simplifyData.simplifyDataFloor(convertDouble(low), convertDouble(up));
+	std::string up_tmp = simplifyData.simplifyDataFloor(low_str, up_str);
 	if (up_tmp == "")
 	{
 		up = 0;
@@ -164,7 +168,10 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 				// TODO 更改处理方式，使用字符替换的方式
 				processZeroOrE(block[k][j], PW_REL_ERR_MAX);
 				// process interval
-				std::string bestData = simplifyData.getBestDataFromInterval(convertDouble(low1), convertDouble(up1), cFreq);
+				std::string low1_str, up1_str;
+				convertDouble(low1, low1_str);
+				convertDouble(up1, up1_str);
+				std::string bestData = simplifyData.getBestDataFromInterval(low1_str, up1_str, cFreq);
 				for (int i = start; i <= end; ++i)
 				{		
 					block[i][j] = bestData;
@@ -208,7 +215,10 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 				} else { // 无交集
 					// 处理区间内数据
 					// 更新start、end、up1、low1
-					std::string bestData = simplifyData.getBestDataFromInterval(convertDouble(low1), convertDouble(up1), cFreq);
+					std::string low1_str, up1_str;
+					convertDouble(low1, low1_str);
+					convertDouble(up1, up1_str);
+					std::string bestData = simplifyData.getBestDataFromInterval(low1_str, up1_str, cFreq);
 					for (int i = start; i <= end; ++i)
 					{
 						block[i][j] = bestData;
@@ -297,7 +307,8 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 				for (int i = start; i <= end; ++i)
 				{		
 					// block[i][j] = std::to_string(up1);
-					block[i][j] = convertDouble(up1);
+					// block[i][j] = convertDouble(up1);
+					convertDouble(up1, block[i][j]);
 					// std::cout << "block[i][j] = " << block[i][j] << std::endl;
 					updateFreq(block[i][j]);
 				}
@@ -315,7 +326,8 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 					up1 = Stod(block[k][j]) * UP;
 					low1 = Stod(block[k][j]) * LOW;
 					processIntervalRange(low1, up1);
-					block[k][j] = convertDouble(up1);
+					// block[k][j] = convertDouble(up1);
+					convertDouble(up1, block[k][j]);
 					// std::cout << "block[i][j] = " << block[k][j] << std::endl;
 					break;
 				}
@@ -341,7 +353,8 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 					for (int i = start; i <= end; ++i)
 					{
 						// block[i][j] = std::to_string(up1);
-						block[i][j] = convertDouble(up1);
+						// block[i][j] = convertDouble(up1);
+						convertDouble(up1, block[i][j]);
 						updateFreq(block[i][j]);
 					}
 					// update
@@ -358,7 +371,8 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 						up1 = Stod(block[k][j]) * UP;
 						low1 = Stod(block[k][j]) * LOW;
 						processIntervalRange(low1, up1);
-						block[k][j] = convertDouble(up1);
+						// block[k][j] = convertDouble(up1);
+						convertDouble(up1, block[k][j]);
 						break;
 					}
 					// update
