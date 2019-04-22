@@ -384,10 +384,13 @@ void MixCompressor::run()
 		// compress_old();
 		compress();
 		clock_t endTime = clock();
-		std::cout << "total time = " << (double)(endTime - startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
+		std::cout << "compress total time = " << (double)(endTime - startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
 	}
 	else if (mode == DECOMPRESS) {
+		clock_t startTime = clock();
 		decompress();
+		clock_t endTime = clock();
+		std::cout << "decompress total time = " << (double)(endTime - startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
 	}
 }
 
