@@ -13,8 +13,10 @@ MixCompressor::MixCompressor(double rel_err, double avg_err,
 	std::string input, char mode) : PW_REL_ERR_MAX(rel_err), AVG_ERR_MAX(avg_err), 
 	inputFilepath(input), mode(mode)
 {
-	lossyCompPtr = new LossyCompressor(rel_err, avg_err);
-	losslessCompPtr = new LosslessCompressor();
+	// lossyCompPtr = new LossyCompressor(rel_err, avg_err);
+	// losslessCompPtr = new LosslessCompressor();
+	lossyCompPtr = std::make_shared<LossyCompressor>(rel_err, avg_err);
+	losslessCompPtr = std::make_shared<LosslessCompressor>();
 
 	blockSize = 3000;
 	columnSize = 0;
@@ -25,18 +27,18 @@ MixCompressor::MixCompressor(double rel_err, double avg_err,
  */
 MixCompressor::~MixCompressor()
 {
-	if (lossyCompPtr)
-	{
-		delete lossyCompPtr;
-	}
-	if (losslessCompPtr)
-	{
-		delete losslessCompPtr;
-	}
-	if (fileProcPtr)
-	{
-		delete fileProcPtr;
-	}
+	// if (lossyCompPtr)
+	// {
+	// 	delete lossyCompPtr;
+	// }
+	// if (losslessCompPtr)
+	// {
+	// 	delete losslessCompPtr;
+	// }
+	// if (fileProcPtr)
+	// {
+	// 	delete fileProcPtr;
+	// }
 	block.clear();
 	for (std::vector<std::string> x : block)
 	{
@@ -57,7 +59,7 @@ int MixCompressor::getFileLines(std::string inputFilepath)
 {
 	std::ifstream in(inputFilepath.c_str(), std::ios::in);
 	if (!in.is_open()) {
-		std::cout << "MixCompressor::getFileLines(), !in.is_open()" << std::endl;
+		std::cout << "MixCompressor::getFileLines(), !in.is_open() " << inputFilepath << std::endl;
 		return -1;
 	}
 	std::string line;
@@ -84,7 +86,14 @@ int MixCompressor::compress()
 	}
 	
 	// get fileLines
+	std::cout << "inputFilepath = " << inputFilepath << std::endl;
 	fileLines = getFileLines(inputFilepath);
+	if (fileLines < 0)
+	{
+		std::cout << "fileLines = " << fileLines << std::endl;
+		exit(1);
+	}
+	
 	blocks = (fileLines - 1) / blockSize + (((fileLines - 1) % blockSize) != 0);
 
 	tempFilepath = inputFilepath  + "_" + convertDouble(AVG_ERR_MAX) + ".tmp";
@@ -94,7 +103,8 @@ int MixCompressor::compress()
 	std::ofstream tmp_out(tempFilepath.c_str(), std::ios::out | std::ios::trunc);
 	// std::ofstream out(outputFilepath.c_str(), std::ios::out | std::ios::trunc);
 
-	fileProcPtr = new FileProcessor(&in, &tmp_out, blockSize);
+	// fileProcPtr = new FileProcessor(&in, &tmp_out, blockSize);
+	fileProcPtr = std::make_shared<FileProcessor>(&in, &tmp_out, blockSize);
 	fileProcPtr->setFileLines(fileLines);
 
 	columnSize = fileProcPtr->initWork();
@@ -233,7 +243,8 @@ int MixCompressor::decompress()
 	std::ifstream tmp_in(tempFilepath.c_str(), std::ios::in);
 	std::ofstream out(outputFilepath.c_str(), std::ios::out | std::ios::trunc);
 
-	fileProcPtr = new FileProcessor(&tmp_in, &out, blockSize);
+	// fileProcPtr = new FileProcessor(&tmp_in, &out, blockSize);
+	fileProcPtr = std::make_shared<FileProcessor>(&tmp_in, &out, blockSize);
 
 	fileProcPtr->getMetadata(blockSize, columnSize, fileLines, blocks);
 	std::cout << "blockSize = " << blockSize << std::endl;

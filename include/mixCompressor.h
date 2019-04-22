@@ -3,9 +3,8 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:33:45
- * @LastEditTime: 2019-04-14 13:44:38
+ * @LastEditTime: 2019-04-22 09:55:30
  */
-#pragma once
 
 #include "lossyComp.h"
 #include "losslessComp.h"
@@ -42,9 +41,13 @@ private:
 
 	int getFileLines(std::string inputFilepath);
 
-	LossyCompressor *lossyCompPtr;
-	LosslessCompressor *losslessCompPtr;
-	FileProcessor *fileProcPtr;
+	// LossyCompressor *lossyCompPtr;
+	// LosslessCompressor *losslessCompPtr;
+	// FileProcessor *fileProcPtr;
+
+	std::shared_ptr<LossyCompressor> lossyCompPtr;
+	std::shared_ptr<LosslessCompressor> losslessCompPtr;
+	std::shared_ptr<FileProcessor> fileProcPtr;
 
 	std::vector<std::vector<std::string> > block; 
 

@@ -80,15 +80,17 @@ int main(int argc, char const *argv[])
 	{
 		exit(-1);
 	}
-
-	MixCompressor *mixComp = new MixCompressor(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
+	// std::cout << "main(): input = " << paras.inputFile << std::endl;
+	// MixCompressor *mixComp = new MixCompressor(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
+	// 	, paras.inputFile, paras.mode);
+	std::shared_ptr<MixCompressor> mixComp = std::make_shared<MixCompressor>(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
 		, paras.inputFile, paras.mode);
 
 	mixComp->run();
 
 	// std::cout << "run() finish" << std::endl;
 	
-	delete mixComp;
+	// delete mixComp;
 
 
 	return 0;

@@ -1,0 +1,73 @@
+dir = /Users/lixuxian/compress/HWzip/file
+file size = 26732269 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/2.csv_0.01.hw
+decompress /Users/lixuxian/compress/HWzip/file/2.csv_0.01.hw time: 418, speed: 63952 bps
+file size = 22489753 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/2.csv_0.03.hw
+decompress /Users/lixuxian/compress/HWzip/file/2.csv_0.03.hw time: 358, speed: 62820 bps
+file size = 20189368 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/2.csv_0.05.hw
+decompress /Users/lixuxian/compress/HWzip/file/2.csv_0.05.hw time: 315, speed: 64093 bps
+file size = 16691620 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/3.csv_0.01.hw
+decompress /Users/lixuxian/compress/HWzip/file/3.csv_0.01.hw time: 264, speed: 63225 bps
+file size = 13528541 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/3.csv_0.03.hw
+decompress /Users/lixuxian/compress/HWzip/file/3.csv_0.03.hw time: 214, speed: 63217 bps
+file size = 12008897 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/3.csv_0.05.hw
+decompress /Users/lixuxian/compress/HWzip/file/3.csv_0.05.hw time: 191, speed: 62873 bps
+file size = 28743233 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/4.csv_0.01.hw
+decompress /Users/lixuxian/compress/HWzip/file/4.csv_0.01.hw time: 451, speed: 63732 bps
+file size = 24043545 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/4.csv_0.03.hw
+decompress /Users/lixuxian/compress/HWzip/file/4.csv_0.03.hw time: 378, speed: 63607 bps
+file size = 21490327 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/4.csv_0.05.hw
+decompress /Users/lixuxian/compress/HWzip/file/4.csv_0.05.hw time: 337, speed: 63769 bps
+file size = 28810222 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/5.csv_0.01.hw
+decompress /Users/lixuxian/compress/HWzip/file/5.csv_0.01.hw time: 457, speed: 63042 bps
+file size = 24141902 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/5.csv_0.03.hw
+decompress /Users/lixuxian/compress/HWzip/file/5.csv_0.03.hw time: 384, speed: 62869 bps
+file size = 21596810 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/5.csv_0.05.hw
+decompress /Users/lixuxian/compress/HWzip/file/5.csv_0.05.hw time: 339, speed: 63707 bps
+file size = 36488240 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/6.csv_0.01.hw
+decompress /Users/lixuxian/compress/HWzip/file/6.csv_0.01.hw time: 575, speed: 63457 bps
+file size = 29990556 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/6.csv_0.03.hw
+decompress /Users/lixuxian/compress/HWzip/file/6.csv_0.03.hw time: 478, speed: 62741 bps
+file size = 26802022 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/6.csv_0.05.hw
+decompress /Users/lixuxian/compress/HWzip/file/6.csv_0.05.hw time: 421, speed: 63662 bps
+file size = 8110628 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/7.csv_0.01.hw
+decompress /Users/lixuxian/compress/HWzip/file/7.csv_0.01.hw time: 131, speed: 61913 bps
+file size = 6481312 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/7.csv_0.03.hw
+decompress /Users/lixuxian/compress/HWzip/file/7.csv_0.03.hw time: 107, speed: 60573 bps
+file size = 5661889 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/7.csv_0.05.hw
+decompress /Users/lixuxian/compress/HWzip/file/7.csv_0.05.hw time: 93, speed: 60880 bps
+file size = 30034152 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/8.csv_0.01.hw
+decompress /Users/lixuxian/compress/HWzip/file/8.csv_0.01.hw time: 476, speed: 63096 bps
+file size = 25193845 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/8.csv_0.03.hw
+decompress /Users/lixuxian/compress/HWzip/file/8.csv_0.03.hw time: 400, speed: 62984 bps
+file size = 22551201 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/8.csv_0.05.hw
+decompress /Users/lixuxian/compress/HWzip/file/8.csv_0.05.hw time: 354, speed: 63703 bps
+file size = 30115595 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/9.csv_0.01.hw
+decompress /Users/lixuxian/compress/HWzip/file/9.csv_0.01.hw time: 474, speed: 63535 bps
+file size = 24923858 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/9.csv_0.03.hw
+decompress /Users/lixuxian/compress/HWzip/file/9.csv_0.03.hw time: 392, speed: 63581 bps
+file size = 22500526 bytes
+cmd = ../bin/hwzip-mac d /Users/lixuxian/compress/HWzip/file/9.csv_0.05.hw
+decompress /Users/lixuxian/compress/HWzip/file/9.csv_0.05.hw time: 352, speed: 63921 bps
