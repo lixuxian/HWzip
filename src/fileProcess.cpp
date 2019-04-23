@@ -185,6 +185,7 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 				// }
 				splitString(line, line_splited, ",");
 				// block[i] = line_splited;
+				// 如果结尾为逗号‘，’，则split的结果size小于columnSize，补0
 				if (line_splited.size() < columnSize)
 				{
 					for (size_t i = line_splited.size(); i < columnSize; i++)

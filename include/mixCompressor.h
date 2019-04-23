@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:33:45
- * @LastEditTime: 2019-04-22 11:16:54
+ * @LastEditTime: 2019-04-23 14:48:42
  */
 
 // #include "lossyComp.h"
@@ -30,7 +30,7 @@ public:
 	MixCompressor(double rel_err, double avg_err, std::string input, char mode);
 	virtual ~MixCompressor();
 
-	int compress_old();
+	int compress_ppmd();
 	int compress();
 	int decompress();
 	

@@ -69,8 +69,10 @@ int MixCompressor::getFileLines(std::string inputFilepath)
  * @param
  * @return: 
  */
-int MixCompressor::compress_old()
+int MixCompressor::compress_ppmd()
 {
+	// TODO 
+	// 封装成一个函数，用于检测文件后缀名
 	std::string suffix = inputFilepath.substr(inputFilepath.length()-4);
 	if (suffix.compare(".csv") != 0)
 	{
@@ -115,14 +117,14 @@ int MixCompressor::compress_old()
 		if (line_num_of_block > 0)
 		{
 			++block_count;
+			// 有损处理一个block的文件，直接修改block中的数据
 			lossyCompPtr->compressOneBlock(block, line_num_of_block);
 
 			std::string lossless_str;
+			// 无损处理一个block的文件，结果存放于lossless_str
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
-			// TODO 目前是写入中间文件，改成直接无损压缩lossless_str（从内存压缩，减少io）
+			// 将处理后的block写入中间文件中，有待后续无损压缩编码
 			fileProcPtr->writeOneBlock2Tempfile(lossless_str);
-			// losslessCompPtr->compress_str_paq9a(lossless_str);
-
 			{
 				std::string t;
 				t.swap(lossless_str);
@@ -153,9 +155,13 @@ int MixCompressor::compress_old()
 	in.close();
 	tmp_out.close();
 
-	std::cout << "lossless encoding, paq9a algorithm..." << std::endl;
-	losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath);
-	std::cout << "finish compressFile_paq9a" << std::endl;
+	// std::cout << "lossless encoding, paq9a algorithm..." << std::endl;
+	// losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath);
+	// std::cout << "finish compressFile_paq9a" << std::endl;
+
+	std::cout << "lossless encoding, ppmd algorithm..." << std::endl;
+	losslessCompPtr->compressFile_ppmd(tempFilepath, outputFilepath);
+	std::cout << "finish compressFile_ppmd" << std::endl;
 
 	deleteTmpFile(tempFilepath);
 
@@ -278,7 +284,7 @@ int MixCompressor::compress()
 	// losslessCompPtr->compressFile_paq9a(tempFilepath, outputFilepath);
 	// std::cout << "finish compressFile_paq9a" << std::endl;
 
-	// deleteTmpFile(tempFilepath);
+	deleteTmpFile(tempFilepath); // 实际上是个空文件
 
 	return 1;
 }
@@ -381,8 +387,8 @@ void MixCompressor::run()
 	if (mode == COMPRESS)
 	{
 		clock_t startTime = clock();
-		// compress_old();
-		compress();
+		compress_ppmd();
+		// compress();
 		clock_t endTime = clock();
 		std::cout << "compress total time = " << (double)(endTime - startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
 	}
