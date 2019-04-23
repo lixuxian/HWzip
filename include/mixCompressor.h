@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:33:45
- * @LastEditTime: 2019-04-22 11:16:54
+ * @LastEditTime: 2019-04-23 16:58:11
  */
 
 // #include "lossyComp.h"
@@ -23,6 +23,7 @@ enum Mode
 class LosslessCompressor;
 class LossyCompressor;
 class FileProcessor;
+class Task;
 
 class MixCompressor
 {
@@ -32,11 +33,14 @@ public:
 
 	int compress_old();
 	int compress();
+	int compress_thread();
 	int decompress();
 	
 	void run();
 
 	int deleteTmpFile(std::string &tmpfile);
+
+	void setTask(std::shared_ptr<Task> &t);
 
 private:
 	// LossyCompressor *lossyComp;
@@ -69,4 +73,5 @@ private:
 	int fileLines;
 	int blocks;
 
+	std::shared_ptr<Task> task;
 };

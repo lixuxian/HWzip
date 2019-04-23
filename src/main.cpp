@@ -3,6 +3,9 @@
 #include <vector>
 #include <iostream>
 #include <cmath>
+#include <thread>
+#include "task.h"
+#include "paqCompresssor.h"
 
 /**
  * @description: 帮助信息，关于可执行程序的使用
@@ -62,6 +65,17 @@ int getParas(int argc, char const *argv[])
 	return 1;
 }
 
+void thread_lossy(std::shared_ptr<MixCompressor> mixComp, std::shared_ptr<Task> task)
+{
+	mixComp->setTask(task);
+	mixComp->run();
+}
+
+void thread_lossless(std::shared_ptr<PaqCompresssor> paqComp, std::shared_ptr<Task> task)
+{
+	paqComp->setTask(task);
+	paqComp->run();
+}
 /**
  * @description: 程序入口
  * @param argc 参数个数
@@ -80,18 +94,27 @@ int main(int argc, char const *argv[])
 	{
 		exit(-1);
 	}
-	// std::cout << "main(): input = " << paras.inputFile << std::endl;
-	// MixCompressor *mixComp = new MixCompressor(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
+
+	// double thread version
+	
+	// std::shared_ptr<MixCompressor> mixComp = std::make_shared<MixCompressor>(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
 	// 	, paras.inputFile, paras.mode);
+
+	// std::shared_ptr<PaqCompresssor> paqComp = std::make_shared<PaqCompresssor>();
+
+	// std::shared_ptr<Task> task = std::make_shared<Task>(20);
+	
+
+	// std::thread lossy(thread_lossy, mixComp, task);
+	// std::thread lossless(thread_lossless, paqComp, task);
+	// lossy.join();
+	// lossless.join();
+
+	// single thread version
 	std::shared_ptr<MixCompressor> mixComp = std::make_shared<MixCompressor>(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
 		, paras.inputFile, paras.mode);
 
 	mixComp->run();
-
-	// std::cout << "run() finish" << std::endl;
-	
-	// delete mixComp;
-
 
 	return 0;
 }
