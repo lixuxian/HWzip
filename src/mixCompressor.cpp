@@ -323,7 +323,6 @@ int MixCompressor::decompress()
 	// tempFilepath = inputFilepath + ".tmp";
 	// outputFilepath = inputFilepath + ".hw";
 
-	// losslessCompPtr->decompressFile_7z(inputFilepath);
 
 	// std::cout << "lossless decoding, PPMD algorithm" << std::endl;
 	// losslessCompPtr->decompressFile_ppmd(inputFilepath, tempFilepath);
@@ -387,8 +386,8 @@ void MixCompressor::run()
 	if (mode == COMPRESS)
 	{
 		clock_t startTime = clock();
-		compress_ppmd();
-		// compress();
+		// compress_ppmd();
+		compress();
 		clock_t endTime = clock();
 		std::cout << "compress total time = " << (double)(endTime - startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
 	}
