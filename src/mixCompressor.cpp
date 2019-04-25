@@ -216,7 +216,7 @@ int MixCompressor::compress()
 	while (true)
 	{
 		block.reserve(columnSize);
-
+		clock_t s = clock();
 		line_num_of_block = fileProcPtr->getOneBlock(block);
 
 		if (line_num_of_block > 0)
@@ -228,6 +228,8 @@ int MixCompressor::compress()
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
 			// TODO 目前是写入中间文件，改成直接无损压缩lossless_str（从内存压缩，减少io）
 			// fileProcPtr->writeOneBlock2Tempfile(lossless_str);
+			clock_t e = clock();
+			std::cout << "lossyCompPtr->compressOneBlock() time = " << (double)(e - s)/CLOCKS_PER_SEC << std::endl;
 			if (lossless_str.length() >= 1024*1024)
 			{
 				losslessCompPtr->compress_str_paq9a(lossless_str);
@@ -333,10 +335,11 @@ int MixCompressor::compress_thread()
 	int block_count = 0;
 	int line_num_of_block;
 
-	// TODO 修改逻辑
+	
 	// losslessCompPtr->compress_init_paq9a(tempFilepath, outputFilepath);
 	// losslessCompPtr->compress_str_paq9a(metadatas);
 	// losslessCompPtr->compress_str_paq9a(header);
+	// 将metadata和header添加到待压缩队列中
 	task->push_str(metadatas);
 	task->push_str(header);
 
@@ -346,6 +349,7 @@ int MixCompressor::compress_thread()
 	{
 		block.reserve(columnSize);
 
+		clock_t s = clock();
 		line_num_of_block = fileProcPtr->getOneBlock(block);
 
 		if (line_num_of_block > 0)
@@ -355,8 +359,9 @@ int MixCompressor::compress_thread()
 
 			// std::string lossless_str;
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
-
-			if (lossless_str.length() >= 1024*1024)
+			clock_t e = clock();
+			std::cout << "losslessCompPtr->compressOneBlock() time = " << (double)(e - s) / CLOCKS_PER_SEC << std::endl;
+			if (lossless_str.length() >= 1 * 1024 * 1024)
 			{
 				// losslessCompPtr->compress_str_paq9a(lossless_str);
 				// 写入task的队列中，待paq压缩
@@ -511,8 +516,8 @@ void MixCompressor::run()
 	{
 		clock_t startTime = clock();
 		// compress_old();
-		compress();
-		// compress_thread();
+		// compress();
+		compress_thread();
 		clock_t endTime = clock();
 		std::cout << "MixCompressor::run() total time = " << (double)(endTime - startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
 	}

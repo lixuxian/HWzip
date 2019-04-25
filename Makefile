@@ -3,6 +3,7 @@ DIR_SRC = ./src
 DIR_OBJ = ./obj
 DIR_BIN = ./bin
 DIR_LIB = ./lib
+DIR_BOOST = /Users/lixuxian/boost_1_68_0
 
 SRC = $(wildcard ${DIR_SRC}/*.cpp)  
 OBJ = $(patsubst %.cpp,${DIR_OBJ}/%.o,$(notdir ${SRC})) 
@@ -13,7 +14,7 @@ TARGET_MAC = hwzip-mac
 BUILD_TARGET = build
 
 CC = g++
-CFLAGS = -Ofast -Wall -std=c++11 -I${DIR_INC} -fpermissive
+CFLAGS = -Ofast -Wall -std=c++11 -I${DIR_INC} -I${DIR_BOOST} -fpermissive
 
 OS:=$(shell uname -s)
 IS_LINUX:=$(shell echo $(OS) | grep -i Linux)

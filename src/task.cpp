@@ -11,24 +11,18 @@ Task::~Task()
 
 void Task::push_str(std::string &str)
 {
-    q_mutex.lock();
-
     tasks.push(str);
-
-    q_mutex.unlock();
 }
 
 bool Task::pop_str(std::string &result)
 {
     bool flag = false;
-    q_mutex.lock();
     if (!tasks.empty())
     {
         result = tasks.front();
         tasks.pop();
         flag = true;
     }
-    q_mutex.unlock();
     return flag;
 }
 

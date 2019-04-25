@@ -899,9 +899,9 @@ void Encoder::flush() {
     fwrite(buf, 1, csize, archive);
     usum+=usize;
     csum+=csize+10;
-    printf("%15.0f -> %15.0f"
-      "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b", 
-      usum, csum);
+    // printf("%15.0f -> %15.0f"
+    //   "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b", 
+    //   usum, csum);
     x1=x=usize=csize=0;
     x2=0xffffffff;
   }

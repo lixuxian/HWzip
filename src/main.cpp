@@ -97,24 +97,37 @@ int main(int argc, char const *argv[])
 
 	// double thread version
 	
+	if (paras.mode == COMPRESS)
+	{
+		std::shared_ptr<MixCompressor> mixComp = std::make_shared<MixCompressor>(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
+		, paras.inputFile, paras.mode);
+
+		std::shared_ptr<PaqCompresssor> paqComp = std::make_shared<PaqCompresssor>();
+
+		std::shared_ptr<Task> task = std::make_shared<Task>(100);
+
+		std::thread lossy(thread_lossy, mixComp, task);
+		std::thread lossless(thread_lossless, paqComp, task);
+		lossy.join();
+		lossless.join();
+	} 
+	else if (paras.mode == DECOMPRESS)
+	{
+		std::shared_ptr<MixCompressor> mixComp = std::make_shared<MixCompressor>(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
+		, paras.inputFile, paras.mode);
+		mixComp->run();
+	}
+	else
+	{
+		std::cout << "main(), error mode" << std::endl;
+		exit(1);
+	}
+	
+
+	// single thread version
 	// std::shared_ptr<MixCompressor> mixComp = std::make_shared<MixCompressor>(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
 	// 	, paras.inputFile, paras.mode);
 
-	// std::shared_ptr<PaqCompresssor> paqComp = std::make_shared<PaqCompresssor>();
-
-	// std::shared_ptr<Task> task = std::make_shared<Task>(20);
-	
-
-	// std::thread lossy(thread_lossy, mixComp, task);
-	// std::thread lossless(thread_lossless, paqComp, task);
-	// lossy.join();
-	// lossless.join();
-
-	// single thread version
-	std::shared_ptr<MixCompressor> mixComp = std::make_shared<MixCompressor>(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
-		, paras.inputFile, paras.mode);
-
-	mixComp->run();
-
+	// mixComp->run();
 	return 0;
 }

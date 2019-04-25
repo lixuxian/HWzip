@@ -2,6 +2,7 @@
 #include "losslessComp.h"
 #include "task.h"
 #include <iostream>
+#include <ctime>
 
 PaqCompresssor::PaqCompresssor()
 {
@@ -24,19 +25,18 @@ void PaqCompresssor::run()
 {
     while (!task->isFinish())
     {
-        if (!task->isEmpty())
+        std::string str;
+        if (task->pop_str(str))
         {
-            std::string str;
-            if (task->pop_str(str))
-            {
-                // paq compress
-                losslessComp->compress_str_paq9a(str);
-                std::cout << "paq compress a string" << std::endl;
-            }
-            {
-                std::string t;
-                t.swap(str);
-            }
+            // paq compress
+            clock_t s = clock();
+            losslessComp->compress_str_paq9a(str);
+            clock_t e = clock();
+            std::cout << "paq compress a string time = " << (double)(e - s) / CLOCKS_PER_SEC << std::endl;
+        }
+        {
+            std::string t;
+            t.swap(str);
         }
     }
     losslessComp->compress_paq9a_end();
