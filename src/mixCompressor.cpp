@@ -387,8 +387,8 @@ void MixCompressor::run()
 	if (mode == COMPRESS)
 	{
 		clock_t startTime = clock();
-		compress_ppmd();
-		// compress();
+		//compress_ppmd();
+		compress();
 		clock_t endTime = clock();
 		std::cout << "compress total time = " << (double)(endTime - startTime) / CLOCKS_PER_SEC << " seconds" << std::endl;
 	}
