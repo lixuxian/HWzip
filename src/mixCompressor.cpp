@@ -23,7 +23,7 @@ MixCompressor::MixCompressor(double rel_err, double avg_err,
 	lossyCompPtr = std::make_shared<LossyCompressor>(rel_err, avg_err);
 	losslessCompPtr = std::make_shared<LosslessCompressor>();
 
-	blockSize = 3000;
+	blockSize = 1000;
 	columnSize = 0;
 }
 
@@ -221,7 +221,7 @@ int MixCompressor::compress()
 	while (true)
 	{
 		block.reserve(columnSize);
-
+		clock_t s = clock();
 		line_num_of_block = fileProcPtr->getOneBlock(block);
 
 		if (line_num_of_block > 0)
@@ -233,6 +233,8 @@ int MixCompressor::compress()
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
 			// TODO 目前是写入中间文件，改成直接无损压缩lossless_str（从内存压缩，减少io）
 			// fileProcPtr->writeOneBlock2Tempfile(lossless_str);
+			clock_t e = clock();
+			std::cout << "losslessCompPtr->compressOneBlock() time = " << (double)(e - s) / CLOCKS_PER_SEC << std::endl;
 			if (lossless_str.length() >= 1024*1024)
 			{
 				losslessCompPtr->compress_str_paq9a(lossless_str);
