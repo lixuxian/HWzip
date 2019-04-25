@@ -17,12 +17,15 @@ void Task::push_str(std::string &str)
 bool Task::pop_str(std::string &result)
 {
     bool flag = false;
-    if (!tasks.empty())
-    {
-        result = tasks.front();
-        tasks.pop();
-        flag = true;
-    }
+    // if (!tasks.empty())
+    // {
+    //     result = tasks.front();
+    //     tasks.pop();
+    //     flag = true;
+    // }
+    result = tasks.front();
+    tasks.pop();
+    flag = true;
     return flag;
 }
 

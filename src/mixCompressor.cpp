@@ -7,6 +7,8 @@
 #include <cstdio>
 #include <ctime>
 #include <iostream>
+#include <mutex>
+#include <condition_variable>
 
 /**
  * @description: 构造函数，根据参数进行相应的初始化
@@ -291,6 +293,9 @@ void MixCompressor::setTask(std::shared_ptr<Task> &t)
 	this->task = t;
 }
 
+int nready = 0;
+std::mutex mut;
+std::condition_variable cond;
 /**
  * @description: 多线程版本，使用paq算法
  * @param
@@ -340,8 +345,15 @@ int MixCompressor::compress_thread()
 	// losslessCompPtr->compress_str_paq9a(metadatas);
 	// losslessCompPtr->compress_str_paq9a(header);
 	// 将metadata和header添加到待压缩队列中
-	task->push_str(metadatas);
-	task->push_str(header);
+	// task->push_str(metadatas);
+	// task->push_str(header);
+	{
+		std::unique_lock<std::mutex> lck(mut);
+		task->push_str(metadatas);
+		task->push_str(header);
+		nready += 2;
+		cond.notify_all();
+	}
 
 	std::string lossless_str = "";
 
@@ -365,7 +377,12 @@ int MixCompressor::compress_thread()
 			{
 				// losslessCompPtr->compress_str_paq9a(lossless_str);
 				// 写入task的队列中，待paq压缩
-				task->push_str(lossless_str);
+				{
+					std::unique_lock<std::mutex> lck(mut);
+					task->push_str(lossless_str);
+					++nready;
+					cond.notify_all();
+				}
 				{
 					std::string t;
 					t.swap(lossless_str);
@@ -374,7 +391,7 @@ int MixCompressor::compress_thread()
 			}
 
 			
-			std::cout << "\rlossy processing... " << std::fixed << (double)block_count / blocks * 100 << " %";
+			std::cout << "\rlossy processing... " << std::fixed << (double)block_count / blocks * 100 << " %" << std::endl;
 			std::cout.flush();
 		}
 		else
@@ -492,7 +509,7 @@ int MixCompressor::decompress()
 		// write this decompressed block to output file
 		fileProcPtr->writeOneBlock2DecompressedFile(block, line_num_of_block);
 		++block_count;
-		std::cout << "\rlossy processing... " << std::fixed << (double)block_count / blocks * 100 << " %";
+		std::cout << "\rlossy processing... " << std::fixed << (double)block_count / blocks * 100 << " %" << std::endl;
 		std::cout.flush();
 	}
 

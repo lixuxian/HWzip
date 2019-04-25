@@ -1,624 +1,0 @@
-tempFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/2.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/2.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/2.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 175915
-blocks = 59
-lossy processing... 1.694915 %lossy processing... 3.389831 %lossy processing... 5.084746 %lossy processing... 6.779661 %lossy processing... 8.474576 %lossy processing... 10.169492 %lossy processing... 11.864407 %lossy processing... 13.559322 %lossy processing... 15.254237 %lossy processing... 16.949153 %lossy processing... 18.644068 %lossy processing... 20.338983 %lossy processing... 22.033898 %lossy processing... 23.728814 %lossy processing... 25.423729 %lossy processing... 27.118644 %lossy processing... 28.813559 %lossy processing... 30.508475 %lossy processing... 32.203390 %lossy processing... 33.898305 %lossy processing... 35.593220 %lossy processing... 37.288136 %lossy processing... 38.983051 %lossy processing... 40.677966 %lossy processing... 42.372881 %lossy processing... 44.067797 %lossy processing... 45.762712 %lossy processing... 47.457627 %lossy processing... 49.152542 %lossy processing... 50.847458 %lossy processing... 52.542373 %lossy processing... 54.237288 %lossy processing... 55.932203 %lossy processing... 57.627119 %lossy processing... 59.322034 %lossy processing... 61.016949 %lossy processing... 62.711864 %lossy processing... 64.406780 %lossy processing... 66.101695 %lossy processing... 67.796610 %lossy processing... 69.491525 %lossy processing... 71.186441 %lossy processing... 72.881356 %lossy processing... 74.576271 %lossy processing... 76.271186 %lossy processing... 77.966102 %lossy processing... 79.661017 %lossy processing... 81.355932 %lossy processing... 83.050847 %lossy processing... 84.745763 %lossy processing... 86.440678 %lossy processing... 88.135593 %lossy processing... 89.830508 %lossy processing... 91.525424 %lossy processing... 93.220339 %lossy processing... 94.915254 %lossy processing... 96.610169 %lossy processing... 98.305085 %lossy processing... 100.000000 %
-finish decompress all 59 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/2.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/2.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/2.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/2.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/2.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 175915
-blocks = 59
-lossy processing... 1.694915 %lossy processing... 3.389831 %lossy processing... 5.084746 %lossy processing... 6.779661 %lossy processing... 8.474576 %lossy processing... 10.169492 %lossy processing... 11.864407 %lossy processing... 13.559322 %lossy processing... 15.254237 %lossy processing... 16.949153 %lossy processing... 18.644068 %lossy processing... 20.338983 %lossy processing... 22.033898 %lossy processing... 23.728814 %lossy processing... 25.423729 %lossy processing... 27.118644 %lossy processing... 28.813559 %lossy processing... 30.508475 %lossy processing... 32.203390 %lossy processing... 33.898305 %lossy processing... 35.593220 %lossy processing... 37.288136 %lossy processing... 38.983051 %lossy processing... 40.677966 %lossy processing... 42.372881 %lossy processing... 44.067797 %lossy processing... 45.762712 %lossy processing... 47.457627 %lossy processing... 49.152542 %lossy processing... 50.847458 %lossy processing... 52.542373 %lossy processing... 54.237288 %lossy processing... 55.932203 %lossy processing... 57.627119 %lossy processing... 59.322034 %lossy processing... 61.016949 %lossy processing... 62.711864 %lossy processing... 64.406780 %lossy processing... 66.101695 %lossy processing... 67.796610 %lossy processing... 69.491525 %lossy processing... 71.186441 %lossy processing... 72.881356 %lossy processing... 74.576271 %lossy processing... 76.271186 %lossy processing... 77.966102 %lossy processing... 79.661017 %lossy processing... 81.355932 %lossy processing... 83.050847 %lossy processing... 84.745763 %lossy processing... 86.440678 %lossy processing... 88.135593 %lossy processing... 89.830508 %lossy processing... 91.525424 %lossy processing... 93.220339 %lossy processing... 94.915254 %lossy processing... 96.610169 %lossy processing... 98.305085 %lossy processing... 100.000000 %
-finish decompress all 59 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/2.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/2.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/2.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/2.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/2.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 175915
-blocks = 59
-lossy processing... 1.694915 %lossy processing... 3.389831 %lossy processing... 5.084746 %lossy processing... 6.779661 %lossy processing... 8.474576 %lossy processing... 10.169492 %lossy processing... 11.864407 %lossy processing... 13.559322 %lossy processing... 15.254237 %lossy processing... 16.949153 %lossy processing... 18.644068 %lossy processing... 20.338983 %lossy processing... 22.033898 %lossy processing... 23.728814 %lossy processing... 25.423729 %lossy processing... 27.118644 %lossy processing... 28.813559 %lossy processing... 30.508475 %lossy processing... 32.203390 %lossy processing... 33.898305 %lossy processing... 35.593220 %lossy processing... 37.288136 %lossy processing... 38.983051 %lossy processing... 40.677966 %lossy processing... 42.372881 %lossy processing... 44.067797 %lossy processing... 45.762712 %lossy processing... 47.457627 %lossy processing... 49.152542 %lossy processing... 50.847458 %lossy processing... 52.542373 %lossy processing... 54.237288 %lossy processing... 55.932203 %lossy processing... 57.627119 %lossy processing... 59.322034 %lossy processing... 61.016949 %lossy processing... 62.711864 %lossy processing... 64.406780 %lossy processing... 66.101695 %lossy processing... 67.796610 %lossy processing... 69.491525 %lossy processing... 71.186441 %lossy processing... 72.881356 %lossy processing... 74.576271 %lossy processing... 76.271186 %lossy processing... 77.966102 %lossy processing... 79.661017 %lossy processing... 81.355932 %lossy processing... 83.050847 %lossy processing... 84.745763 %lossy processing... 86.440678 %lossy processing... 88.135593 %lossy processing... 89.830508 %lossy processing... 91.525424 %lossy processing... 93.220339 %lossy processing... 94.915254 %lossy processing... 96.610169 %lossy processing... 98.305085 %lossy processing... 100.000000 %
-finish decompress all 59 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/2.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/2.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/3.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/3.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/3.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 105319
-blocks = 36
-lossy processing... 2.777778 %lossy processing... 5.555556 %lossy processing... 8.333333 %lossy processing... 11.111111 %lossy processing... 13.888889 %lossy processing... 16.666667 %lossy processing... 19.444444 %lossy processing... 22.222222 %lossy processing... 25.000000 %lossy processing... 27.777778 %lossy processing... 30.555556 %lossy processing... 33.333333 %lossy processing... 36.111111 %lossy processing... 38.888889 %lossy processing... 41.666667 %lossy processing... 44.444444 %lossy processing... 47.222222 %lossy processing... 50.000000 %lossy processing... 52.777778 %lossy processing... 55.555556 %lossy processing... 58.333333 %lossy processing... 61.111111 %lossy processing... 63.888889 %lossy processing... 66.666667 %lossy processing... 69.444444 %lossy processing... 72.222222 %lossy processing... 75.000000 %lossy processing... 77.777778 %lossy processing... 80.555556 %lossy processing... 83.333333 %lossy processing... 86.111111 %lossy processing... 88.888889 %lossy processing... 91.666667 %lossy processing... 94.444444 %lossy processing... 97.222222 %lossy processing... 100.000000 %
-finish decompress all 36 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/3.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/3.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/3.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/3.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/3.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 105319
-blocks = 36
-lossy processing... 2.777778 %lossy processing... 5.555556 %lossy processing... 8.333333 %lossy processing... 11.111111 %lossy processing... 13.888889 %lossy processing... 16.666667 %lossy processing... 19.444444 %lossy processing... 22.222222 %lossy processing... 25.000000 %lossy processing... 27.777778 %lossy processing... 30.555556 %lossy processing... 33.333333 %lossy processing... 36.111111 %lossy processing... 38.888889 %lossy processing... 41.666667 %lossy processing... 44.444444 %lossy processing... 47.222222 %lossy processing... 50.000000 %lossy processing... 52.777778 %lossy processing... 55.555556 %lossy processing... 58.333333 %lossy processing... 61.111111 %lossy processing... 63.888889 %lossy processing... 66.666667 %lossy processing... 69.444444 %lossy processing... 72.222222 %lossy processing... 75.000000 %lossy processing... 77.777778 %lossy processing... 80.555556 %lossy processing... 83.333333 %lossy processing... 86.111111 %lossy processing... 88.888889 %lossy processing... 91.666667 %lossy processing... 94.444444 %lossy processing... 97.222222 %lossy processing... 100.000000 %
-finish decompress all 36 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/3.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/3.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/3.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/3.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/3.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 105319
-blocks = 36
-lossy processing... 2.777778 %lossy processing... 5.555556 %lossy processing... 8.333333 %lossy processing... 11.111111 %lossy processing... 13.888889 %lossy processing... 16.666667 %lossy processing... 19.444444 %lossy processing... 22.222222 %lossy processing... 25.000000 %lossy processing... 27.777778 %lossy processing... 30.555556 %lossy processing... 33.333333 %lossy processing... 36.111111 %lossy processing... 38.888889 %lossy processing... 41.666667 %lossy processing... 44.444444 %lossy processing... 47.222222 %lossy processing... 50.000000 %lossy processing... 52.777778 %lossy processing... 55.555556 %lossy processing... 58.333333 %lossy processing... 61.111111 %lossy processing... 63.888889 %lossy processing... 66.666667 %lossy processing... 69.444444 %lossy processing... 72.222222 %lossy processing... 75.000000 %lossy processing... 77.777778 %lossy processing... 80.555556 %lossy processing... 83.333333 %lossy processing... 86.111111 %lossy processing... 88.888889 %lossy processing... 91.666667 %lossy processing... 94.444444 %lossy processing... 97.222222 %lossy processing... 100.000000 %
-finish decompress all 36 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/3.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/3.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/4.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/4.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/4.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 188902
-blocks = 63
-lossy processing... 1.587302 %lossy processing... 3.174603 %lossy processing... 4.761905 %lossy processing... 6.349206 %lossy processing... 7.936508 %lossy processing... 9.523810 %lossy processing... 11.111111 %lossy processing... 12.698413 %lossy processing... 14.285714 %lossy processing... 15.873016 %lossy processing... 17.460317 %lossy processing... 19.047619 %lossy processing... 20.634921 %lossy processing... 22.222222 %lossy processing... 23.809524 %lossy processing... 25.396825 %lossy processing... 26.984127 %lossy processing... 28.571429 %lossy processing... 30.158730 %lossy processing... 31.746032 %lossy processing... 33.333333 %lossy processing... 34.920635 %lossy processing... 36.507937 %lossy processing... 38.095238 %lossy processing... 39.682540 %lossy processing... 41.269841 %lossy processing... 42.857143 %lossy processing... 44.444444 %lossy processing... 46.031746 %lossy processing... 47.619048 %lossy processing... 49.206349 %lossy processing... 50.793651 %lossy processing... 52.380952 %lossy processing... 53.968254 %lossy processing... 55.555556 %lossy processing... 57.142857 %lossy processing... 58.730159 %lossy processing... 60.317460 %lossy processing... 61.904762 %lossy processing... 63.492063 %lossy processing... 65.079365 %lossy processing... 66.666667 %lossy processing... 68.253968 %lossy processing... 69.841270 %lossy processing... 71.428571 %lossy processing... 73.015873 %lossy processing... 74.603175 %lossy processing... 76.190476 %lossy processing... 77.777778 %lossy processing... 79.365079 %lossy processing... 80.952381 %lossy processing... 82.539683 %lossy processing... 84.126984 %lossy processing... 85.714286 %lossy processing... 87.301587 %lossy processing... 88.888889 %lossy processing... 90.476190 %lossy processing... 92.063492 %lossy processing... 93.650794 %lossy processing... 95.238095 %lossy processing... 96.825397 %lossy processing... 98.412698 %lossy processing... 100.000000 %
-finish decompress all 63 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/4.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/4.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/4.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/4.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/4.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 188902
-blocks = 63
-lossy processing... 1.587302 %lossy processing... 3.174603 %lossy processing... 4.761905 %lossy processing... 6.349206 %lossy processing... 7.936508 %lossy processing... 9.523810 %lossy processing... 11.111111 %lossy processing... 12.698413 %lossy processing... 14.285714 %lossy processing... 15.873016 %lossy processing... 17.460317 %lossy processing... 19.047619 %lossy processing... 20.634921 %lossy processing... 22.222222 %lossy processing... 23.809524 %lossy processing... 25.396825 %lossy processing... 26.984127 %lossy processing... 28.571429 %lossy processing... 30.158730 %lossy processing... 31.746032 %lossy processing... 33.333333 %lossy processing... 34.920635 %lossy processing... 36.507937 %lossy processing... 38.095238 %lossy processing... 39.682540 %lossy processing... 41.269841 %lossy processing... 42.857143 %lossy processing... 44.444444 %lossy processing... 46.031746 %lossy processing... 47.619048 %lossy processing... 49.206349 %lossy processing... 50.793651 %lossy processing... 52.380952 %lossy processing... 53.968254 %lossy processing... 55.555556 %lossy processing... 57.142857 %lossy processing... 58.730159 %lossy processing... 60.317460 %lossy processing... 61.904762 %lossy processing... 63.492063 %lossy processing... 65.079365 %lossy processing... 66.666667 %lossy processing... 68.253968 %lossy processing... 69.841270 %lossy processing... 71.428571 %lossy processing... 73.015873 %lossy processing... 74.603175 %lossy processing... 76.190476 %lossy processing... 77.777778 %lossy processing... 79.365079 %lossy processing... 80.952381 %lossy processing... 82.539683 %lossy processing... 84.126984 %lossy processing... 85.714286 %lossy processing... 87.301587 %lossy processing... 88.888889 %lossy processing... 90.476190 %lossy processing... 92.063492 %lossy processing... 93.650794 %lossy processing... 95.238095 %lossy processing... 96.825397 %lossy processing... 98.412698 %lossy processing... 100.000000 %
-finish decompress all 63 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/4.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/4.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/4.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/4.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/4.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 188902
-blocks = 63
-lossy processing... 1.587302 %lossy processing... 3.174603 %lossy processing... 4.761905 %lossy processing... 6.349206 %lossy processing... 7.936508 %lossy processing... 9.523810 %lossy processing... 11.111111 %lossy processing... 12.698413 %lossy processing... 14.285714 %lossy processing... 15.873016 %lossy processing... 17.460317 %lossy processing... 19.047619 %lossy processing... 20.634921 %lossy processing... 22.222222 %lossy processing... 23.809524 %lossy processing... 25.396825 %lossy processing... 26.984127 %lossy processing... 28.571429 %lossy processing... 30.158730 %lossy processing... 31.746032 %lossy processing... 33.333333 %lossy processing... 34.920635 %lossy processing... 36.507937 %lossy processing... 38.095238 %lossy processing... 39.682540 %lossy processing... 41.269841 %lossy processing... 42.857143 %lossy processing... 44.444444 %lossy processing... 46.031746 %lossy processing... 47.619048 %lossy processing... 49.206349 %lossy processing... 50.793651 %lossy processing... 52.380952 %lossy processing... 53.968254 %lossy processing... 55.555556 %lossy processing... 57.142857 %lossy processing... 58.730159 %lossy processing... 60.317460 %lossy processing... 61.904762 %lossy processing... 63.492063 %lossy processing... 65.079365 %lossy processing... 66.666667 %lossy processing... 68.253968 %lossy processing... 69.841270 %lossy processing... 71.428571 %lossy processing... 73.015873 %lossy processing... 74.603175 %lossy processing... 76.190476 %lossy processing... 77.777778 %lossy processing... 79.365079 %lossy processing... 80.952381 %lossy processing... 82.539683 %lossy processing... 84.126984 %lossy processing... 85.714286 %lossy processing... 87.301587 %lossy processing... 88.888889 %lossy processing... 90.476190 %lossy processing... 92.063492 %lossy processing... 93.650794 %lossy processing... 95.238095 %lossy processing... 96.825397 %lossy processing... 98.412698 %lossy processing... 100.000000 %
-finish decompress all 63 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/4.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/4.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/5.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/5.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/5.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 191074
-blocks = 64
-lossy processing... 1.562500 %lossy processing... 3.125000 %lossy processing... 4.687500 %lossy processing... 6.250000 %lossy processing... 7.812500 %lossy processing... 9.375000 %lossy processing... 10.937500 %lossy processing... 12.500000 %lossy processing... 14.062500 %lossy processing... 15.625000 %lossy processing... 17.187500 %lossy processing... 18.750000 %lossy processing... 20.312500 %lossy processing... 21.875000 %lossy processing... 23.437500 %lossy processing... 25.000000 %lossy processing... 26.562500 %lossy processing... 28.125000 %lossy processing... 29.687500 %lossy processing... 31.250000 %lossy processing... 32.812500 %lossy processing... 34.375000 %lossy processing... 35.937500 %lossy processing... 37.500000 %lossy processing... 39.062500 %lossy processing... 40.625000 %lossy processing... 42.187500 %lossy processing... 43.750000 %lossy processing... 45.312500 %lossy processing... 46.875000 %lossy processing... 48.437500 %lossy processing... 50.000000 %lossy processing... 51.562500 %lossy processing... 53.125000 %lossy processing... 54.687500 %lossy processing... 56.250000 %lossy processing... 57.812500 %lossy processing... 59.375000 %lossy processing... 60.937500 %lossy processing... 62.500000 %lossy processing... 64.062500 %lossy processing... 65.625000 %lossy processing... 67.187500 %lossy processing... 68.750000 %lossy processing... 70.312500 %lossy processing... 71.875000 %lossy processing... 73.437500 %lossy processing... 75.000000 %lossy processing... 76.562500 %lossy processing... 78.125000 %lossy processing... 79.687500 %lossy processing... 81.250000 %lossy processing... 82.812500 %lossy processing... 84.375000 %lossy processing... 85.937500 %lossy processing... 87.500000 %lossy processing... 89.062500 %lossy processing... 90.625000 %lossy processing... 92.187500 %lossy processing... 93.750000 %lossy processing... 95.312500 %lossy processing... 96.875000 %lossy processing... 98.437500 %lossy processing... 100.000000 %
-finish decompress all 64 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/5.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/5.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/5.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/5.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/5.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 191074
-blocks = 64
-lossy processing... 1.562500 %lossy processing... 3.125000 %lossy processing... 4.687500 %lossy processing... 6.250000 %lossy processing... 7.812500 %lossy processing... 9.375000 %lossy processing... 10.937500 %lossy processing... 12.500000 %lossy processing... 14.062500 %lossy processing... 15.625000 %lossy processing... 17.187500 %lossy processing... 18.750000 %lossy processing... 20.312500 %lossy processing... 21.875000 %lossy processing... 23.437500 %lossy processing... 25.000000 %lossy processing... 26.562500 %lossy processing... 28.125000 %lossy processing... 29.687500 %lossy processing... 31.250000 %lossy processing... 32.812500 %lossy processing... 34.375000 %lossy processing... 35.937500 %lossy processing... 37.500000 %lossy processing... 39.062500 %lossy processing... 40.625000 %lossy processing... 42.187500 %lossy processing... 43.750000 %lossy processing... 45.312500 %lossy processing... 46.875000 %lossy processing... 48.437500 %lossy processing... 50.000000 %lossy processing... 51.562500 %lossy processing... 53.125000 %lossy processing... 54.687500 %lossy processing... 56.250000 %lossy processing... 57.812500 %lossy processing... 59.375000 %lossy processing... 60.937500 %lossy processing... 62.500000 %lossy processing... 64.062500 %lossy processing... 65.625000 %lossy processing... 67.187500 %lossy processing... 68.750000 %lossy processing... 70.312500 %lossy processing... 71.875000 %lossy processing... 73.437500 %lossy processing... 75.000000 %lossy processing... 76.562500 %lossy processing... 78.125000 %lossy processing... 79.687500 %lossy processing... 81.250000 %lossy processing... 82.812500 %lossy processing... 84.375000 %lossy processing... 85.937500 %lossy processing... 87.500000 %lossy processing... 89.062500 %lossy processing... 90.625000 %lossy processing... 92.187500 %lossy processing... 93.750000 %lossy processing... 95.312500 %lossy processing... 96.875000 %lossy processing... 98.437500 %lossy processing... 100.000000 %
-finish decompress all 64 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/5.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/5.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/5.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/5.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/5.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 191074
-blocks = 64
-lossy processing... 1.562500 %lossy processing... 3.125000 %lossy processing... 4.687500 %lossy processing... 6.250000 %lossy processing... 7.812500 %lossy processing... 9.375000 %lossy processing... 10.937500 %lossy processing... 12.500000 %lossy processing... 14.062500 %lossy processing... 15.625000 %lossy processing... 17.187500 %lossy processing... 18.750000 %lossy processing... 20.312500 %lossy processing... 21.875000 %lossy processing... 23.437500 %lossy processing... 25.000000 %lossy processing... 26.562500 %lossy processing... 28.125000 %lossy processing... 29.687500 %lossy processing... 31.250000 %lossy processing... 32.812500 %lossy processing... 34.375000 %lossy processing... 35.937500 %lossy processing... 37.500000 %lossy processing... 39.062500 %lossy processing... 40.625000 %lossy processing... 42.187500 %lossy processing... 43.750000 %lossy processing... 45.312500 %lossy processing... 46.875000 %lossy processing... 48.437500 %lossy processing... 50.000000 %lossy processing... 51.562500 %lossy processing... 53.125000 %lossy processing... 54.687500 %lossy processing... 56.250000 %lossy processing... 57.812500 %lossy processing... 59.375000 %lossy processing... 60.937500 %lossy processing... 62.500000 %lossy processing... 64.062500 %lossy processing... 65.625000 %lossy processing... 67.187500 %lossy processing... 68.750000 %lossy processing... 70.312500 %lossy processing... 71.875000 %lossy processing... 73.437500 %lossy processing... 75.000000 %lossy processing... 76.562500 %lossy processing... 78.125000 %lossy processing... 79.687500 %lossy processing... 81.250000 %lossy processing... 82.812500 %lossy processing... 84.375000 %lossy processing... 85.937500 %lossy processing... 87.500000 %lossy processing... 89.062500 %lossy processing... 90.625000 %lossy processing... 92.187500 %lossy processing... 93.750000 %lossy processing... 95.312500 %lossy processing... 96.875000 %lossy processing... 98.437500 %lossy processing... 100.000000 %
-finish decompress all 64 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/5.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/5.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/6.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/6.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/6.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 233598
-blocks = 78
-lossy processing... 1.282051 %lossy processing... 2.564103 %lossy processing... 3.846154 %lossy processing... 5.128205 %lossy processing... 6.410256 %lossy processing... 7.692308 %lossy processing... 8.974359 %lossy processing... 10.256410 %lossy processing... 11.538462 %lossy processing... 12.820513 %lossy processing... 14.102564 %lossy processing... 15.384615 %lossy processing... 16.666667 %lossy processing... 17.948718 %lossy processing... 19.230769 %lossy processing... 20.512821 %lossy processing... 21.794872 %lossy processing... 23.076923 %lossy processing... 24.358974 %lossy processing... 25.641026 %lossy processing... 26.923077 %lossy processing... 28.205128 %lossy processing... 29.487179 %lossy processing... 30.769231 %lossy processing... 32.051282 %lossy processing... 33.333333 %lossy processing... 34.615385 %lossy processing... 35.897436 %lossy processing... 37.179487 %lossy processing... 38.461538 %lossy processing... 39.743590 %lossy processing... 41.025641 %lossy processing... 42.307692 %lossy processing... 43.589744 %lossy processing... 44.871795 %lossy processing... 46.153846 %lossy processing... 47.435897 %lossy processing... 48.717949 %lossy processing... 50.000000 %lossy processing... 51.282051 %lossy processing... 52.564103 %lossy processing... 53.846154 %lossy processing... 55.128205 %lossy processing... 56.410256 %lossy processing... 57.692308 %lossy processing... 58.974359 %lossy processing... 60.256410 %lossy processing... 61.538462 %lossy processing... 62.820513 %lossy processing... 64.102564 %lossy processing... 65.384615 %lossy processing... 66.666667 %lossy processing... 67.948718 %lossy processing... 69.230769 %lossy processing... 70.512821 %lossy processing... 71.794872 %lossy processing... 73.076923 %lossy processing... 74.358974 %lossy processing... 75.641026 %lossy processing... 76.923077 %lossy processing... 78.205128 %lossy processing... 79.487179 %lossy processing... 80.769231 %lossy processing... 82.051282 %lossy processing... 83.333333 %lossy processing... 84.615385 %lossy processing... 85.897436 %lossy processing... 87.179487 %lossy processing... 88.461538 %lossy processing... 89.743590 %lossy processing... 91.025641 %lossy processing... 92.307692 %lossy processing... 93.589744 %lossy processing... 94.871795 %lossy processing... 96.153846 %lossy processing... 97.435897 %lossy processing... 98.717949 %lossy processing... 100.000000 %
-finish decompress all 78 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/6.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/6.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/6.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/6.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/6.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 233598
-blocks = 78
-lossy processing... 1.282051 %lossy processing... 2.564103 %lossy processing... 3.846154 %lossy processing... 5.128205 %lossy processing... 6.410256 %lossy processing... 7.692308 %lossy processing... 8.974359 %lossy processing... 10.256410 %lossy processing... 11.538462 %lossy processing... 12.820513 %lossy processing... 14.102564 %lossy processing... 15.384615 %lossy processing... 16.666667 %lossy processing... 17.948718 %lossy processing... 19.230769 %lossy processing... 20.512821 %lossy processing... 21.794872 %lossy processing... 23.076923 %lossy processing... 24.358974 %lossy processing... 25.641026 %lossy processing... 26.923077 %lossy processing... 28.205128 %lossy processing... 29.487179 %lossy processing... 30.769231 %lossy processing... 32.051282 %lossy processing... 33.333333 %lossy processing... 34.615385 %lossy processing... 35.897436 %lossy processing... 37.179487 %lossy processing... 38.461538 %lossy processing... 39.743590 %lossy processing... 41.025641 %lossy processing... 42.307692 %lossy processing... 43.589744 %lossy processing... 44.871795 %lossy processing... 46.153846 %lossy processing... 47.435897 %lossy processing... 48.717949 %lossy processing... 50.000000 %lossy processing... 51.282051 %lossy processing... 52.564103 %lossy processing... 53.846154 %lossy processing... 55.128205 %lossy processing... 56.410256 %lossy processing... 57.692308 %lossy processing... 58.974359 %lossy processing... 60.256410 %lossy processing... 61.538462 %lossy processing... 62.820513 %lossy processing... 64.102564 %lossy processing... 65.384615 %lossy processing... 66.666667 %lossy processing... 67.948718 %lossy processing... 69.230769 %lossy processing... 70.512821 %lossy processing... 71.794872 %lossy processing... 73.076923 %lossy processing... 74.358974 %lossy processing... 75.641026 %lossy processing... 76.923077 %lossy processing... 78.205128 %lossy processing... 79.487179 %lossy processing... 80.769231 %lossy processing... 82.051282 %lossy processing... 83.333333 %lossy processing... 84.615385 %lossy processing... 85.897436 %lossy processing... 87.179487 %lossy processing... 88.461538 %lossy processing... 89.743590 %lossy processing... 91.025641 %lossy processing... 92.307692 %lossy processing... 93.589744 %lossy processing... 94.871795 %lossy processing... 96.153846 %lossy processing... 97.435897 %lossy processing... 98.717949 %lossy processing... 100.000000 %
-finish decompress all 78 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/6.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/6.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/6.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/6.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/6.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 233598
-blocks = 78
-lossy processing... 1.282051 %lossy processing... 2.564103 %lossy processing... 3.846154 %lossy processing... 5.128205 %lossy processing... 6.410256 %lossy processing... 7.692308 %lossy processing... 8.974359 %lossy processing... 10.256410 %lossy processing... 11.538462 %lossy processing... 12.820513 %lossy processing... 14.102564 %lossy processing... 15.384615 %lossy processing... 16.666667 %lossy processing... 17.948718 %lossy processing... 19.230769 %lossy processing... 20.512821 %lossy processing... 21.794872 %lossy processing... 23.076923 %lossy processing... 24.358974 %lossy processing... 25.641026 %lossy processing... 26.923077 %lossy processing... 28.205128 %lossy processing... 29.487179 %lossy processing... 30.769231 %lossy processing... 32.051282 %lossy processing... 33.333333 %lossy processing... 34.615385 %lossy processing... 35.897436 %lossy processing... 37.179487 %lossy processing... 38.461538 %lossy processing... 39.743590 %lossy processing... 41.025641 %lossy processing... 42.307692 %lossy processing... 43.589744 %lossy processing... 44.871795 %lossy processing... 46.153846 %lossy processing... 47.435897 %lossy processing... 48.717949 %lossy processing... 50.000000 %lossy processing... 51.282051 %lossy processing... 52.564103 %lossy processing... 53.846154 %lossy processing... 55.128205 %lossy processing... 56.410256 %lossy processing... 57.692308 %lossy processing... 58.974359 %lossy processing... 60.256410 %lossy processing... 61.538462 %lossy processing... 62.820513 %lossy processing... 64.102564 %lossy processing... 65.384615 %lossy processing... 66.666667 %lossy processing... 67.948718 %lossy processing... 69.230769 %lossy processing... 70.512821 %lossy processing... 71.794872 %lossy processing... 73.076923 %lossy processing... 74.358974 %lossy processing... 75.641026 %lossy processing... 76.923077 %lossy processing... 78.205128 %lossy processing... 79.487179 %lossy processing... 80.769231 %lossy processing... 82.051282 %lossy processing... 83.333333 %lossy processing... 84.615385 %lossy processing... 85.897436 %lossy processing... 87.179487 %lossy processing... 88.461538 %lossy processing... 89.743590 %lossy processing... 91.025641 %lossy processing... 92.307692 %lossy processing... 93.589744 %lossy processing... 94.871795 %lossy processing... 96.153846 %lossy processing... 97.435897 %lossy processing... 98.717949 %lossy processing... 100.000000 %
-finish decompress all 78 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/6.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/6.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/7.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/7.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/7.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 50811
-blocks = 17
-lossy processing... 5.882353 %lossy processing... 11.764706 %lossy processing... 17.647059 %lossy processing... 23.529412 %lossy processing... 29.411765 %lossy processing... 35.294118 %lossy processing... 41.176471 %lossy processing... 47.058824 %lossy processing... 52.941176 %lossy processing... 58.823529 %lossy processing... 64.705882 %lossy processing... 70.588235 %lossy processing... 76.470588 %lossy processing... 82.352941 %lossy processing... 88.235294 %lossy processing... 94.117647 %lossy processing... 100.000000 %
-finish decompress all 17 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/7.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/7.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/7.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/7.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/7.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 50811
-blocks = 17
-lossy processing... 5.882353 %lossy processing... 11.764706 %lossy processing... 17.647059 %lossy processing... 23.529412 %lossy processing... 29.411765 %lossy processing... 35.294118 %lossy processing... 41.176471 %lossy processing... 47.058824 %lossy processing... 52.941176 %lossy processing... 58.823529 %lossy processing... 64.705882 %lossy processing... 70.588235 %lossy processing... 76.470588 %lossy processing... 82.352941 %lossy processing... 88.235294 %lossy processing... 94.117647 %lossy processing... 100.000000 %
-finish decompress all 17 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/7.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/7.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/7.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/7.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/7.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 50811
-blocks = 17
-lossy processing... 5.882353 %lossy processing... 11.764706 %lossy processing... 17.647059 %lossy processing... 23.529412 %lossy processing... 29.411765 %lossy processing... 35.294118 %lossy processing... 41.176471 %lossy processing... 47.058824 %lossy processing... 52.941176 %lossy processing... 58.823529 %lossy processing... 64.705882 %lossy processing... 70.588235 %lossy processing... 76.470588 %lossy processing... 82.352941 %lossy processing... 88.235294 %lossy processing... 94.117647 %lossy processing... 100.000000 %
-finish decompress all 17 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/7.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/7.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/8.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/8.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/8.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 195089
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/8.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/8.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/8.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/8.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/8.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 195089
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/8.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/8.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/8.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/8.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/8.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 195089
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/8.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/8.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/9.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/9.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/9.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 197837
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/9.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/9.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/9.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/9.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/9.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 197837
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/9.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/9.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/9.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/9.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/9.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 197837
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/9.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/9.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/2.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/2.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/2.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 175915
-blocks = 59
-lossy processing... 1.694915 %lossy processing... 3.389831 %lossy processing... 5.084746 %lossy processing... 6.779661 %lossy processing... 8.474576 %lossy processing... 10.169492 %lossy processing... 11.864407 %lossy processing... 13.559322 %lossy processing... 15.254237 %lossy processing... 16.949153 %lossy processing... 18.644068 %lossy processing... 20.338983 %lossy processing... 22.033898 %lossy processing... 23.728814 %lossy processing... 25.423729 %lossy processing... 27.118644 %lossy processing... 28.813559 %lossy processing... 30.508475 %lossy processing... 32.203390 %lossy processing... 33.898305 %lossy processing... 35.593220 %lossy processing... 37.288136 %lossy processing... 38.983051 %lossy processing... 40.677966 %lossy processing... 42.372881 %lossy processing... 44.067797 %lossy processing... 45.762712 %lossy processing... 47.457627 %lossy processing... 49.152542 %lossy processing... 50.847458 %lossy processing... 52.542373 %lossy processing... 54.237288 %lossy processing... 55.932203 %lossy processing... 57.627119 %lossy processing... 59.322034 %lossy processing... 61.016949 %lossy processing... 62.711864 %lossy processing... 64.406780 %lossy processing... 66.101695 %lossy processing... 67.796610 %lossy processing... 69.491525 %lossy processing... 71.186441 %lossy processing... 72.881356 %lossy processing... 74.576271 %lossy processing... 76.271186 %lossy processing... 77.966102 %lossy processing... 79.661017 %lossy processing... 81.355932 %lossy processing... 83.050847 %lossy processing... 84.745763 %lossy processing... 86.440678 %lossy processing... 88.135593 %lossy processing... 89.830508 %lossy processing... 91.525424 %lossy processing... 93.220339 %lossy processing... 94.915254 %lossy processing... 96.610169 %lossy processing... 98.305085 %lossy processing... 100.000000 %
-finish decompress all 59 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/2.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/2.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/2.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/2.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/2.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 175915
-blocks = 59
-lossy processing... 1.694915 %lossy processing... 3.389831 %lossy processing... 5.084746 %lossy processing... 6.779661 %lossy processing... 8.474576 %lossy processing... 10.169492 %lossy processing... 11.864407 %lossy processing... 13.559322 %lossy processing... 15.254237 %lossy processing... 16.949153 %lossy processing... 18.644068 %lossy processing... 20.338983 %lossy processing... 22.033898 %lossy processing... 23.728814 %lossy processing... 25.423729 %lossy processing... 27.118644 %lossy processing... 28.813559 %lossy processing... 30.508475 %lossy processing... 32.203390 %lossy processing... 33.898305 %lossy processing... 35.593220 %lossy processing... 37.288136 %lossy processing... 38.983051 %lossy processing... 40.677966 %lossy processing... 42.372881 %lossy processing... 44.067797 %lossy processing... 45.762712 %lossy processing... 47.457627 %lossy processing... 49.152542 %lossy processing... 50.847458 %lossy processing... 52.542373 %lossy processing... 54.237288 %lossy processing... 55.932203 %lossy processing... 57.627119 %lossy processing... 59.322034 %lossy processing... 61.016949 %lossy processing... 62.711864 %lossy processing... 64.406780 %lossy processing... 66.101695 %lossy processing... 67.796610 %lossy processing... 69.491525 %lossy processing... 71.186441 %lossy processing... 72.881356 %lossy processing... 74.576271 %lossy processing... 76.271186 %lossy processing... 77.966102 %lossy processing... 79.661017 %lossy processing... 81.355932 %lossy processing... 83.050847 %lossy processing... 84.745763 %lossy processing... 86.440678 %lossy processing... 88.135593 %lossy processing... 89.830508 %lossy processing... 91.525424 %lossy processing... 93.220339 %lossy processing... 94.915254 %lossy processing... 96.610169 %lossy processing... 98.305085 %lossy processing... 100.000000 %
-finish decompress all 59 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/2.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/2.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/2.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/2.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/2.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/2.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 175915
-blocks = 59
-lossy processing... 1.694915 %lossy processing... 3.389831 %lossy processing... 5.084746 %lossy processing... 6.779661 %lossy processing... 8.474576 %lossy processing... 10.169492 %lossy processing... 11.864407 %lossy processing... 13.559322 %lossy processing... 15.254237 %lossy processing... 16.949153 %lossy processing... 18.644068 %lossy processing... 20.338983 %lossy processing... 22.033898 %lossy processing... 23.728814 %lossy processing... 25.423729 %lossy processing... 27.118644 %lossy processing... 28.813559 %lossy processing... 30.508475 %lossy processing... 32.203390 %lossy processing... 33.898305 %lossy processing... 35.593220 %lossy processing... 37.288136 %lossy processing... 38.983051 %lossy processing... 40.677966 %lossy processing... 42.372881 %lossy processing... 44.067797 %lossy processing... 45.762712 %lossy processing... 47.457627 %lossy processing... 49.152542 %lossy processing... 50.847458 %lossy processing... 52.542373 %lossy processing... 54.237288 %lossy processing... 55.932203 %lossy processing... 57.627119 %lossy processing... 59.322034 %lossy processing... 61.016949 %lossy processing... 62.711864 %lossy processing... 64.406780 %lossy processing... 66.101695 %lossy processing... 67.796610 %lossy processing... 69.491525 %lossy processing... 71.186441 %lossy processing... 72.881356 %lossy processing... 74.576271 %lossy processing... 76.271186 %lossy processing... 77.966102 %lossy processing... 79.661017 %lossy processing... 81.355932 %lossy processing... 83.050847 %lossy processing... 84.745763 %lossy processing... 86.440678 %lossy processing... 88.135593 %lossy processing... 89.830508 %lossy processing... 91.525424 %lossy processing... 93.220339 %lossy processing... 94.915254 %lossy processing... 96.610169 %lossy processing... 98.305085 %lossy processing... 100.000000 %
-finish decompress all 59 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/2.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/2.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/3.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/3.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/3.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 105319
-blocks = 36
-lossy processing... 2.777778 %lossy processing... 5.555556 %lossy processing... 8.333333 %lossy processing... 11.111111 %lossy processing... 13.888889 %lossy processing... 16.666667 %lossy processing... 19.444444 %lossy processing... 22.222222 %lossy processing... 25.000000 %lossy processing... 27.777778 %lossy processing... 30.555556 %lossy processing... 33.333333 %lossy processing... 36.111111 %lossy processing... 38.888889 %lossy processing... 41.666667 %lossy processing... 44.444444 %lossy processing... 47.222222 %lossy processing... 50.000000 %lossy processing... 52.777778 %lossy processing... 55.555556 %lossy processing... 58.333333 %lossy processing... 61.111111 %lossy processing... 63.888889 %lossy processing... 66.666667 %lossy processing... 69.444444 %lossy processing... 72.222222 %lossy processing... 75.000000 %lossy processing... 77.777778 %lossy processing... 80.555556 %lossy processing... 83.333333 %lossy processing... 86.111111 %lossy processing... 88.888889 %lossy processing... 91.666667 %lossy processing... 94.444444 %lossy processing... 97.222222 %lossy processing... 100.000000 %
-finish decompress all 36 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/3.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/3.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/3.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/3.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/3.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 105319
-blocks = 36
-lossy processing... 2.777778 %lossy processing... 5.555556 %lossy processing... 8.333333 %lossy processing... 11.111111 %lossy processing... 13.888889 %lossy processing... 16.666667 %lossy processing... 19.444444 %lossy processing... 22.222222 %lossy processing... 25.000000 %lossy processing... 27.777778 %lossy processing... 30.555556 %lossy processing... 33.333333 %lossy processing... 36.111111 %lossy processing... 38.888889 %lossy processing... 41.666667 %lossy processing... 44.444444 %lossy processing... 47.222222 %lossy processing... 50.000000 %lossy processing... 52.777778 %lossy processing... 55.555556 %lossy processing... 58.333333 %lossy processing... 61.111111 %lossy processing... 63.888889 %lossy processing... 66.666667 %lossy processing... 69.444444 %lossy processing... 72.222222 %lossy processing... 75.000000 %lossy processing... 77.777778 %lossy processing... 80.555556 %lossy processing... 83.333333 %lossy processing... 86.111111 %lossy processing... 88.888889 %lossy processing... 91.666667 %lossy processing... 94.444444 %lossy processing... 97.222222 %lossy processing... 100.000000 %
-finish decompress all 36 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/3.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/3.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/3.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/3.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/3.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/3.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 105319
-blocks = 36
-lossy processing... 2.777778 %lossy processing... 5.555556 %lossy processing... 8.333333 %lossy processing... 11.111111 %lossy processing... 13.888889 %lossy processing... 16.666667 %lossy processing... 19.444444 %lossy processing... 22.222222 %lossy processing... 25.000000 %lossy processing... 27.777778 %lossy processing... 30.555556 %lossy processing... 33.333333 %lossy processing... 36.111111 %lossy processing... 38.888889 %lossy processing... 41.666667 %lossy processing... 44.444444 %lossy processing... 47.222222 %lossy processing... 50.000000 %lossy processing... 52.777778 %lossy processing... 55.555556 %lossy processing... 58.333333 %lossy processing... 61.111111 %lossy processing... 63.888889 %lossy processing... 66.666667 %lossy processing... 69.444444 %lossy processing... 72.222222 %lossy processing... 75.000000 %lossy processing... 77.777778 %lossy processing... 80.555556 %lossy processing... 83.333333 %lossy processing... 86.111111 %lossy processing... 88.888889 %lossy processing... 91.666667 %lossy processing... 94.444444 %lossy processing... 97.222222 %lossy processing... 100.000000 %
-finish decompress all 36 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/3.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/3.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/4.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/4.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/4.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 188902
-blocks = 63
-lossy processing... 1.587302 %lossy processing... 3.174603 %lossy processing... 4.761905 %lossy processing... 6.349206 %lossy processing... 7.936508 %lossy processing... 9.523810 %lossy processing... 11.111111 %lossy processing... 12.698413 %lossy processing... 14.285714 %lossy processing... 15.873016 %lossy processing... 17.460317 %lossy processing... 19.047619 %lossy processing... 20.634921 %lossy processing... 22.222222 %lossy processing... 23.809524 %lossy processing... 25.396825 %lossy processing... 26.984127 %lossy processing... 28.571429 %lossy processing... 30.158730 %lossy processing... 31.746032 %lossy processing... 33.333333 %lossy processing... 34.920635 %lossy processing... 36.507937 %lossy processing... 38.095238 %lossy processing... 39.682540 %lossy processing... 41.269841 %lossy processing... 42.857143 %lossy processing... 44.444444 %lossy processing... 46.031746 %lossy processing... 47.619048 %lossy processing... 49.206349 %lossy processing... 50.793651 %lossy processing... 52.380952 %lossy processing... 53.968254 %lossy processing... 55.555556 %lossy processing... 57.142857 %lossy processing... 58.730159 %lossy processing... 60.317460 %lossy processing... 61.904762 %lossy processing... 63.492063 %lossy processing... 65.079365 %lossy processing... 66.666667 %lossy processing... 68.253968 %lossy processing... 69.841270 %lossy processing... 71.428571 %lossy processing... 73.015873 %lossy processing... 74.603175 %lossy processing... 76.190476 %lossy processing... 77.777778 %lossy processing... 79.365079 %lossy processing... 80.952381 %lossy processing... 82.539683 %lossy processing... 84.126984 %lossy processing... 85.714286 %lossy processing... 87.301587 %lossy processing... 88.888889 %lossy processing... 90.476190 %lossy processing... 92.063492 %lossy processing... 93.650794 %lossy processing... 95.238095 %lossy processing... 96.825397 %lossy processing... 98.412698 %lossy processing... 100.000000 %
-finish decompress all 63 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/4.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/4.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/4.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/4.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/4.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 188902
-blocks = 63
-lossy processing... 1.587302 %lossy processing... 3.174603 %lossy processing... 4.761905 %lossy processing... 6.349206 %lossy processing... 7.936508 %lossy processing... 9.523810 %lossy processing... 11.111111 %lossy processing... 12.698413 %lossy processing... 14.285714 %lossy processing... 15.873016 %lossy processing... 17.460317 %lossy processing... 19.047619 %lossy processing... 20.634921 %lossy processing... 22.222222 %lossy processing... 23.809524 %lossy processing... 25.396825 %lossy processing... 26.984127 %lossy processing... 28.571429 %lossy processing... 30.158730 %lossy processing... 31.746032 %lossy processing... 33.333333 %lossy processing... 34.920635 %lossy processing... 36.507937 %lossy processing... 38.095238 %lossy processing... 39.682540 %lossy processing... 41.269841 %lossy processing... 42.857143 %lossy processing... 44.444444 %lossy processing... 46.031746 %lossy processing... 47.619048 %lossy processing... 49.206349 %lossy processing... 50.793651 %lossy processing... 52.380952 %lossy processing... 53.968254 %lossy processing... 55.555556 %lossy processing... 57.142857 %lossy processing... 58.730159 %lossy processing... 60.317460 %lossy processing... 61.904762 %lossy processing... 63.492063 %lossy processing... 65.079365 %lossy processing... 66.666667 %lossy processing... 68.253968 %lossy processing... 69.841270 %lossy processing... 71.428571 %lossy processing... 73.015873 %lossy processing... 74.603175 %lossy processing... 76.190476 %lossy processing... 77.777778 %lossy processing... 79.365079 %lossy processing... 80.952381 %lossy processing... 82.539683 %lossy processing... 84.126984 %lossy processing... 85.714286 %lossy processing... 87.301587 %lossy processing... 88.888889 %lossy processing... 90.476190 %lossy processing... 92.063492 %lossy processing... 93.650794 %lossy processing... 95.238095 %lossy processing... 96.825397 %lossy processing... 98.412698 %lossy processing... 100.000000 %
-finish decompress all 63 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/4.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/4.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/4.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/4.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/4.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/4.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 188902
-blocks = 63
-lossy processing... 1.587302 %lossy processing... 3.174603 %lossy processing... 4.761905 %lossy processing... 6.349206 %lossy processing... 7.936508 %lossy processing... 9.523810 %lossy processing... 11.111111 %lossy processing... 12.698413 %lossy processing... 14.285714 %lossy processing... 15.873016 %lossy processing... 17.460317 %lossy processing... 19.047619 %lossy processing... 20.634921 %lossy processing... 22.222222 %lossy processing... 23.809524 %lossy processing... 25.396825 %lossy processing... 26.984127 %lossy processing... 28.571429 %lossy processing... 30.158730 %lossy processing... 31.746032 %lossy processing... 33.333333 %lossy processing... 34.920635 %lossy processing... 36.507937 %lossy processing... 38.095238 %lossy processing... 39.682540 %lossy processing... 41.269841 %lossy processing... 42.857143 %lossy processing... 44.444444 %lossy processing... 46.031746 %lossy processing... 47.619048 %lossy processing... 49.206349 %lossy processing... 50.793651 %lossy processing... 52.380952 %lossy processing... 53.968254 %lossy processing... 55.555556 %lossy processing... 57.142857 %lossy processing... 58.730159 %lossy processing... 60.317460 %lossy processing... 61.904762 %lossy processing... 63.492063 %lossy processing... 65.079365 %lossy processing... 66.666667 %lossy processing... 68.253968 %lossy processing... 69.841270 %lossy processing... 71.428571 %lossy processing... 73.015873 %lossy processing... 74.603175 %lossy processing... 76.190476 %lossy processing... 77.777778 %lossy processing... 79.365079 %lossy processing... 80.952381 %lossy processing... 82.539683 %lossy processing... 84.126984 %lossy processing... 85.714286 %lossy processing... 87.301587 %lossy processing... 88.888889 %lossy processing... 90.476190 %lossy processing... 92.063492 %lossy processing... 93.650794 %lossy processing... 95.238095 %lossy processing... 96.825397 %lossy processing... 98.412698 %lossy processing... 100.000000 %
-finish decompress all 63 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/4.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/4.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/5.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/5.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/5.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 191074
-blocks = 64
-lossy processing... 1.562500 %lossy processing... 3.125000 %lossy processing... 4.687500 %lossy processing... 6.250000 %lossy processing... 7.812500 %lossy processing... 9.375000 %lossy processing... 10.937500 %lossy processing... 12.500000 %lossy processing... 14.062500 %lossy processing... 15.625000 %lossy processing... 17.187500 %lossy processing... 18.750000 %lossy processing... 20.312500 %lossy processing... 21.875000 %lossy processing... 23.437500 %lossy processing... 25.000000 %lossy processing... 26.562500 %lossy processing... 28.125000 %lossy processing... 29.687500 %lossy processing... 31.250000 %lossy processing... 32.812500 %lossy processing... 34.375000 %lossy processing... 35.937500 %lossy processing... 37.500000 %lossy processing... 39.062500 %lossy processing... 40.625000 %lossy processing... 42.187500 %lossy processing... 43.750000 %lossy processing... 45.312500 %lossy processing... 46.875000 %lossy processing... 48.437500 %lossy processing... 50.000000 %lossy processing... 51.562500 %lossy processing... 53.125000 %lossy processing... 54.687500 %lossy processing... 56.250000 %lossy processing... 57.812500 %lossy processing... 59.375000 %lossy processing... 60.937500 %lossy processing... 62.500000 %lossy processing... 64.062500 %lossy processing... 65.625000 %lossy processing... 67.187500 %lossy processing... 68.750000 %lossy processing... 70.312500 %lossy processing... 71.875000 %lossy processing... 73.437500 %lossy processing... 75.000000 %lossy processing... 76.562500 %lossy processing... 78.125000 %lossy processing... 79.687500 %lossy processing... 81.250000 %lossy processing... 82.812500 %lossy processing... 84.375000 %lossy processing... 85.937500 %lossy processing... 87.500000 %lossy processing... 89.062500 %lossy processing... 90.625000 %lossy processing... 92.187500 %lossy processing... 93.750000 %lossy processing... 95.312500 %lossy processing... 96.875000 %lossy processing... 98.437500 %lossy processing... 100.000000 %
-finish decompress all 64 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/5.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/5.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/5.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/5.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/5.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 191074
-blocks = 64
-lossy processing... 1.562500 %lossy processing... 3.125000 %lossy processing... 4.687500 %lossy processing... 6.250000 %lossy processing... 7.812500 %lossy processing... 9.375000 %lossy processing... 10.937500 %lossy processing... 12.500000 %lossy processing... 14.062500 %lossy processing... 15.625000 %lossy processing... 17.187500 %lossy processing... 18.750000 %lossy processing... 20.312500 %lossy processing... 21.875000 %lossy processing... 23.437500 %lossy processing... 25.000000 %lossy processing... 26.562500 %lossy processing... 28.125000 %lossy processing... 29.687500 %lossy processing... 31.250000 %lossy processing... 32.812500 %lossy processing... 34.375000 %lossy processing... 35.937500 %lossy processing... 37.500000 %lossy processing... 39.062500 %lossy processing... 40.625000 %lossy processing... 42.187500 %lossy processing... 43.750000 %lossy processing... 45.312500 %lossy processing... 46.875000 %lossy processing... 48.437500 %lossy processing... 50.000000 %lossy processing... 51.562500 %lossy processing... 53.125000 %lossy processing... 54.687500 %lossy processing... 56.250000 %lossy processing... 57.812500 %lossy processing... 59.375000 %lossy processing... 60.937500 %lossy processing... 62.500000 %lossy processing... 64.062500 %lossy processing... 65.625000 %lossy processing... 67.187500 %lossy processing... 68.750000 %lossy processing... 70.312500 %lossy processing... 71.875000 %lossy processing... 73.437500 %lossy processing... 75.000000 %lossy processing... 76.562500 %lossy processing... 78.125000 %lossy processing... 79.687500 %lossy processing... 81.250000 %lossy processing... 82.812500 %lossy processing... 84.375000 %lossy processing... 85.937500 %lossy processing... 87.500000 %lossy processing... 89.062500 %lossy processing... 90.625000 %lossy processing... 92.187500 %lossy processing... 93.750000 %lossy processing... 95.312500 %lossy processing... 96.875000 %lossy processing... 98.437500 %lossy processing... 100.000000 %
-finish decompress all 64 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/5.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/5.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/5.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/5.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/5.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/5.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 191074
-blocks = 64
-lossy processing... 1.562500 %lossy processing... 3.125000 %lossy processing... 4.687500 %lossy processing... 6.250000 %lossy processing... 7.812500 %lossy processing... 9.375000 %lossy processing... 10.937500 %lossy processing... 12.500000 %lossy processing... 14.062500 %lossy processing... 15.625000 %lossy processing... 17.187500 %lossy processing... 18.750000 %lossy processing... 20.312500 %lossy processing... 21.875000 %lossy processing... 23.437500 %lossy processing... 25.000000 %lossy processing... 26.562500 %lossy processing... 28.125000 %lossy processing... 29.687500 %lossy processing... 31.250000 %lossy processing... 32.812500 %lossy processing... 34.375000 %lossy processing... 35.937500 %lossy processing... 37.500000 %lossy processing... 39.062500 %lossy processing... 40.625000 %lossy processing... 42.187500 %lossy processing... 43.750000 %lossy processing... 45.312500 %lossy processing... 46.875000 %lossy processing... 48.437500 %lossy processing... 50.000000 %lossy processing... 51.562500 %lossy processing... 53.125000 %lossy processing... 54.687500 %lossy processing... 56.250000 %lossy processing... 57.812500 %lossy processing... 59.375000 %lossy processing... 60.937500 %lossy processing... 62.500000 %lossy processing... 64.062500 %lossy processing... 65.625000 %lossy processing... 67.187500 %lossy processing... 68.750000 %lossy processing... 70.312500 %lossy processing... 71.875000 %lossy processing... 73.437500 %lossy processing... 75.000000 %lossy processing... 76.562500 %lossy processing... 78.125000 %lossy processing... 79.687500 %lossy processing... 81.250000 %lossy processing... 82.812500 %lossy processing... 84.375000 %lossy processing... 85.937500 %lossy processing... 87.500000 %lossy processing... 89.062500 %lossy processing... 90.625000 %lossy processing... 92.187500 %lossy processing... 93.750000 %lossy processing... 95.312500 %lossy processing... 96.875000 %lossy processing... 98.437500 %lossy processing... 100.000000 %
-finish decompress all 64 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/5.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/5.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/6.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/6.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/6.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 233598
-blocks = 78
-lossy processing... 1.282051 %lossy processing... 2.564103 %lossy processing... 3.846154 %lossy processing... 5.128205 %lossy processing... 6.410256 %lossy processing... 7.692308 %lossy processing... 8.974359 %lossy processing... 10.256410 %lossy processing... 11.538462 %lossy processing... 12.820513 %lossy processing... 14.102564 %lossy processing... 15.384615 %lossy processing... 16.666667 %lossy processing... 17.948718 %lossy processing... 19.230769 %lossy processing... 20.512821 %lossy processing... 21.794872 %lossy processing... 23.076923 %lossy processing... 24.358974 %lossy processing... 25.641026 %lossy processing... 26.923077 %lossy processing... 28.205128 %lossy processing... 29.487179 %lossy processing... 30.769231 %lossy processing... 32.051282 %lossy processing... 33.333333 %lossy processing... 34.615385 %lossy processing... 35.897436 %lossy processing... 37.179487 %lossy processing... 38.461538 %lossy processing... 39.743590 %lossy processing... 41.025641 %lossy processing... 42.307692 %lossy processing... 43.589744 %lossy processing... 44.871795 %lossy processing... 46.153846 %lossy processing... 47.435897 %lossy processing... 48.717949 %lossy processing... 50.000000 %lossy processing... 51.282051 %lossy processing... 52.564103 %lossy processing... 53.846154 %lossy processing... 55.128205 %lossy processing... 56.410256 %lossy processing... 57.692308 %lossy processing... 58.974359 %lossy processing... 60.256410 %lossy processing... 61.538462 %lossy processing... 62.820513 %lossy processing... 64.102564 %lossy processing... 65.384615 %lossy processing... 66.666667 %lossy processing... 67.948718 %lossy processing... 69.230769 %lossy processing... 70.512821 %lossy processing... 71.794872 %lossy processing... 73.076923 %lossy processing... 74.358974 %lossy processing... 75.641026 %lossy processing... 76.923077 %lossy processing... 78.205128 %lossy processing... 79.487179 %lossy processing... 80.769231 %lossy processing... 82.051282 %lossy processing... 83.333333 %lossy processing... 84.615385 %lossy processing... 85.897436 %lossy processing... 87.179487 %lossy processing... 88.461538 %lossy processing... 89.743590 %lossy processing... 91.025641 %lossy processing... 92.307692 %lossy processing... 93.589744 %lossy processing... 94.871795 %lossy processing... 96.153846 %lossy processing... 97.435897 %lossy processing... 98.717949 %lossy processing... 100.000000 %
-finish decompress all 78 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/6.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/6.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/6.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/6.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/6.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 233598
-blocks = 78
-lossy processing... 1.282051 %lossy processing... 2.564103 %lossy processing... 3.846154 %lossy processing... 5.128205 %lossy processing... 6.410256 %lossy processing... 7.692308 %lossy processing... 8.974359 %lossy processing... 10.256410 %lossy processing... 11.538462 %lossy processing... 12.820513 %lossy processing... 14.102564 %lossy processing... 15.384615 %lossy processing... 16.666667 %lossy processing... 17.948718 %lossy processing... 19.230769 %lossy processing... 20.512821 %lossy processing... 21.794872 %lossy processing... 23.076923 %lossy processing... 24.358974 %lossy processing... 25.641026 %lossy processing... 26.923077 %lossy processing... 28.205128 %lossy processing... 29.487179 %lossy processing... 30.769231 %lossy processing... 32.051282 %lossy processing... 33.333333 %lossy processing... 34.615385 %lossy processing... 35.897436 %lossy processing... 37.179487 %lossy processing... 38.461538 %lossy processing... 39.743590 %lossy processing... 41.025641 %lossy processing... 42.307692 %lossy processing... 43.589744 %lossy processing... 44.871795 %lossy processing... 46.153846 %lossy processing... 47.435897 %lossy processing... 48.717949 %lossy processing... 50.000000 %lossy processing... 51.282051 %lossy processing... 52.564103 %lossy processing... 53.846154 %lossy processing... 55.128205 %lossy processing... 56.410256 %lossy processing... 57.692308 %lossy processing... 58.974359 %lossy processing... 60.256410 %lossy processing... 61.538462 %lossy processing... 62.820513 %lossy processing... 64.102564 %lossy processing... 65.384615 %lossy processing... 66.666667 %lossy processing... 67.948718 %lossy processing... 69.230769 %lossy processing... 70.512821 %lossy processing... 71.794872 %lossy processing... 73.076923 %lossy processing... 74.358974 %lossy processing... 75.641026 %lossy processing... 76.923077 %lossy processing... 78.205128 %lossy processing... 79.487179 %lossy processing... 80.769231 %lossy processing... 82.051282 %lossy processing... 83.333333 %lossy processing... 84.615385 %lossy processing... 85.897436 %lossy processing... 87.179487 %lossy processing... 88.461538 %lossy processing... 89.743590 %lossy processing... 91.025641 %lossy processing... 92.307692 %lossy processing... 93.589744 %lossy processing... 94.871795 %lossy processing... 96.153846 %lossy processing... 97.435897 %lossy processing... 98.717949 %lossy processing... 100.000000 %
-finish decompress all 78 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/6.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/6.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/6.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/6.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/6.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/6.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 233598
-blocks = 78
-lossy processing... 1.282051 %lossy processing... 2.564103 %lossy processing... 3.846154 %lossy processing... 5.128205 %lossy processing... 6.410256 %lossy processing... 7.692308 %lossy processing... 8.974359 %lossy processing... 10.256410 %lossy processing... 11.538462 %lossy processing... 12.820513 %lossy processing... 14.102564 %lossy processing... 15.384615 %lossy processing... 16.666667 %lossy processing... 17.948718 %lossy processing... 19.230769 %lossy processing... 20.512821 %lossy processing... 21.794872 %lossy processing... 23.076923 %lossy processing... 24.358974 %lossy processing... 25.641026 %lossy processing... 26.923077 %lossy processing... 28.205128 %lossy processing... 29.487179 %lossy processing... 30.769231 %lossy processing... 32.051282 %lossy processing... 33.333333 %lossy processing... 34.615385 %lossy processing... 35.897436 %lossy processing... 37.179487 %lossy processing... 38.461538 %lossy processing... 39.743590 %lossy processing... 41.025641 %lossy processing... 42.307692 %lossy processing... 43.589744 %lossy processing... 44.871795 %lossy processing... 46.153846 %lossy processing... 47.435897 %lossy processing... 48.717949 %lossy processing... 50.000000 %lossy processing... 51.282051 %lossy processing... 52.564103 %lossy processing... 53.846154 %lossy processing... 55.128205 %lossy processing... 56.410256 %lossy processing... 57.692308 %lossy processing... 58.974359 %lossy processing... 60.256410 %lossy processing... 61.538462 %lossy processing... 62.820513 %lossy processing... 64.102564 %lossy processing... 65.384615 %lossy processing... 66.666667 %lossy processing... 67.948718 %lossy processing... 69.230769 %lossy processing... 70.512821 %lossy processing... 71.794872 %lossy processing... 73.076923 %lossy processing... 74.358974 %lossy processing... 75.641026 %lossy processing... 76.923077 %lossy processing... 78.205128 %lossy processing... 79.487179 %lossy processing... 80.769231 %lossy processing... 82.051282 %lossy processing... 83.333333 %lossy processing... 84.615385 %lossy processing... 85.897436 %lossy processing... 87.179487 %lossy processing... 88.461538 %lossy processing... 89.743590 %lossy processing... 91.025641 %lossy processing... 92.307692 %lossy processing... 93.589744 %lossy processing... 94.871795 %lossy processing... 96.153846 %lossy processing... 97.435897 %lossy processing... 98.717949 %lossy processing... 100.000000 %
-finish decompress all 78 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/6.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/6.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/7.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/7.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/7.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 50811
-blocks = 17
-lossy processing... 5.882353 %lossy processing... 11.764706 %lossy processing... 17.647059 %lossy processing... 23.529412 %lossy processing... 29.411765 %lossy processing... 35.294118 %lossy processing... 41.176471 %lossy processing... 47.058824 %lossy processing... 52.941176 %lossy processing... 58.823529 %lossy processing... 64.705882 %lossy processing... 70.588235 %lossy processing... 76.470588 %lossy processing... 82.352941 %lossy processing... 88.235294 %lossy processing... 94.117647 %lossy processing... 100.000000 %
-finish decompress all 17 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/7.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/7.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/7.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/7.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/7.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 50811
-blocks = 17
-lossy processing... 5.882353 %lossy processing... 11.764706 %lossy processing... 17.647059 %lossy processing... 23.529412 %lossy processing... 29.411765 %lossy processing... 35.294118 %lossy processing... 41.176471 %lossy processing... 47.058824 %lossy processing... 52.941176 %lossy processing... 58.823529 %lossy processing... 64.705882 %lossy processing... 70.588235 %lossy processing... 76.470588 %lossy processing... 82.352941 %lossy processing... 88.235294 %lossy processing... 94.117647 %lossy processing... 100.000000 %
-finish decompress all 17 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/7.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/7.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/7.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/7.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/7.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/7.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 50811
-blocks = 17
-lossy processing... 5.882353 %lossy processing... 11.764706 %lossy processing... 17.647059 %lossy processing... 23.529412 %lossy processing... 29.411765 %lossy processing... 35.294118 %lossy processing... 41.176471 %lossy processing... 47.058824 %lossy processing... 52.941176 %lossy processing... 58.823529 %lossy processing... 64.705882 %lossy processing... 70.588235 %lossy processing... 76.470588 %lossy processing... 82.352941 %lossy processing... 88.235294 %lossy processing... 94.117647 %lossy processing... 100.000000 %
-finish decompress all 17 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/7.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/7.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/8.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/8.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/8.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 195089
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/8.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/8.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/8.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/8.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/8.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 195089
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/8.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/8.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/8.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/8.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/8.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/8.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 195089
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/8.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/8.csv_0.05_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.01.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.01_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/9.csv_0.01.tmp -> /Users/lixuxian/compress/HWzip/file/9.csv_0.01.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/9.csv_0.01.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 197837
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/9.csv_0.01.hw to file /Users/lixuxian/compress/HWzip/file/9.csv_0.01_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.03.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.03_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/9.csv_0.03.tmp -> /Users/lixuxian/compress/HWzip/file/9.csv_0.03.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/9.csv_0.03.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 197837
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/9.csv_0.03.hw to file /Users/lixuxian/compress/HWzip/file/9.csv_0.03_de.csv
-tempFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.05.tmp
-outputFilepath = /Users/lixuxian/compress/HWzip/file/9.csv_0.05_de.csv
-lossless decoding, paq9a algorithm
-
-/Users/lixuxian/compress/HWzip/file/9.csv_0.05.tmp -> /Users/lixuxian/compress/HWzip/file/9.csv_0.05.tmp   405877 KiB
-decompress file to /Users/lixuxian/compress/HWzip/file/9.csv_0.05.tmp
-blockSize = 3000
-columnSize = 194
-fileLines = 197837
-blocks = 66
-lossy processing... 1.515152 %lossy processing... 3.030303 %lossy processing... 4.545455 %lossy processing... 6.060606 %lossy processing... 7.575758 %lossy processing... 9.090909 %lossy processing... 10.606061 %lossy processing... 12.121212 %lossy processing... 13.636364 %lossy processing... 15.151515 %lossy processing... 16.666667 %lossy processing... 18.181818 %lossy processing... 19.696970 %lossy processing... 21.212121 %lossy processing... 22.727273 %lossy processing... 24.242424 %lossy processing... 25.757576 %lossy processing... 27.272727 %lossy processing... 28.787879 %lossy processing... 30.303030 %lossy processing... 31.818182 %lossy processing... 33.333333 %lossy processing... 34.848485 %lossy processing... 36.363636 %lossy processing... 37.878788 %lossy processing... 39.393939 %lossy processing... 40.909091 %lossy processing... 42.424242 %lossy processing... 43.939394 %lossy processing... 45.454545 %lossy processing... 46.969697 %lossy processing... 48.484848 %lossy processing... 50.000000 %lossy processing... 51.515152 %lossy processing... 53.030303 %lossy processing... 54.545455 %lossy processing... 56.060606 %lossy processing... 57.575758 %lossy processing... 59.090909 %lossy processing... 60.606061 %lossy processing... 62.121212 %lossy processing... 63.636364 %lossy processing... 65.151515 %lossy processing... 66.666667 %lossy processing... 68.181818 %lossy processing... 69.696970 %lossy processing... 71.212121 %lossy processing... 72.727273 %lossy processing... 74.242424 %lossy processing... 75.757576 %lossy processing... 77.272727 %lossy processing... 78.787879 %lossy processing... 80.303030 %lossy processing... 81.818182 %lossy processing... 83.333333 %lossy processing... 84.848485 %lossy processing... 86.363636 %lossy processing... 87.878788 %lossy processing... 89.393939 %lossy processing... 90.909091 %lossy processing... 92.424242 %lossy processing... 93.939394 %lossy processing... 95.454545 %lossy processing... 96.969697 %lossy processing... 98.484848 %lossy processing... 100.000000 %
-finish decompress all 66 blocks
-decompress file /Users/lixuxian/compress/HWzip/file/9.csv_0.05.hw to file /Users/lixuxian/compress/HWzip/file/9.csv_0.05_de.csv

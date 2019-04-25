@@ -8,8 +8,8 @@ class Task
 {
 private:
     const int max_size;
-    // std::queue<std::string> tasks;
-    boost::lockfree::spsc_queue<std::string, boost::lockfree::capacity<100> > tasks;
+    std::queue<std::string> tasks;
+    // boost::lockfree::spsc_queue<std::string, boost::lockfree::capacity<100> > tasks;
     bool finish;
 
 public:
