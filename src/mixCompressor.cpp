@@ -23,7 +23,7 @@ MixCompressor::MixCompressor(double rel_err, double avg_err,
 	lossyCompPtr = std::make_shared<LossyCompressor>(rel_err, avg_err);
 	losslessCompPtr = std::make_shared<LosslessCompressor>();
 
-	blockSize = 1000;
+	blockSize = 3000;
 	columnSize = 0;
 }
 
