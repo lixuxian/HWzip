@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-04-01 09:34:42
- * @LastEditTime: 2019-04-22 15:40:43
+ * @LastEditTime: 2019-04-26 15:20:12
  */
 #include <string>
 #include <vector>
@@ -16,6 +16,7 @@ public:
 	~SimplifyData();
 
 	std::string getBestData(std::string data, double err, std::vector<int> &cFreq);
+	std::string getBestData_new(double data_d, double lTmp, double uTmp, std::vector<int> &cFreq);
 	std::string getBestDataFromInterval(std::string s1, std::string s2, std::vector<int> &cFreq);
 	std::string simplifyDataCeil(std::string s1, std::string s2);
 	std::string simplifyDataFloor(std::string s1, std::string s2);

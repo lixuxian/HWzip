@@ -363,18 +363,20 @@ int MixCompressor::compress_thread()
 
 		clock_t s = clock();
 		line_num_of_block = fileProcPtr->getOneBlock(block);
-
+		// clock_t e_b = clock();
+		// std::cout << "fileProcPtr->getOneBlock() time = " << (double)(e_b - s) / CLOCKS_PER_SEC << std::endl;
 		if (line_num_of_block > 0)
 		{
 			++block_count;
 			lossyCompPtr->compressOneBlock(block, line_num_of_block);
-
+			// clock_t e_lossy = clock();
+			// std::cout << "lossy compress time = " << (double)(e_lossy - e_b) / CLOCKS_PER_SEC << std::endl;
 			// std::string lossless_str;
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
 			clock_t e = clock();
-			std::cout << "losslessCompPtr->compressOneBlock() time = " << (double)(e - s) / CLOCKS_PER_SEC << std::endl;
-			if (lossless_str.length() >= 1 * 1024 * 1024)
-			{
+			std::cout << "losslessCompPtr->compressOneBlock time = " << (double)(e - s) / CLOCKS_PER_SEC << std::endl;
+			// if (lossless_str.length() >= 1 * 1024 * 1024)
+			// {
 				// losslessCompPtr->compress_str_paq9a(lossless_str);
 				// 写入task的队列中，待paq压缩
 				{
@@ -388,7 +390,7 @@ int MixCompressor::compress_thread()
 					t.swap(lossless_str);
 				}
 				lossless_str = "";
-			}
+			// }
 
 			
 			std::cout << "\rlossy processing... " << std::fixed << (double)block_count / blocks * 100 << " %" << std::endl;

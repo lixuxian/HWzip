@@ -55,7 +55,10 @@ void PaqCompresssor::run()
             task->pop_str(str);
             --nready;
         }
+        clock_t s = clock();
         losslessComp->compress_str_paq9a(str);
+        clock_t e = clock();
+        std::cout << "losslessComp->compress_str_paq9a, time = " << (double)(e - s)/CLOCKS_PER_SEC << std::endl;
         {
             std::string t;
             t.swap(str);

@@ -71,10 +71,19 @@ void thread_lossy(std::shared_ptr<MixCompressor> mixComp, std::shared_ptr<Task> 
 	mixComp->run();
 }
 
+bool end = false;
+std::mutex mut_end;
+std::condition_variable cv;
+
 void thread_lossless(std::shared_ptr<PaqCompresssor> paqComp, std::shared_ptr<Task> task)
 {
 	paqComp->setTask(task);
 	paqComp->run();
+	{
+		std::unique_lock<std::mutex> lock_end(mut_end);
+		end = true;
+		cv.notify_all();
+	}
 }
 /**
  * @description: 程序入口
@@ -95,6 +104,7 @@ int main(int argc, char const *argv[])
 		exit(-1);
 	}
 
+	time_t stime = time(NULL);
 	// double thread version
 	
 	if (paras.mode == COMPRESS)
@@ -106,16 +116,19 @@ int main(int argc, char const *argv[])
 
 		std::shared_ptr<Task> task = std::make_shared<Task>(100);
 
-		std::thread lossy(thread_lossy, mixComp, task);
 		std::thread lossless(thread_lossless, paqComp, task);
-		lossy.join();
-		lossless.join();
+		lossless.detach();
+
+		mixComp->setTask(task);
+		mixComp->run();
+		
 	} 
 	else if (paras.mode == DECOMPRESS)
 	{
 		std::shared_ptr<MixCompressor> mixComp = std::make_shared<MixCompressor>(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
 		, paras.inputFile, paras.mode);
 		mixComp->run();
+		end = true;
 	}
 	else
 	{
@@ -123,11 +136,21 @@ int main(int argc, char const *argv[])
 		exit(1);
 	}
 	
+	{
+		std::unique_lock<std::mutex> lock_end(mut_end);
+		while (!end)
+		{
+			cv.wait(lock_end);
+		}
+		std::cout << "end..." << std::endl;
+	}
 
 	// single thread version
 	// std::shared_ptr<MixCompressor> mixComp = std::make_shared<MixCompressor>(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
 	// 	, paras.inputFile, paras.mode);
 
 	// mixComp->run();
+	time_t etime = time(NULL);
+	std::cout << "finish compress, time = " << etime << " - " << stime << " = " << etime - stime << " seconds" << std::endl;
 	return 0;
 }

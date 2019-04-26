@@ -52,6 +52,35 @@ std::string SimplifyData::getBestData(std::string data, double err, std::vector<
 	return getBestDataFromInterval(ls, us, cFreq);
 }
 
+std::string SimplifyData::getBestData_new(double data_d, double lTmp, double uTmp, std::vector<int> &cFreq)
+{
+	if (data_d == 0.0)
+	{
+		return "0";
+	}
+	// double UP = 1 + err;
+	// double LOW = 1 - err;
+	// double lTmp, uTmp;
+	// double data_d = Stod(data);
+	// if (data.find('-') != std::string::npos)
+	if (data_d < 0)
+	{
+		double tmp = lTmp;
+		lTmp = uTmp;
+		uTmp = lTmp;
+	}
+
+	// TODO
+	// 两个函数可以合并为一个
+	std::string lTmp_str, uTmp_str;
+	convertDouble(lTmp, lTmp_str);
+	convertDouble(uTmp, uTmp_str);
+	std::string ls = simplifyDataCeil(lTmp_str, uTmp_str);
+	std::string us = simplifyDataFloor(	lTmp_str, uTmp_str);
+
+	return getBestDataFromInterval(ls, us, cFreq);
+}
+
 /**
  * @description: 从误差允许的区间中，选择一个长度最短、字符频率最高的字符串，替换当前数据
  * @param ls 区间下限
@@ -438,6 +467,10 @@ void SimplifyData::restoreE0(std::string e_data, double err, std::string &result
 	} else if (e_data.find("e") != std::string::npos)
 	{
 		splitString(e_data, splited_data, "e");
+	} else {
+		// don't contain 'e' or 'E'
+		result = "0";
+		return;
 	}
 	if (splited_data[0].find('.') != std::string::npos)
 	{

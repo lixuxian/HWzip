@@ -14,7 +14,7 @@ TARGET_MAC = hwzip-mac
 BUILD_TARGET = build
 
 CC = g++
-CFLAGS = -Ofast -Wall -std=c++11 -I${DIR_INC} -I${DIR_BOOST} -fpermissive
+CFLAGS = -Ofast -Wall -std=c++11 -I${DIR_INC} -I${DIR_BOOST} -fpermissive -ltcmalloc_and_profiler
 
 OS:=$(shell uname -s)
 IS_LINUX:=$(shell echo $(OS) | grep -i Linux)

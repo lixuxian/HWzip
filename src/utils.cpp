@@ -32,7 +32,7 @@ void splitString(const std::string& s, std::vector<std::string>& v, const std::s
  */
 bool isZeroOrNA(const std::string &str)
 {
-    if (str == "NA" || str == "" || str == " ")           
+    if (str == "" || str == " " || str == "NA")           
     {
         return true;
     }

@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 22:45:38
- * @LastEditTime: 2019-04-22 14:27:12
+ * @LastEditTime: 2019-04-26 11:28:25
  */
 #ifndef __UTILS__
 #define __UTILS__
@@ -19,7 +19,6 @@ bool containE(const std::string &str);
 std::string convertDouble_old(double value);
 // std::string convertDouble(double value);
 void convertDouble(double value, std::string &res);
-
 
 double Stod(const std::string &str);
 

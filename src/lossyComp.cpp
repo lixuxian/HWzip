@@ -36,16 +36,16 @@ void LossyCompressor::updateFreq(const std::string &data)
  */
 void LossyCompressor::processZeroOrE(std::string &data, double err)
 {
-	if (isZeroOrNA(data))
-	{
-		data = "0";
-	} else if (containE(data))
-	{
-		// data = simplifyData.restoreE0(data, err);
-		simplifyData.restoreE0(data, err, data);
-	} else {
-		perror("LossyCompressor::processZeroOrE(), not zero or E!");
-	}
+	// if (isZeroOrNA(data))
+	// {
+	// 	data = "0";
+	// } else if (containE(data))
+	// {
+	// 	simplifyData.restoreE0(data, err, data);
+	// } else {
+	// 	perror("LossyCompressor::processZeroOrE(), not zero or E!");
+	// }
+	simplifyData.restoreE0(data, err, data);
 	updateFreq(data);
 }
 
@@ -165,7 +165,6 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 			if (isZeroOrNA(block[k][j]) || containE(block[k][j]))
 			{
 				// 区间结束
-				// TODO 更改处理方式，使用字符替换的方式
 				processZeroOrE(block[k][j], PW_REL_ERR_MAX);
 				// process interval
 				std::string low1_str, up1_str;
@@ -188,11 +187,12 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 				}
 				else if (k == rowN - 1) // 最后一个数
 				{
-					up1 = Stod(block[k][j]) * UP;
-					low1 = Stod(block[k][j]) * LOW;
+					double data_d = Stod(block[k][j]);
+					up1 = data_d * UP;
+					low1 = data_d * LOW;
 					processIntervalRange(low1, up1);
-					// block[k][j] = convertDouble(up1);
-					block[k][j] = simplifyData.getBestData(block[k][j], PW_REL_ERR_MAX, cFreq);
+					// block[k][j] = simplifyData.getBestData(block[k][j], PW_REL_ERR_MAX, cFreq);
+					block[k][j] = simplifyData.getBestData_new(data_d, low1, up1, cFreq);
 					updateFreq(block[k][j]);
 					break;
 				}
@@ -235,12 +235,13 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 					}
 					else if (k == rowN - 1) // 最后一个数
 					{
-						up1 = Stod(block[k][j]) * UP;
-						low1 = Stod(block[k][j]) * LOW;
+						double data_d = Stod(block[k][j]);
+						up1 = data_d * UP;
+						low1 = data_d * LOW;
 						processIntervalRange(low1, up1);
 						// TODO 更改处理方式，使用字符替换的方式
-						// block[k][j] = convertDouble(up1);
-						block[k][j] = simplifyData.getBestData(block[k][j], PW_REL_ERR_MAX, cFreq);
+						// block[k][j] = simplifyData.getBestData(block[k][j], PW_REL_ERR_MAX, cFreq);
+						block[k][j] = simplifyData.getBestData_new(data_d, low1, up1, cFreq);
 						updateFreq(block[k][j]);
 						break;
 					}
