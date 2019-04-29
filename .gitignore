@@ -6,3 +6,4 @@ obj/
 hwzip.dSYM/*
 calerror/cal_error.dSYM/
 test/*.txt
+test.hw

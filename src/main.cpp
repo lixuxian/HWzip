@@ -80,6 +80,7 @@ int main(int argc, char const *argv[])
 	{
 		exit(-1);
 	}
+	time_t stime = time(NULL);
 	// std::cout << "main(): input = " << paras.inputFile << std::endl;
 	// MixCompressor *mixComp = new MixCompressor(paras.MAX_PW_REL_ERR, paras.MAX_AVG_ERR
 	// 	, paras.inputFile, paras.mode);
@@ -92,6 +93,8 @@ int main(int argc, char const *argv[])
 	
 	// delete mixComp;
 
+	time_t etime = time(NULL);
+	std::cout << "finish compress, time = " << etime << " - " << stime << " = " << etime - stime << " seconds" << std::endl;
 
 	return 0;
 }
