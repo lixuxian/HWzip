@@ -3,7 +3,8 @@ DIR_SRC = ./src
 DIR_OBJ = ./obj
 DIR_BIN = ./bin
 DIR_LIB = ./lib
-DIR_BOOST = /Users/lixuxian/boost_1_68_0
+# DIR_BOOST = /Users/lixuxian/boost_1_68_0
+DIR_BOOST = /root/boost_1_68_0
 
 SRC = $(wildcard ${DIR_SRC}/*.cpp)  
 OBJ = $(patsubst %.cpp,${DIR_OBJ}/%.o,$(notdir ${SRC})) 
@@ -14,7 +15,7 @@ TARGET_MAC = hwzip-mac
 BUILD_TARGET = build
 
 CC = g++
-CFLAGS = -Ofast -Wall -std=c++11 -I${DIR_INC} -I${DIR_BOOST} -fpermissive -ltcmalloc_and_profiler
+CFLAGS = -Ofast -Wall -std=c++11 -I${DIR_INC} -I${DIR_BOOST} -fpermissive -lpthread
 
 OS:=$(shell uname -s)
 IS_LINUX:=$(shell echo $(OS) | grep -i Linux)
@@ -44,7 +45,7 @@ ${DIR_OBJ}/%.o:${DIR_SRC}/%.cpp
 	$(CC) $(CFLAGS) -c  $< -o $@
 
 ${BIN_TARGET}:${OBJ}
-	$(CC) $(OBJ)  ${LDFLAGS}  -o $@
+	$(CC) $(OBJ)  ${LDFLAGS} -lpthread -o $@
 
 install:
 	cp ${BIN_TARGET} /usr/local/bin
