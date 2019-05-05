@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:33:45
- * @LastEditTime: 2019-04-23 16:58:11
+ * @LastEditTime: 2019-05-05 10:55:39
  */
 
 // #include "lossyComp.h"
@@ -13,28 +13,31 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "compressConf.h"
 
-enum Mode
-{
-	COMPRESS = 1,
-	DECOMPRESS
-};
+// enum Mode
+// {
+// 	COMPRESS = 1,
+// 	DECOMPRESS
+// };
 
 class LosslessCompressor;
 class LossyCompressor;
+class PaqCompressor;
 class FileProcessor;
 class Task;
+class CompressConf;
 
 class MixCompressor
 {
 public:
-	MixCompressor(double rel_err, double avg_err, std::string input, char mode);
+	MixCompressor(CompressConf &cf);
 	virtual ~MixCompressor();
 
-	int compress_old();
-	int compress();
+	int compress_ppmd();
+	int compress_paq();
 	int compress_thread();
-	int decompress();
+	int decompress(std::string &losslessAlgorithm);
 	
 	void run();
 
@@ -42,19 +45,15 @@ public:
 
 	void setTask(std::shared_ptr<Task> &t);
 
+	void setConf(CompressConf &cf);
+
 private:
-	// LossyCompressor *lossyComp;
-	// LosslessCompressor *losslessComp;
-	// FileProcessor *fileProc;
 
 	int getFileLines(std::string inputFilepath);
 
-	// LossyCompressor *lossyCompPtr;
-	// LosslessCompressor *losslessCompPtr;
-	// FileProcessor *fileProcPtr;
-
 	std::shared_ptr<LossyCompressor> lossyCompPtr;
 	std::shared_ptr<LosslessCompressor> losslessCompPtr;
+	std::shared_ptr<PaqCompressor> paqCompPtr;
 	std::shared_ptr<FileProcessor> fileProcPtr;
 
 	std::vector<std::vector<std::string> > block; 
@@ -74,4 +73,6 @@ private:
 	int blocks;
 
 	std::shared_ptr<Task> task;
+
+	CompressConf conf;
 };

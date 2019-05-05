@@ -1,10 +1,56 @@
+/*
+ * @Description: 
+ * @Author: lixuxian
+ * @LastEditor: lixuxian
+ * @Date: 2019-04-29 09:43:47
+ * @LastEditTime: 2019-05-05 09:39:10
+ */
 #include "fileProcess.h"
 #include "utils.h"
+#include <fstream>
+
+Metadata::Metadata() : version("1.1")
+{
+	
+}
+
+Metadata::~Metadata()
+{
+	
+}
+
+void Metadata::setVersion(std::string &ver)
+{
+	version = ver;
+}
+
+void Metadata::setBlockLines(int block_lines)
+{
+	blockLines = block_lines;
+}
+void Metadata::setColumnNum(int column_num)
+{
+	columnNum = column_num;
+}
+void Metadata::setfileLines(int file_lines)
+{
+	fileLines = file_lines;
+}
+void Metadata::setLosslessAlgorithm(std::string &algorithm)
+{
+	losslessAlgorithm = algorithm;
+}
+void Metadata::createMetadatString(std::string &meta_string)
+{
+	meta_string = version + "," + losslessAlgorithm + "," 
+		+ std::to_string(blockLines) + "," + std::to_string(columnNum) + "," 
+		+ std::to_string(fileLines) + "\n";
+}
 
 FileProcessor::FileProcessor(std::ifstream *in, std::ofstream *out, int blockSize) : in(in), out(out), 
 blockLines(blockSize), blockCount(0), columnSize(0), decompress_block_count(0)
 {
-
+	
 }
 
 FileProcessor::~FileProcessor()
@@ -21,6 +67,11 @@ void FileProcessor::setFileLines(int lines)
 	this->fileLines = lines;
 }
 
+/**
+ * @description: 初始化函数旧版，将metadata和header直接写入中间文件
+ * @param  
+ * @return: int 返回输入csv的列数
+ */
 int FileProcessor::initWork_old()
 {
 	if (!in->is_open())
@@ -60,7 +111,7 @@ int FileProcessor::initWork_old()
  * @param
  * @return: int 文件列数
  */
-int FileProcessor::initWork(std::string &metadatas, std::string &header)
+int FileProcessor::initWork(std::string &losslessAlgorithm, std::string &metadatas, std::string &header)
 {
 	if (!in->is_open())
 	{
@@ -77,18 +128,27 @@ int FileProcessor::initWork(std::string &metadatas, std::string &header)
 	// header
 	// std::string header;
 	std::getline(*in, header);
-
+	header += '\n';
+	
 	std::vector<std::string> header_splited;
 	splitString(header, header_splited, ",");
 
 	int column_num = header_splited.size();
 	columnSize = column_num;
 
+	// get metadata
+	meta.setBlockLines(blockLines);
+	meta.setColumnNum(column_num);
+	meta.setfileLines(fileLines);
+	meta.setLosslessAlgorithm(losslessAlgorithm);
+
+	meta.createMetadatString(metadatas);
+	LOG(INFO) << "metadatas = " << metadatas << std::endl;
 	// metadatas
 	// blocklines + cols + lossless algorith
 	// std::string metadatas = std::to_string(blockLines) + "," + std::to_string(column_num) + "," + std::to_string(fileLines);
-	metadatas = std::to_string(blockLines) + "," + std::to_string(column_num) + "," + std::to_string(fileLines) + '\n';
-	header += '\n';
+	// metadatas = std::to_string(blockLines) + "," + std::to_string(column_num) + "," + std::to_string(fileLines) + '\n';
+
 	// *out << metadatas << std::endl;
 	// *out << header << std::endl;
 
@@ -123,9 +183,16 @@ void FileProcessor::getMetadata(int& blockSize, int& columnSize, int& lines, int
 	std::vector<std::string> metadata_splited;
 	splitString(metadata, metadata_splited, ",");
 
-	blockSize = std::stoi(metadata_splited[0]);
-	columnSize = std::stoi(metadata_splited[1]);
-	lines = std::stoi(metadata_splited[2]);
+	meta.setVersion(metadata_splited[0]);
+	meta.setLosslessAlgorithm(metadata_splited[1]);
+	
+	blockSize = std::stoi(metadata_splited[2]);
+	columnSize = std::stoi(metadata_splited[3]);
+	lines = std::stoi(metadata_splited[4]);
+
+	meta.setBlockLines(blockSize);
+	meta.setColumnNum(columnSize);
+	meta.setfileLines(lines);
 
 	blocks = (lines - 1) / blockSize;
 	if ((lines - 1) % blockSize != 0) {
@@ -442,4 +509,26 @@ int FileProcessor::writeOneBlock2DecompressedFile(std::vector<std::vector<std::s
 		(*out) << line_str << std::endl;
 	}
 	return 1;
+}
+
+bool FileProcessor::checkFile(std::string file, std::string version)
+{
+	std::ifstream in(file, std::ios::in);
+	if (!in.is_open())
+	{
+		LOG(ERROR) << "checkFile error" << std::endl;
+		exit(1);
+	}
+	for (size_t i = 0; i < version.size(); i++)
+	{
+		char c = in.get();
+		LOG(INFO) << "c = " << c << std::endl;
+		if (c != version[i])
+		{
+			LOG(INFO) << "c = " << c << " != " << version[i] << std::endl;
+			in.close();
+			return false;
+		}
+	}
+	return true;
 }

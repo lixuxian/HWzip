@@ -1,6 +1,6 @@
 #include "losslessComp.h"
 #include "ppmd.h"
-#include "paq9a.h"
+// #include "paq9a.h"
 #include <cstdio>
 #include <iostream>
 #include <vector>
@@ -12,10 +12,7 @@ LosslessCompressor::LosslessCompressor() : simThreshold(0.90), simRange(12)
 
 LosslessCompressor::~LosslessCompressor()
 {
-	if (e)
-	{
-		delete e;
-	}
+
 }
 
 /**
@@ -241,33 +238,7 @@ int LosslessCompressor::compressFile_bz2(std::string inputFilepath, int level)
 	return 1;
 }
 
-/**
- * @description: 最后一步的无损压缩，paq9a的无损压缩接口(上下文混合模型压缩算法)
- * @param inputFilepath 输入文件路径(即中间文件) 
- * @param outputFilepath 输出文件路径(即最终的压缩文件)
- * @return: int 1表示正常
- */
-int LosslessCompressor::compressFile_paq9a(std::string inputFilepath, std::string outputFilepath)
-{
-	FILE *out = fopen(outputFilepath.c_str(), "rb");
-	if (out)
-	{
-		std::cout << "Cannot overwrite archive " << outputFilepath << std::endl;
-		exit(1);
-	}
-	out = fopen(outputFilepath.c_str(), "wb+");
-	if (!out)
-	{
-		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
-		exit(1);
-	}
-	compress_paq9a(inputFilepath.c_str(), out);
-	if (out)
-	{
-		fclose(out);
-	}
-	return 1;
-}
+
 
 /**
  * @description: 最后一步的无损压缩，ppmd的无损压缩接口，其实现在静态库libppmd中
@@ -281,40 +252,40 @@ int LosslessCompressor::compressFile_ppmd(std::string inputFilepath, std::string
 	return 1;
 }
 
-int LosslessCompressor::compress_init_paq9a(std::string inputFilepath, std::string outputFilepath)
-{
-	FILE *out = fopen(outputFilepath.c_str(), "rb");
-	if (out)
-	{
-		std::cout << "Cannot overwrite archive " << outputFilepath << std::endl;
-		exit(1);
-	}
-	out = fopen(outputFilepath.c_str(), "wb");
-	if (!out)
-	{
-		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
-		exit(1);
-	}
-	Mode_paq mode = COMPRESS;
-	e = paq9a_compress_init(inputFilepath.c_str(), out, mode);
-	return 1;
-}
+// int LosslessCompressor::compress_init_paq9a(std::string inputFilepath, std::string outputFilepath)
+// {
+// 	FILE *out = fopen(outputFilepath.c_str(), "rb");
+// 	if (out)
+// 	{
+// 		std::cout << "Cannot overwrite archive " << outputFilepath << std::endl;
+// 		exit(1);
+// 	}
+// 	out = fopen(outputFilepath.c_str(), "wb");
+// 	if (!out)
+// 	{
+// 		std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
+// 		exit(1);
+// 	}
+// 	Mode_paq mode = COMPRESS;
+// 	e = paq9a_compress_init(inputFilepath.c_str(), out, mode);
+// 	return 1;
+// }
 
-int LosslessCompressor::compress_str_paq9a(std::string str)
-{
-	if (this->e == NULL)
-	{
-		std::cout << "LosslessCompressor::compress_str_paq9a(), this->e == NULL" << std::endl;
-		exit(1);
-	}
-	paq9a_compress_str(str.c_str(), e);
-	return 1;
-}
+// int LosslessCompressor::compress_str_paq9a(std::string str)
+// {
+// 	if (this->e == NULL)
+// 	{
+// 		std::cout << "LosslessCompressor::compress_str_paq9a(), this->e == NULL" << std::endl;
+// 		exit(1);
+// 	}
+// 	paq9a_compress_str(str.c_str(), e);
+// 	return 1;
+// }
 
-void LosslessCompressor::compress_paq9a_end()
-{
-	paq9a_compress_end(e);
-}
+// void LosslessCompressor::compress_paq9a_end()
+// {
+// 	paq9a_compress_end(e);
+// }
 
 /**
  * @description: ppmd的无损解压接口，其实现在静态库libppmd中
@@ -352,32 +323,4 @@ int LosslessCompressor::decompressFile_bz2(std::string inputFilepath)
 	return 1;
 }
 
-/**
- * @description: paq9a的无损解压接口，其实现在paq9a.h中
- * @param inputFilepath 输入文件路径(即压缩文件)
- * @param outputFilepath 输出文件路径(即中间文件)
- * @return: int 1表示正常
- */
-int LosslessCompressor::decompressFile_paq9a(std::string inputFilepath, std::string outputFilepath)
-{
-	// FILE *in = fopen(inputFilepath.c_str(), "rb");
-	// if (!in)
-	// {
-	// 	std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *in == NULL" << std::endl;
-	// 	exit(0);
-	// }
-	// FILE *out = fopen(outputFilepath.c_str(), "wb");
-	// if (!out)
-	// {
-	// 	std::cout << "LosslessCompressor::compressFile_paq9a(), FILE *out == NULL" << std::endl;
-	// 	exit(0);
-	// }
-	// Mode_paq m = DECOMPRESS;
-	// paq9a(in, out, m);
-	decompress_paq9a(inputFilepath.c_str(), outputFilepath.c_str());
 
-	// fclose(in);
-	// fclose(out);
-
-	return 1;
-}

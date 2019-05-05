@@ -1236,8 +1236,7 @@ void extract(int argc, char** argv) {
 
 
 void decompress_paq9a(const char *input, const char *output) {
-  // assert(argc>2);
-  // assert(argv[1][0]=='x');
+
   static char filename[MAXNAMELEN+1];  // filename from archive
 
   // Open archive

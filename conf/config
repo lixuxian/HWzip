@@ -1,0 +1,21 @@
+# version = 1.1
+# 配置文件
+
+# 最大相对误差，对数值x，其解压后数值为x'，则x对相对误差为(x - x')/x
+max_pw_rel_err = 0.10
+
+# 最大平均误差(按列指标计算)，计算公式为sqrt((1/N) * sum( ((x(i) - x'(i)) / x(i))^2 )， 其中i = 1..N
+max_avg_err = 0.05
+
+# 无损编码算法，目前支持ppmd和paq，paq算法压缩率更高，压缩时间更长
+lossless_encoding = ppmd
+# lossless_encoding = paq
+
+# 是否开启多线程，默认开启。目前采用ppmd不支持多线程
+multi_thread = true
+
+# 每次压缩一块，block_size为每块数据的行数
+block_size = 3000
+
+# 删除中间文件
+remove_tmp_file = false

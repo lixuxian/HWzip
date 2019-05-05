@@ -1,6 +1,6 @@
 #include "task.h"
 
-Task::Task(int size) : max_size(size), finish(false)
+Task::Task() : finish(false), nready(0)
 {
     
 }

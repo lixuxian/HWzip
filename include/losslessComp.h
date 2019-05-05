@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:36:17
- * @LastEditTime: 2019-04-22 11:11:10
+ * @LastEditTime: 2019-05-05 11:10:59
  */
 
 #include "baseComp.h"
@@ -11,7 +11,7 @@
 #include <string>
 #include <vector>
 
-class Encoder;
+// class Encoder;
 
 class LosslessCompressor : public BaseCompressor
 {
@@ -33,24 +33,24 @@ public:
 
 	int compressFile_bz2(std::string inputFilepath, int level);
 
-	int compressFile_paq9a(std::string inputFilepath, std::string outputFilepath);
+	// int compressFile_paq9a(std::string inputFilepath, std::string outputFilepath);
 
-	int compressFile_ppmd(std::string inputFilepath, std::string outputFilepath);
+	static int compressFile_ppmd(std::string inputFilepath, std::string outputFilepath);
 	
 	int decompressFile_7z(std::string inputFilepath);
 
 	int decompressFile_bz2(std::string inputFilepath);
 
-	int decompressFile_paq9a(std::string inputFilepath, std::string outputFilepath);
+	// int decompressFile_paq9a(std::string inputFilepath, std::string outputFilepath);
 
-	int decompressFile_ppmd(std::string inputFilepath, std::string outputFilepath);
+	static int decompressFile_ppmd(std::string inputFilepath, std::string outputFilepath);
 
-	int compress_init_paq9a(std::string inputFilepath, std::string outputFilepath);
-	int compress_str_paq9a(std::string str);
-	void compress_paq9a_end();
+	// int compress_init_paq9a(std::string inputFilepath, std::string outputFilepath);
+	// int compress_str_paq9a(std::string str);
+	// void compress_paq9a_end();
 
 private:
 	double simThreshold;
 	int simRange;
-	Encoder *e;
+	// Encoder *e;
 };

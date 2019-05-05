@@ -124,3 +124,56 @@ double Stod(const std::string &str)
   }
   return res;
 }
+
+void setPaths(double AVG_ERR_MAX, std::string &inputFilepath, std::string &tempFilepath, std::string &outputFilepath)
+{
+  std::string avg_err_str;
+	convertDouble(AVG_ERR_MAX, avg_err_str);
+	tempFilepath = inputFilepath  + "_" + avg_err_str + ".tmp";
+	outputFilepath = inputFilepath + "_" + avg_err_str + ".hw";
+}
+
+void trim(std::string &str)
+{
+    std::string::size_type pos = str.find_first_not_of(' ');
+    if (pos == std::string::npos)
+    {
+        return;
+    }
+    std::string::size_type pos2 = str.find_last_not_of(' ');
+    if (pos2 != std::string::npos)
+    {
+        str = str.substr(pos, pos2 - pos + 1);
+        return;
+    }
+    str = str.substr(pos);
+}
+
+/**
+ * @description: 帮助信息，关于可执行程序的使用
+ * @param
+ * @return: int -1表示命令行参数错误
+ */
+int Help() 
+{
+	std::string helpString = 
+		"hwzip v1.1\n"
+		"How to use hwzip:\n"
+		"    compress:           hwzip c [file to compress]\n"
+		"    decompress:         hwzip d [file to decompress]\n"
+		"Example:\n"
+		"    hwzip c file/7.csv\n"
+		"    hwzip d file/7.csv_0.05.hw\n";
+	std::cout << helpString;
+  	return -1;
+}
+
+bool isFileSuffix(std::string file, std::string suffix)
+{
+	std::string suffix_real = file.substr(file.length()-suffix.length());
+  if (suffix_real.compare(suffix) == 0)
+  {
+    return true;
+  } 
+  return false;
+}

@@ -15,7 +15,9 @@ TARGET_MAC = hwzip-mac
 BUILD_TARGET = build
 
 CC = g++
-CFLAGS = -Ofast -Wall -std=c++11 -I${DIR_INC} -I${DIR_BOOST} -fpermissive -lpthread
+CFLAGS = -g -Ofast -Wall -std=c++11 -I${DIR_INC} -fpermissive
+
+LDFLAGS =  -lglog -lpthread
 
 OS:=$(shell uname -s)
 IS_LINUX:=$(shell echo $(OS) | grep -i Linux)
@@ -45,7 +47,7 @@ ${DIR_OBJ}/%.o:${DIR_SRC}/%.cpp
 	$(CC) $(CFLAGS) -c  $< -o $@
 
 ${BIN_TARGET}:${OBJ}
-	$(CC) $(OBJ)  ${LDFLAGS} -lpthread -o $@
+	$(CC) $(OBJ)  $(CFLAGS) ${LDFLAGS} -o $@
 
 install:
 	cp ${BIN_TARGET} /usr/local/bin
