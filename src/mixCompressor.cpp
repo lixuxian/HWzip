@@ -236,6 +236,7 @@ int MixCompressor::compress_paq()
 			++block_count;
 			lossyCompPtr->compressOneBlock(block, line_num_of_block);
 
+			// fileProcPtr->writeOneBlock2Tempfile(block, line_num_of_block);
 			// std::string lossless_str;
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
 			// TODO 目前是写入中间文件，改成直接无损压缩lossless_str（从内存压缩，减少io）

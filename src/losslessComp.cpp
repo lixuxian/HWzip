@@ -4,8 +4,9 @@
 #include <cstdio>
 #include <iostream>
 #include <vector>
+#include "utils.h"
 
-LosslessCompressor::LosslessCompressor() : simThreshold(0.90), simRange(12)
+LosslessCompressor::LosslessCompressor() : simThreshold(0.90), simRange(120)
 {
 	
 }
@@ -37,6 +38,18 @@ void LosslessCompressor::decompress(std::string inputFilepath, std::string outpu
 	
 }
 
+bool allZero(std::vector<std::vector<std::string> > &block, int line_num, int colIndex)
+{
+	for (size_t i = 0; i < line_num; i++)
+	{
+		if (!isZeroOrNA(block[i][colIndex]))
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
 /**
  * @description: 对一个块的数据进行无损压缩，结果存入lossless_str中
  * @param block 待压缩的一块数据
@@ -59,6 +72,15 @@ int LosslessCompressor::compressOneBlock(std::vector<std::vector<std::string> > 
 	// first three col are metadatas
 	for (int col = 0; col < colN; ++col)
 	{
+		// add by lixuxian 20190505
+		// 全0列不存
+		// if (allZero(block, line_num, col))
+		// {
+		// 	// LOG(INFO) << "allZero -- " << col << " column" << std::endl;
+		// 	continue;
+		// }
+		// add by lixuxian 20190505
+
 		std::string col_str = "";
 		double similarity;
 		int simCol = chooseSimilarColumn(block, line_num, col, similarity);

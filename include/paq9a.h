@@ -561,7 +561,8 @@ HashTable<B>::~HashTable() {
 
 ////////////////////////// LZP /////////////////////////
 
-U32 MEM=1<<29;  // Global memory limit, 1 << 22+(memory option)
+// U32 MEM=1<<29;  // Global memory limit, 1 << 22+(memory option)
+U32 MEM=1<<31;  // Global memory limit, 1 << 22+(memory option)
 
 // LZP predicts the next byte and maintains context.  Methods:
 // c() returns the predicted byte for the next update, or -1 if none.
@@ -918,7 +919,7 @@ Encoder* paq9a_compress_init(const char* filename, FILE* out, Mode_paq mode)
     printf("%8d KiB\b\b\b\b\b\b\b\b\b\b\b\b", allocated>>10);
   }
   fprintf(out, "pQ9%c", 1); // 写入版本信息
-  putc('7', out);           // 写入内存配置，默认level 7
+  putc('9', out);           // 写入内存配置，默认level 7
   fprintf(out, "%s", filename); // 写入tmp文件名
 
   if (mode == COMPRESS)
@@ -1078,7 +1079,7 @@ FILE* open_archive(const char* filename) {
 void compress_paq9a(const char* filename, FILE* out) {
 
   fprintf(out, "pQ9%c", 1); // 写入版本信息
-  putc('7', out);           // 写入内存配置，默认level 7
+  putc('9', out);           // 写入内存配置，默认level 7
   // Open input file
   FILE* in=fopen(filename, "rb");
   if (!in) {
