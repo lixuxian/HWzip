@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:36:17
- * @LastEditTime: 2019-05-05 11:10:59
+ * @LastEditTime: 2019-05-15 10:18:03
  */
 
 #include "baseComp.h"
@@ -24,10 +24,12 @@ public:
 
 	double getSimilarity(std::vector<std::vector<std::string> > &block, int line_num, int c1, int c2);
 	int chooseSimilarColumn(std::vector<std::vector<std::string> > &block, int line_num, int currentCol, double &similarity);
+	int chooseSimilarColumn_sorted(std::vector<std::vector<std::string> > &block, int line_num, int currentCol, std::vector<size_t> &sortedIndex, double &similarity);
 	int createSimilarString(std::vector<std::vector<std::string> > &block, int line_num, int simCol, int currentCol, std::string &result);
 
 
 	int compressOneBlock(std::vector<std::vector<std::string> > &block, int line_num, std::string &lossless_str);
+	int compressOneBlock_sorted(std::vector<std::vector<std::string> > &block, int line_num, std::string &lossless_str);
 
 	int compressFile_7z(std::string inputFilepath, std::string outputFilepath, int level);
 

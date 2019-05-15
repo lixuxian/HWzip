@@ -238,9 +238,8 @@ int MixCompressor::compress_paq()
 
 			// fileProcPtr->writeOneBlock2Tempfile(block, line_num_of_block);
 			// std::string lossless_str;
-			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
-			// TODO 目前是写入中间文件，改成直接无损压缩lossless_str（从内存压缩，减少io）
-			// fileProcPtr->writeOneBlock2Tempfile(lossless_str);
+			losslessCompPtr->compressOneBlock_sorted(block, line_num_of_block, lossless_str);
+
 			clock_t e = clock();
 			LOG(INFO) << "lossyCompPtr->compressOneBlock() time = " << (double)(e - s)/CLOCKS_PER_SEC << std::endl;
 			if (lossless_str.length() >= 1024*1024)
@@ -377,7 +376,8 @@ int MixCompressor::compress_thread()
 		{
 			++block_count;
 			lossyCompPtr->compressOneBlock(block, line_num_of_block);
-			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
+			losslessCompPtr->compressOneBlock_sorted(block, line_num_of_block, lossless_str);
+			// losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
 			clock_t e = clock();
 			LOG(INFO) << "losslessCompPtr->compressOneBlock time = " << (double)(e - s) / CLOCKS_PER_SEC << std::endl;
 				// 写入task的队列中，待paq压缩

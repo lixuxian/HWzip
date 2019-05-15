@@ -15,7 +15,7 @@ TARGET_MAC = hwzip-mac
 BUILD_TARGET = build
 
 CC = g++
-CFLAGS = -g -Ofast -Wall -std=c++11 -I${DIR_INC} -fpermissive
+CFLAGS = -g  -Wall -std=c++11 -I${DIR_INC} -fpermissive
 
 LDFLAGS =  -lglog -lpthread
 

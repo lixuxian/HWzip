@@ -3,9 +3,10 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 18:09:06
- * @LastEditTime: 2019-04-11 11:49:56
+ * @LastEditTime: 2019-05-15 16:35:29
  */
 #include "errComputer.h"
+#include "utils.h"
 #include <cmath>
 
 ErrComputer::ErrComputer()
@@ -25,8 +26,8 @@ ErrComputer::~ErrComputer()
  */
 double ErrComputer::pwRelErr(std::string s1, std::string s2)
 {
-	double d1 = std::stod(s1);
-	double d2 = std::stod(s2);
+	double d1 = Stod(s1);
+	double d2 = Stod(s2);
 	if (d1 == 0.0 || d2 == 0.0)
 	{
 		return 0.0;
@@ -57,7 +58,7 @@ double ErrComputer::pwRelErr(double d1, double d2)
  */
 double ErrComputer::pwRelErr(std::string s1, double d2)
 {
-	double d1 = std::stod(s1);
+	double d1 = Stod(s1);
 	if (d1 == 0.0 || d2 == 0.0)
 	{
 		return 0.0;
@@ -73,7 +74,7 @@ double ErrComputer::pwRelErr(std::string s1, double d2)
  */
 double ErrComputer::pwRelErr(double d1, std::string s2)
 {
-	double d2 = std::stod(s2);
+	double d2 = Stod(s2);
 	if (d1 == 0.0 || d2 == 0.0)
 	{
 		return 0.0;
@@ -89,8 +90,8 @@ double ErrComputer::pwRelErr(double d1, std::string s2)
  */
 double ErrComputer::pwRelErrSquare(std::string s1, std::string s2)
 {
-	double d1 = std::stod(s1);
-	double d2 = std::stod(s2);
+	double d1 = Stod(s1);
+	double d2 = Stod(s2);
 	if (d1 == 0.0 || d2 == 0.0)
 	{
 		return 0.0;

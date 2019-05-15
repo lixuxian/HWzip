@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include "utils.h"
+#include "sortColumn.h"
 
 LosslessCompressor::LosslessCompressor() : simThreshold(0.90), simRange(120)
 {
@@ -122,6 +123,81 @@ int LosslessCompressor::compressOneBlock(std::vector<std::vector<std::string> > 
 	return 1;
 }
 
+void saveIndexString(std::vector<size_t> sortedIndex, std::string &lossless_str)
+{
+	size_t i = 0;
+	for (; i < sortedIndex.size() - 1; i++)
+	{
+		lossless_str += std::to_string(sortedIndex[i]) + ",";
+	}
+	lossless_str += std::to_string(sortedIndex[i]) + "\n";
+}
+
+/**
+ * @description: 先对一个块排序，再进行进行无损压缩，结果存入lossless_str中
+ * @param block 待压缩的一块数据
+ * @param line_num block中的文件行数
+ * @param lossless_str 对block的无损压缩结果，稍后存入中间文件
+ * @return: int 1表示正常
+ */
+int LosslessCompressor::compressOneBlock_sorted(std::vector<std::vector<std::string> > &block, int line_num, std::string &lossless_str)
+{
+	int rowN = line_num;
+	assert(rowN > 0);
+	int colN = block[0].size();
+	assert(colN > 0);
+
+	std::vector<size_t> sortedIndex(colN);
+	sortColumn::sortBlock(block, line_num, sortedIndex);
+
+	saveIndexString(sortedIndex, lossless_str);
+
+	// first three col are metadatas
+	// for (int col = 0; col < colN; ++col)
+	for (int i = 0; i < colN; ++i)
+	{
+		int col = sortedIndex[i];
+
+		std::string col_str = "";
+		double similarity;
+		int simCol = chooseSimilarColumn_sorted(block, line_num, i, sortedIndex, similarity);
+		if (simCol == -1)
+		{
+			/* no similar col */
+			std::string pre_data = block[0][col];
+			col_str += pre_data;
+			for (int line = 1; line < line_num; ++line)
+			{
+				std::string currentData = block[line][col];
+				// std::cout << "currentData = " << currentData << std::endl;
+				if (pre_data.compare(currentData) == 0) // 相等
+				{
+					col_str += ",";
+				} else {
+					col_str += "," + currentData;
+					pre_data = currentData;
+				}
+			}
+			col_str += ",";
+		}
+		else
+		{
+			/* there is a similar column */
+			if (similarity == 1.0) {
+				// if (col != 0) {
+				// 	col_str += ",";
+				// }
+				col_str += std::to_string(col - simCol - 1) + "-,";
+			}
+			else
+			{
+				createSimilarString(block, line_num, simCol, col, col_str);
+			}
+		}
+		lossless_str += col_str;
+	}
+	return 1;
+}
 /**
  * @description: 根据相似列，构造本列的字符串
  * @param block 经过有损处理后的一块数据
@@ -202,6 +278,38 @@ int LosslessCompressor::chooseSimilarColumn(std::vector<std::vector<std::string>
 		{
 			maxSimilarity = sim;
 			maxSimilarityIndex = i;
+		}
+	}
+	similarity = maxSimilarity;
+	return maxSimilarityIndex;
+}
+
+/**
+ * @description: 从block的列中，选择一个和当前列相似的列
+ * 				(选择范围由simRange控制，减少计算量；相似度大于阈值simThreshold才算相似)
+ * @param block 经过有损处理后的一块数据
+ * @param line_num 该block中的文件行数
+ * @param currentCol 当前列的列索引
+ * @param similarity 当前列和相似列的相似度(即相同数据所占的比例，如0.9)
+ * @return: int 大于0表示相似列的索引，-1表示没有相似列
+ */
+int LosslessCompressor::chooseSimilarColumn_sorted(std::vector<std::vector<std::string> > &block, int line_num, int currentIndex, std::vector<size_t> &sortedIndex, double &similarity)
+{
+	int firstColIndex = 3;
+	int end = currentIndex;
+	int start = currentIndex - simRange >= firstColIndex ? currentIndex - simRange : firstColIndex;
+
+	double maxSimilarity = 0.0;
+	int maxSimilarityIndex = -1;
+
+	for (int i = start; i < end; ++i)
+	{
+		int realBlockIndex = sortedIndex[i];
+		double sim = getSimilarity(block, line_num, realBlockIndex, sortedIndex[currentIndex]);
+		if (sim >= simThreshold && sim > maxSimilarity)
+		{
+			maxSimilarity = sim;
+			maxSimilarityIndex = realBlockIndex;
 		}
 	}
 	similarity = maxSimilarity;
