@@ -97,7 +97,7 @@ void CompressConf::readConf(std::string &confFile)
             }
         }   
     }
-    MAX_PW_REL_ERR = std::min(MAX_PW_REL_ERR, MAX_AVG_ERR);
+    // MAX_PW_REL_ERR = std::min(MAX_PW_REL_ERR, MAX_AVG_ERR);
     if (lossless_algorithm.compare("ppmd") == 0)
     {
         multi_thread = false;

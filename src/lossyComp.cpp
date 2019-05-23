@@ -100,6 +100,21 @@ void LossyCompressor::processIntervalData(std::vector<std::vector<std::string> >
  */
 int LossyCompressor::compressOneBlock(std::vector<std::vector<std::string> > &block, int line_num)
 {
+	// add by lixuxain 20190515
+	// store origin block
+	assert(line_num > 0);
+	int rowN = line_num;
+	assert(rowN > 0);
+	int colN = block[0].size();
+	assert(colN > 0);
+	origin_block.reserve(line_num);
+	for (size_t i = 0; i < line_num; i++)
+	{
+		origin_block.push_back(block[i]);
+	}
+	LOG(INFO) << "complete copy block to origin_block, size = " << origin_block.size() << std::endl;
+	// add by lixuxain 20190515
+
 	++block_count;
 
 	if (block_count == 1)
@@ -110,6 +125,24 @@ int LossyCompressor::compressOneBlock(std::vector<std::vector<std::string> > &bl
 	{
 		compressOtherBlock(block, line_num);	
 	}
+	// refine a block
+	refineOneBlock(block, line_num);
+
+	for (std::vector<std::string> x : origin_block)
+	{
+		for (std::string s : x)
+		{
+			{
+				s.clear();
+				std::string().swap(s);
+			}
+			x.clear();
+			std::vector<std::string>().swap(x);
+		}
+		x.shrink_to_fit();
+	}
+	origin_block.clear();
+	origin_block.shrink_to_fit();
 	return 1;
 }
 
@@ -408,3 +441,65 @@ void LossyCompressor::decompress(std::string inputFilepath, std::string outputFi
 
 }
 
+void LossyCompressor::refineOneBlock(std::vector<std::vector<std::string> > &block, int line_num)
+{
+	// calculate avg err
+	// if > MAX_AVG_ERR
+	// 	refine
+	// else
+	// 	continue
+	int rowN = line_num;
+	assert(rowN > 0);
+	int colN = block[0].size();
+	assert(colN > 0);
+
+
+	for (size_t i = 3; i < colN; i++)
+	{
+		float err_sum = 0.0f;
+		float cur_avg_err = 0.0f;
+		for (size_t j = 0; j < rowN; j++)
+		{
+			err_sum += errComputer.pwRelErrSquare(origin_block[j][i], block[j][i]);
+		}
+		cur_avg_err = std::sqrt(err_sum / rowN);
+		// LOG(INFO) << "cur_avg_err = " << cur_avg_err << std::endl;
+		if (cur_avg_err > AVG_ERR_MAX)
+		{
+			// LOG(INFO) << "cur_avg_err > AVG_ERR_MAX" << std::endl;
+			// refine  column i
+			for (size_t r = 0; r < rowN; r++)
+			{
+				std::string data = block[r][i];
+				float last_err_square = errComputer.pwRelErrSquare(origin_block[r][i], data);
+				if (errComputer.pwRelErr(origin_block[r][i], block[r][i]) > AVG_ERR_MAX)
+				{
+					// refine block[r][i]
+					if (origin_block[r][i].find(".") != std::string::npos)
+					{
+						simplifyData.simplifyFloat(origin_block[r][i], AVG_ERR_MAX, block[r][i]);
+						// if (r == 0 && origin_block[r][i].compare("-106.7") == 0)
+						// {
+						// 	LOG(WARNING) << "-106.7 --> " << block[r][i] << " , data = " << data << std::endl;
+						// }
+					}
+					else
+					{
+						simplifyData.simplifyInt(origin_block[r][i], AVG_ERR_MAX, block[r][i]);
+					}
+				}
+				// check
+				float now_err_square = errComputer.pwRelErrSquare(origin_block[r][i], block[r][i]);
+				float new_avg_err = std::sqrt(err_sum - last_err_square + now_err_square) / rowN;
+				if (new_avg_err <= AVG_ERR_MAX)
+				{
+					break;
+				}
+			}
+		}
+		else
+		{
+			continue;
+		}
+	}
+}

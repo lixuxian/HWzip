@@ -5,7 +5,7 @@
 max_pw_rel_err = 0.10
 
 # 最大平均误差(按列指标计算)，计算公式为sqrt((1/N) * sum( ((x(i) - x'(i)) / x(i))^2 )， 其中i = 1..N
-max_avg_err = 0.10
+max_avg_err = 0.05
 
 # 无损编码算法，目前支持ppmd和paq，paq算法压缩率更高，压缩时间更长
 # lossless_encoding = ppmd
@@ -18,4 +18,4 @@ multi_thread = true
 block_size = 2725
 
 # 删除中间文件
-remove_tmp_file = false
+remove_tmp_file = true

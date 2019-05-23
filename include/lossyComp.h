@@ -3,13 +3,15 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:36:08
- * @LastEditTime: 2019-04-11 11:40:58
+ * @LastEditTime: 2019-05-15 17:34:38
  */
 #pragma once
 
 #include "baseComp.h"
 #include "simplifyData.h"
 #include <vector>
+
+class ErrComputer;
 
 class LossyCompressor : public BaseCompressor
 {
@@ -41,6 +43,10 @@ private:
 	void processIntervalRange(double &low, double &up); // 对区间上下取整
 	void processIntervalData(std::vector<std::vector<std::string> > &block, int col, int start, int end);
 
+	void refineOneBlock(std::vector<std::vector<std::string> > &block, int line_num);
+
 public:
 	SimplifyData simplifyData;
+	std::vector<std::vector<std::string> > origin_block;
+	ErrComputer errComputer;
 };

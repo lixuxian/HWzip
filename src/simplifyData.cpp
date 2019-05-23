@@ -414,7 +414,7 @@ void SimplifyData::simplifyInt(std::string i_data, double err, std::string &resu
 	// std::string result = i_data;
 	result = i_data;
 	int isNav = 0;
-	if (i_data.find('.') != std::string::npos)
+	if (i_data.find('-') != std::string::npos)
 	{
 		isNav = 1;
 	}
