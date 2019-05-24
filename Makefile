@@ -44,7 +44,7 @@ ${BUILD_TARGET}:
 
 
 ${DIR_OBJ}/%.o:${DIR_SRC}/%.cpp
-	$(CC) $(CFLAGS) -c  $< -o $@
+	$(CC) $(CFLAGS) $(LDFLAGS) -c  $< -o $@
 
 ${BIN_TARGET}:${OBJ}
 	$(CC) $(OBJ)  $(CFLAGS) ${LDFLAGS} -o $@
