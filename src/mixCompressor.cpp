@@ -373,9 +373,11 @@ int MixCompressor::compress_thread()
 
 		clock_t s = clock();
 		line_num_of_block = fileProcPtr->getOneBlock(block);
+		LOG(INFO) << "line_num_of_block = " << line_num_of_block << std::endl;
 		if (line_num_of_block > 0)
 		{
 			++block_count;
+			fileProcPtr->normlizeOneBlock(block, line_num_of_block);
 			lossyCompPtr->compressOneBlock(block, line_num_of_block);
 			losslessCompPtr->compressOneBlock(block, line_num_of_block, lossless_str);
 			clock_t e = clock();
@@ -502,7 +504,7 @@ int MixCompressor::decompress(std::string &losslessAlgorithm)
 		if ( line_num_of_block == -1) {
 			break;
 		}
-		
+
 		// write this decompressed block to output file
 		fileProcPtr->writeOneBlock2DecompressedFile(block, line_num_of_block);
 		++block_count;

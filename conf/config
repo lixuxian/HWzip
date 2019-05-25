@@ -15,7 +15,7 @@ lossless_encoding = paq
 multi_thread = true
 
 # 每次压缩一块，block_size为每块数据的行数
-block_size = 2725
+block_size = 8172
 
 # 删除中间文件
 remove_tmp_file = true

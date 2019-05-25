@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 18:10:11
- * @LastEditTime: 2019-04-30 20:48:48
+ * @LastEditTime: 2019-05-24 09:24:37
  */
 
 #include <string>
@@ -56,6 +56,8 @@ public:
 	int writeHeader2DecompressedFile();
 
 	static bool checkFile(std::string file, std::string filetype);
+
+	void normlizeOneBlock(std::vector<std::vector<std::string> > &block, int line_num);
 
 	std::ifstream *in;
 	std::ofstream *out;

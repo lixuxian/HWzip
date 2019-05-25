@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-04-29 09:43:47
- * @LastEditTime: 2019-05-05 09:39:10
+ * @LastEditTime: 2019-05-24 11:25:29
  */
 #include "fileProcess.h"
 #include "utils.h"
@@ -259,6 +259,7 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 						line_splited.push_back("0");
 					}
 				}
+
 				block.push_back(line_splited);
 				// for (int x = 0; x < block[i].size(); ++x)
 				// {
@@ -292,6 +293,7 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 		}
 		
 	}
+
 	return i;
 }
 
@@ -531,4 +533,48 @@ bool FileProcessor::checkFile(std::string file, std::string version)
 		}
 	}
 	return true;
+}
+
+void FileProcessor::normlizeOneBlock(std::vector<std::vector<std::string> > &block, int line_num)
+{
+	std::cout << "normlizeOneBlock......" << std::endl;
+	assert(line_num > 0);
+	for (size_t i = 3; i < columnSize; i++)
+	{
+		bool isFloat = false;
+		float f_max = -INFINITY;
+		float f_min = INFINITY;
+		
+		// get max and min num
+		for (size_t j = 0; j < line_num; ++j)
+		{
+			std::string num = block[j][i];
+			float f_num = Stod(num);
+			if (!isFloat && num.find(".") != std::string::npos)
+			{
+				isFloat = true;
+			}
+			if (f_num > f_max)
+			{
+				f_max = f_num;
+			}
+			if (f_num < f_min)
+			{
+				f_min = f_num;
+			}
+		}
+		// normalize
+		float range = f_max - f_min;
+		// LOG(INFO) << "range = " << range << std::endl;
+		if (range == 0)
+		{
+			continue;
+		}
+		for (size_t j = 0; j < line_num; ++j)
+		{
+			std::string num = block[j][i];
+			block[j][i] = std::to_string((Stod(num) - f_min) / range);
+		}
+	}
+	
 }
