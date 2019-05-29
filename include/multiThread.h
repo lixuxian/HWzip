@@ -1,5 +1,7 @@
 #include <memory>
 #include <string>
+#include <mutex>
+#include <condition_variable>
 #include "compressConf.h"
 
 class PaqCompressor;

@@ -11,6 +11,7 @@
 #include <vector>
 #include <sstream>
 #include <cmath>
+#include <cassert>
 #include "glog/logging.h"
 
 void splitString(const std::string& s, std::vector<std::string>& v, const std::string& c);
