@@ -920,6 +920,7 @@ Encoder* paq9a_compress_init(const char* filename, FILE* out, Mode_paq mode)
   }
   fprintf(out, "pQ9%c", 1); // 写入版本信息
   putc('9', out);           // 写入内存配置，默认level 7
+  // putc('7', out);           // 写入内存配置，默认level 7
   fprintf(out, "%s", filename); // 写入tmp文件名
 
   if (mode == COMPRESS)

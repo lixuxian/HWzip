@@ -466,33 +466,36 @@ void LossyCompressor::refineOneBlock(std::vector<std::vector<std::string> > &blo
 		// LOG(INFO) << "cur_avg_err = " << cur_avg_err << std::endl;
 		if (cur_avg_err > AVG_ERR_MAX)
 		{
-			// LOG(INFO) << "cur_avg_err > AVG_ERR_MAX" << std::endl;
+			// LOG(INFO) << "cur_avg_err > AVG_ERR_MAX " <<  cur_avg_err <<  " > " << AVG_ERR_MAX << std::endl;
 			// refine  column i
 			for (size_t r = 0; r < rowN; r++)
 			{
 				std::string data = block[r][i];
 				float last_err_square = errComputer.pwRelErrSquare(origin_block[r][i], data);
-				if (errComputer.pwRelErr(origin_block[r][i], block[r][i]) > AVG_ERR_MAX)
+				float last_err = errComputer.pwRelErr(origin_block[r][i], data);
+				// if (errComputer.pwRelErr(origin_block[r][i], block[r][i]) > AVG_ERR_MAX)
+				if (last_err > AVG_ERR_MAX)
 				{
 					// refine block[r][i]
+					// LOG(INFO) << "111 block[r][i] = " << block[r][i] << std::endl;
 					if (origin_block[r][i].find(".") != std::string::npos)
 					{
 						simplifyData.simplifyFloat(origin_block[r][i], AVG_ERR_MAX, block[r][i]);
-						// if (r == 0 && origin_block[r][i].compare("-106.7") == 0)
-						// {
-						// 	LOG(WARNING) << "-106.7 --> " << block[r][i] << " , data = " << data << std::endl;
-						// }
 					}
 					else
 					{
 						simplifyData.simplifyInt(origin_block[r][i], AVG_ERR_MAX, block[r][i]);
 					}
+					// LOG(INFO) << "222 block[r][i] = " << block[r][i] << std::endl;
+
 				}
 				// check
 				float now_err_square = errComputer.pwRelErrSquare(origin_block[r][i], block[r][i]);
-				float new_avg_err = std::sqrt(err_sum - last_err_square + now_err_square) / rowN;
+				err_sum = err_sum - last_err_square + now_err_square;
+				float new_avg_err = std::sqrt(err_sum / rowN);
 				if (new_avg_err <= AVG_ERR_MAX)
 				{
+					// LOG(INFO) << "new_avg_err <= AVG_ERR_MAX " << new_avg_err << " <= " << AVG_ERR_MAX << std::endl;
 					break;
 				}
 			}

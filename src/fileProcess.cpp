@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-04-29 09:43:47
- * @LastEditTime: 2019-05-05 09:39:10
+ * @LastEditTime: 2019-05-27 15:03:17
  */
 #include "fileProcess.h"
 #include "utils.h"
@@ -522,7 +522,7 @@ bool FileProcessor::checkFile(std::string file, std::string version)
 	for (size_t i = 0; i < version.size(); i++)
 	{
 		char c = in.get();
-		LOG(INFO) << "c = " << c << std::endl;
+		LOG(INFO) << "c = " << c << ", " << (int)c << std::endl;
 		if (c != version[i])
 		{
 			LOG(INFO) << "c = " << c << " != " << version[i] << std::endl;
