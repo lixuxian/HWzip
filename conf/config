@@ -1,5 +1,6 @@
-# version = 1.1
+# version = 1.2
 # 配置文件
+# 带‘#’的行是注释
 
 # 最大相对误差，对数值x，其解压后数值为x'，则x对相对误差为(x - x')/x
 max_pw_rel_err = 0.10
@@ -12,10 +13,17 @@ max_avg_err = 0.05
 lossless_encoding = paq
 
 # 是否开启多线程，默认开启。目前采用ppmd不支持多线程
+# multi_thread = false
 multi_thread = true
 
-# 每次压缩一块，block_size为每块数据的行数
+# 每次压缩一块，block_size为每块数据的行数，一般情况下行数越多，压缩率越好
+# block_size = 8172
+# block_size = 5448
 block_size = 2724
 
 # 删除中间文件
+# remove_tmp_file = false
 remove_tmp_file = true
+
+# 第一个数据列的索引(默认3，前三列为时间1、时间2、ObjID，无法进行有损压缩)
+first_data_index = 3

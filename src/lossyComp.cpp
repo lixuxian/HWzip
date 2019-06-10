@@ -1,14 +1,24 @@
 #include "lossyComp.h"
 // #include "errComputer.h"
 #include "utils.h"
+#include "compressConf.h"
 #include <iostream>
 
-LossyCompressor::LossyCompressor(double rel_err, double avg_err) : PW_REL_ERR_MAX(rel_err), AVG_ERR_MAX(avg_err), cFreq(10), block_count(0)
+LossyCompressor::LossyCompressor(double rel_err, double avg_err) : PW_REL_ERR_MAX(rel_err), AVG_ERR_MAX(avg_err), cFreq(10), block_count(0), firstColIndex(3)
 {
 	UP = 1 + PW_REL_ERR_MAX;
 	LOW = 1 - PW_REL_ERR_MAX;
 
 }
+
+LossyCompressor::LossyCompressor(CompressConf &cf) : PW_REL_ERR_MAX(cf.MAX_PW_REL_ERR), AVG_ERR_MAX(cf.MAX_AVG_ERR), cFreq(10), block_count(0), firstColIndex(cf.firstDataIndex)
+{
+	UP = 1 + PW_REL_ERR_MAX;
+	LOW = 1 - PW_REL_ERR_MAX;
+	LOG(INFO) << "LossyCompressor::fristDataIndex = " << firstColIndex << std::endl;
+
+}
+
 
 LossyCompressor::~LossyCompressor()
 {
@@ -163,7 +173,7 @@ int LossyCompressor::compressOtherBlock(std::vector<std::vector<std::string> > &
 	}
 	int colN = block[0].size();
 	// first three col are metadatas
-	for (int j = 3; j < colN; ++j)
+	for (int j = firstColIndex; j < colN; ++j)
 	{
 		// std::cout << "compress column " << j << std::endl;
 		int start = 0, end = 0; // 区间开始、结束下标
@@ -306,7 +316,7 @@ int LossyCompressor::compressFirstBlock(std::vector<std::vector<std::string> > &
 	}
 	int colN = block[0].size();
 	// first three col are metadatas
-	for (int j = 3; j < colN; ++j)
+	for (int j = firstColIndex; j < colN; ++j)
 	{
 		// std::cout << "compress column " << j << std::endl;
 		int start = 0, end = 0; // 区间开始、结束下标
@@ -454,7 +464,7 @@ void LossyCompressor::refineOneBlock(std::vector<std::vector<std::string> > &blo
 	assert(colN > 0);
 
 
-	for (size_t i = 3; i < colN; i++)
+	for (size_t i = firstColIndex; i < colN; i++)
 	{
 		float err_sum = 0.0f;
 		float cur_avg_err = 0.0f;
@@ -487,7 +497,22 @@ void LossyCompressor::refineOneBlock(std::vector<std::vector<std::string> > &blo
 						simplifyData.simplifyInt(origin_block[r][i], AVG_ERR_MAX, block[r][i]);
 					}
 					// LOG(INFO) << "222 block[r][i] = " << block[r][i] << std::endl;
-
+					if (block[r][i].find(".") != std::string::npos && block[r][i].length() > 10)
+					{
+						int decimal_len = 6;
+						double value = Stod(block[r][i]);
+						if (value > 10.0f)
+						{
+							decimal_len = 3;
+						}
+						else if (value > 1.0f)
+						{
+							decimal_len = 4;
+						}
+						
+						block[r][i] = block[r][i].substr(0, block[r][i].find(".") + decimal_len);
+						// LOG(INFO) << "block[r][i].length() > 10, num = " << block[r][i] << std::endl;
+					}
 				}
 				// check
 				float now_err_square = errComputer.pwRelErrSquare(origin_block[r][i], block[r][i]);

@@ -25,6 +25,7 @@ public:
     bool multi_thread;
     bool remove_tmp_file;
     int blockSize;
+    int firstDataIndex;
 
 public:
     CompressConf();

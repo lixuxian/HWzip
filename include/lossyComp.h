@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:36:08
- * @LastEditTime: 2019-05-15 17:34:38
+ * @LastEditTime: 2019-06-03 10:42:28
  */
 #pragma once
 
@@ -12,11 +12,13 @@
 #include <vector>
 
 class ErrComputer;
+class CompressConf;
 
 class LossyCompressor : public BaseCompressor
 {
 public:
 	LossyCompressor(double rel_err = 0.10, double avg_err = 0.05);
+	LossyCompressor(CompressConf &cf);
 	virtual ~LossyCompressor();
 
 	int compressOneBlock(std::vector<std::vector<std::string> > &block, int line_num);
@@ -49,4 +51,5 @@ public:
 	SimplifyData simplifyData;
 	std::vector<std::vector<std::string> > origin_block;
 	ErrComputer errComputer;
+	int firstColIndex;
 };

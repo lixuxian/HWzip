@@ -1,4 +1,5 @@
 #include "task.h"
+#include "utils.h"
 
 Task::Task() : finish(false), nready(0)
 {
@@ -7,6 +8,18 @@ Task::Task() : finish(false), nready(0)
 
 Task::~Task()
 {
+    LOG(INFO) << "Task::~Task()" << std::endl;
+    if (!tasks.empty())
+    {
+        LOG(WARNING) << "Task::~Task(), !tasks.empty()" << std::endl;
+        while (!tasks.empty())
+        {
+            std::string str = tasks.front();
+            str.clear();
+            str.shrink_to_fit();
+            tasks.pop();
+        }
+    }
 }
 
 void Task::push_str(std::string &str)

@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-04-29 09:43:47
- * @LastEditTime: 2019-05-27 15:03:17
+ * @LastEditTime: 2019-06-05 11:12:51
  */
 #include "fileProcess.h"
 #include "utils.h"
@@ -285,6 +285,109 @@ int FileProcessor::getOneBlock(std::vector<std::vector<std::string> > &block)
 			line_splited.clear();
 			std::vector<std::string>().swap(line_splited);
 			// std::cout << "line.capacity() = " << line.capacity() << "line_splited.capacity() = " << line_splited.capacity() << " size = " << line_splited.size() << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		
+	}
+	return i;
+}
+
+int FileProcessor::getTwoBlocks(std::vector<std::vector<std::string> > &block)
+{
+	int i = 0;
+
+	// block 1
+	for (; i < blockLines; ++i)
+	{
+		std::string line;
+		std::vector<std::string> line_splited;
+		line_splited.reserve(columnSize);
+		try
+		{
+			if(std::getline(*in, line))
+			{
+				++fileLines;
+				splitString(line, line_splited, ",");
+				if (line_splited.size() < columnSize)
+				{
+					for (size_t i = line_splited.size(); i < columnSize; i++)
+					{
+						line_splited.push_back("0");
+					}
+				}
+				block.push_back(line_splited);
+			}
+			else
+			{
+				return i;
+			}
+			{
+				std::string().swap(line);
+			}
+			// clear
+			for (std::string x : line_splited)
+			{
+				x.clear();
+				{
+					std::string().swap(x);
+				}
+			}
+			line_splited.clear();
+			std::vector<std::string>().swap(line_splited);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		
+	}
+	// block 2
+	i = 0;
+	for (; i < blockLines; ++i)
+	{
+		std::string line;
+		std::vector<std::string> line_splited;
+		line_splited.reserve(columnSize);
+		try
+		{
+			if(std::getline(*in, line))
+			{
+				++fileLines;
+				splitString(line, line_splited, ",");
+				if (line_splited.size() < columnSize)
+				{
+					for (size_t i = line_splited.size(); i < columnSize; i++)
+					{
+						line_splited.push_back("0");
+					}
+				}
+				// block.push_back(line_splited);
+				// block[i].insert(block[i].end(), line_splited.begin(), line_splited.end());
+				for (size_t c = 0; c < columnSize; ++c)
+				{
+					block[i].insert(block[i].begin() + (2 * c + 1), line_splited[c]);
+				}
+			}
+			else
+			{
+				return i;
+			}
+			{
+				std::string().swap(line);
+			}
+			// clear
+			for (std::string x : line_splited)
+			{
+				x.clear();
+				{
+					std::string().swap(x);
+				}
+			}
+			line_splited.clear();
+			std::vector<std::string>().swap(line_splited);
 		}
 		catch(const std::exception& e)
 		{

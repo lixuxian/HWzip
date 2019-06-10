@@ -1,23 +1,15 @@
 #!/bin/bash
-cd ../file
-dir=$(pwd)
+# 批量解压脚本，对file目录中的所有“.hw”文件进行解压
+cd ..
+dir=$(pwd)/file
 echo "dir = $dir"
-logfile=../test/decompress_result.txt
+logfile=./test/decompress_result.txt
 
 size() {
     echo $(ls -l $1 | awk '{print $5}')
 }
 
-OS=$(uname -s)
-IS_MAC=$(echo $OS | grep "Darwin")
-if [ "$IS_MAC" != "" ];then
-    BIN="../bin/hwzip-mac"
-fi
-# echo "IS_MAC = $IS_MAC"
-IS_LINUX=$(echo $OS | grep "Linux")
-if [ "$IS_LINUX" != "" ];then
-    BIN="../bin/hwzip"
-fi
+BIN="./bin/hwzip"
 
 for file in $dir/*; do
     if [ "${file##*.}"x = "hw"x ]; then

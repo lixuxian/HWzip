@@ -5,15 +5,23 @@
 #include <iostream>
 #include <vector>
 #include "utils.h"
+#include "compressConf.h"
 
-LosslessCompressor::LosslessCompressor() : simThreshold(0.90), simRange(120)
+LosslessCompressor::LosslessCompressor() : simThreshold(0.10), simRange(180), firstColIndex(3)
 {
 	
 }
 
+LosslessCompressor::LosslessCompressor(CompressConf &cf) : simThreshold(0.10), simRange(180), firstColIndex(cf.firstDataIndex)
+{
+	LOG(INFO) << "LosslessCompressor::fristDataIndex = " << firstColIndex << std::endl;
+	LOG(INFO) << "multi_thread = " << cf.multi_thread << std::endl;
+}
+
+
 LosslessCompressor::~LosslessCompressor()
 {
-
+	LOG(INFO) << "LosslessCompressor::~LosslessCompressor()" << std::endl;
 }
 
 /**
@@ -72,15 +80,6 @@ int LosslessCompressor::compressOneBlock(std::vector<std::vector<std::string> > 
 	// first three col are metadatas
 	for (int col = 0; col < colN; ++col)
 	{
-		// add by lixuxian 20190505
-		// 全0列不存
-		// if (allZero(block, line_num, col))
-		// {
-		// 	// LOG(INFO) << "allZero -- " << col << " column" << std::endl;
-		// 	continue;
-		// }
-		// add by lixuxian 20190505
-
 		std::string col_str = "";
 		double similarity;
 		int simCol = chooseSimilarColumn(block, line_num, col, similarity);
@@ -118,6 +117,85 @@ int LosslessCompressor::compressOneBlock(std::vector<std::vector<std::string> > 
 			}
 		}
 		lossless_str += col_str;
+	}
+	return 1;
+}
+
+/**
+ * @description: 根据与block1的相似性，压缩block2，结果写入lossless_str中
+ * @param block1 前一列，作为基准来计算相似性，从而压缩block2
+ * @param block2 待压缩列
+ * @param line_num 文件块的行数
+ * @param lossless_str block2的压缩结果
+ * @return: 
+ */
+int LosslessCompressor::compressBlockBySimilarity(std::vector<std::vector<std::string> > &block1, std::vector<std::vector<std::string> > &block2, int line_num, std::string &lossless_str)
+{
+	LOG(INFO) << "LosslessCompressor::compressBlockBySimilarity()..." << std::endl;
+	assert(block1.size() > 0 && block2.size() > 0);
+	size_t col_1 = block1[0].size();
+	size_t col_2 = block2[0].size();
+	assert(col_1 == col_2);
+
+	for (size_t col = 0; col < col_2; col++)
+	{
+		
+		// 块内压缩
+		std::string col_str = "";
+		double similarity;
+		int simCol = chooseSimilarColumn(block2, line_num, col, similarity);
+		if (simCol == -1)
+		{
+			// 块间压缩，没在块内找到相似列
+			int sameNum = 0;
+			for (size_t j = 0; j < line_num; j++)
+			{
+				if (block1[j][col].compare(block2[j][col]) == 0)
+				{
+					++sameNum;
+				}	
+			}
+			if (sameNum == line_num)
+			{
+				LOG(INFO) << "******sameNum == line_num**********" << std::endl; 
+				// 相同列，存列索引即可。利用对象间的相似性
+				lossless_str += "-" + std::to_string(col) + "-,";
+			}
+			// 列压缩
+			else
+			{
+				/* no similar col */
+				std::string pre_data = block2[0][col];
+				col_str += pre_data;
+				for (int line = 1; line < line_num; ++line)
+				{
+					std::string currentData = block2[line][col];
+					// std::cout << "currentData = " << currentData << std::endl;
+					if (pre_data.compare(currentData) == 0) // 相等
+					{
+						col_str += ",";
+					} else {
+						col_str += "," + currentData;
+						pre_data = currentData;
+					}
+				}
+				col_str += ",";
+				}
+		}
+		else
+		{
+			/* there is a similar column */
+			if (similarity == 1.0) {
+				col_str += std::to_string(col - simCol - 1) + "-,";
+			}
+			else
+			{
+				createSimilarString(block2, line_num, simCol, col, col_str);
+			}
+		}
+		lossless_str += col_str;
+			// 块内压缩
+		
 	}
 	return 1;
 }
@@ -188,10 +266,13 @@ int LosslessCompressor::createSimilarString(std::vector<std::vector<std::string>
  */
 int LosslessCompressor::chooseSimilarColumn(std::vector<std::vector<std::string> > &block, int line_num, int currentCol, double &similarity)
 {
-	int firstColIndex = 3;
+	// int firstColIndex = 3;
 	int end = currentCol;
 	int start = currentCol - simRange >= firstColIndex ? currentCol - simRange : firstColIndex;
-
+	if (currentCol < firstColIndex)
+	{
+		start = 0;
+	}
 	double maxSimilarity = 0.0;
 	int maxSimilarityIndex = -1;
 

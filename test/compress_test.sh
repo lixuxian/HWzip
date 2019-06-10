@@ -1,28 +1,12 @@
 #!/bin/bash
+# 批量测试脚本，对file目录中的所有“.csv”文件进行压缩
 cd ..
 dir=$(pwd)/file
 echo "dir = $dir"
-# pw_err=$1
-# avg_err=$2
 
-# if [ "$pw_err" = "" ] || [ "$avg_err" = "" ];then
-#     echo "please input max_err and avg_err"
-#     echo "  for example:  ./compress_test.sh 0.10 0.05"
-#     exit 1
-# fi
+BIN="./bin/hwzip"
 
-OS=$(uname -s)
-IS_MAC=$(echo $OS | grep "Darwin")
-if [ "$IS_MAC" != "" ];then
-    BIN="./bin/hwzip-mac"
-fi
-# echo "IS_MAC = $IS_MAC"
-IS_LINUX=$(echo $OS | grep "Linux")
-if [ "$IS_LINUX" != "" ];then
-    BIN="./bin/hwzip"
-fi
-# echo "IS_LINUX = $IS_LINUX"
-logfile=./test/compress_result.txt
+logfile=./test/compress_test_result.txt
 
 size() {
     echo $(ls -l $1 | awk '{print $5}')

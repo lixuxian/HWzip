@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:33:45
- * @LastEditTime: 2019-05-05 10:55:39
+ * @LastEditTime: 2019-06-06 11:07:45
  */
 
 // #include "lossyComp.h"
@@ -37,7 +37,13 @@ public:
 	int compress_ppmd();
 	int compress_paq();
 	int compress_thread();
+	int compress_multi_blocks();
 	int decompress(std::string &losslessAlgorithm);
+
+	float compareTwoBlocks(std::vector<std::vector<std::string> >& b1, std::vector<std::vector<std::string> >& b2, float theta);
+	void testBlocks();
+	int compress_two_blocks();
+
 	
 	void run();
 
@@ -57,6 +63,7 @@ private:
 	std::shared_ptr<FileProcessor> fileProcPtr;
 
 	std::vector<std::vector<std::string> > block; 
+	std::vector<std::vector<std::string> > block2; 
 
 
 	const double PW_REL_ERR_MAX;

@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 17:36:17
- * @LastEditTime: 2019-05-23 09:46:59
+ * @LastEditTime: 2019-06-06 11:13:12
  */
 
 #include "baseComp.h"
@@ -12,11 +12,13 @@
 #include <vector>
 
 // class Encoder;
+class CompressConf;
 
 class LosslessCompressor : public BaseCompressor
 {
 public:
 	LosslessCompressor();
+	LosslessCompressor(CompressConf &cf);
 	virtual ~LosslessCompressor();
 
 	void compress(std::string inputFilepath, std::string outputFilepath);
@@ -28,6 +30,7 @@ public:
 
 
 	int compressOneBlock(std::vector<std::vector<std::string> > &block, int line_num, std::string &lossless_str);
+	int compressBlockBySimilarity(std::vector<std::vector<std::string> > &block1, std::vector<std::vector<std::string> > &block2, int line_num, std::string &lossless_str);
 
 	int compressFile_7z(std::string inputFilepath, std::string outputFilepath, int level);
 
@@ -52,5 +55,6 @@ public:
 private:
 	double simThreshold;
 	int simRange;
+	int firstColIndex;
 	// Encoder *e;
 };

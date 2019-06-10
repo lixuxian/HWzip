@@ -2,7 +2,7 @@
 #include "utils.h"
 #include <iostream>
 
-CompressConf::CompressConf() : confFilepath("conf/config"), MAX_PW_REL_ERR(0.1), MAX_AVG_ERR(0.05), lossless_algorithm("paq"), multi_thread(true)
+CompressConf::CompressConf() : confFilepath("conf/config"), MAX_PW_REL_ERR(0.1), MAX_AVG_ERR(0.05), lossless_algorithm("paq"), multi_thread(true), firstDataIndex(3)
 {
 
 }
@@ -90,6 +90,11 @@ void CompressConf::readConf(std::string &confFile)
                     remove_tmp_file = false;
                 }
                 LOG(INFO) << "remove_tmp_file = " << remove_tmp_file << std::endl;
+            }
+            else if (v[0].compare("first_data_index") == 0)
+            {
+                firstDataIndex = std::stoi(v[1]);
+                LOG(INFO) << "first_data_index = " << firstDataIndex << std::endl;
             }
             else
             {

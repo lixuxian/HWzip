@@ -1,4 +1,5 @@
 #!/bin/bash
+# 批量压缩脚本，对file目录中的所有“.csv”文件进行bzip2压缩
 cd ..
 dir=$(pwd)/file
 echo "dir = $dir"

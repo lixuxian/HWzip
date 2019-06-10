@@ -19,6 +19,12 @@ PaqCompressor::PaqCompressor(std::string &infile, double rel_err, double avg_err
 
 PaqCompressor::~PaqCompressor()
 {
+	LOG(INFO) << "PaqCompressor::~PaqCompressor()" << std::endl;
+	if (this->e != NULL)
+	{
+		delete e;
+		this->e == NULL;
+	}
 }
 
 void PaqCompressor::setTask(std::shared_ptr<Task> &t)

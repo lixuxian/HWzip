@@ -3,7 +3,7 @@
  * @Author: lixuxian
  * @LastEditor: lixuxian
  * @Date: 2019-03-29 18:10:11
- * @LastEditTime: 2019-04-30 20:48:48
+ * @LastEditTime: 2019-06-04 20:52:02
  */
 
 #include <string>
@@ -42,6 +42,7 @@ public:
 	int initWork(std::string &losslessAlgorithm, std::string &metadatas, std::string &header); // store head、time and ID
 
 	int getOneBlock(std::vector<std::vector<std::string> > &block);
+	int getTwoBlocks(std::vector<std::vector<std::string> > &block);
 	int writeOneBlock2Tempfile(std::vector<std::vector<std::string> > &block, int line_num);
 	int writeOneBlock2Tempfile(std::string &lossless_str);
 	void initBlock(std::vector<std::vector<std::string> > &block);
